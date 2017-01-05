@@ -1,6 +1,6 @@
-# StaticGen
+# JAMstack CMS
 
-[StaticGen.com](http://www.staticgen.com), a leaderboard of top open-source static site generators.
+[jamstackcms.com](http://www.jamstackcms.com), a leaderboard of top open-source static site content management systems.
 
 ## Contributing
 
@@ -9,17 +9,17 @@ as a `<name>.md` in the `source/projects` folder.
 
 Make sure to follow the following rules:
 
-*   **Static Site Generation:** No "flat-file CMSs" or similar tools. The program must be able to output a static website that can be hosted in places like Netlify, S3 or Github Pages.
-*   **Open Source:** The generator must have a public repository on Github that we can link to and pull in stats from.
-*   **Stick to the format:** Fill out all the same fields as the other static site generators in `source/projects`.
+*   **Static Site Generation:** No "flat-file CMSs". The program must be able to output a static website that can be hosted in places like Netlify, S3 or Github Pages.
+*   **Open Source:** The CMS must have a public repository on Github that we can link to and pull in stats from.
+*   **Stick to the format:** Fill out all the same fields as the other CMS's in `source/projects`.
 *   **Short description:** Keep all the details for the body text, keep the description for the overview page short and sweet.
 
 ## Running locally
 
-StaticGen is built with Middleman. To install and run locally:
+JAMstack CMS is built with Middleman. To install and run locally:
 
     git clone https://github.com/netlify/staticgen.git
-    cd staticgen
+    cd jamstackcms
     bundle install
     bundle exec middleman
 
@@ -36,7 +36,7 @@ Then middleman will use the Gist you specified to archive stats (stars, forks an
 
 ## Netlify
 
-StaticGen is built and maintained by [Netlify](https://www.netlify.com), a hosting and automation service for static websites and apps.
+JAMstack CMS is built and maintained by [Netlify](https://www.netlify.com), a hosting and automation service for static websites and apps.
 
 ## License
 This project is licensed under the [MIT license](http://opensource.org/licenses/MIT).
