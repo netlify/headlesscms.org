@@ -17,7 +17,7 @@ body {
 }
 
 h1 { font-size: 76px; }
-h2 { font-size: 49px; font-weight: 100; }
+h2 { font-size: 49px; font-weight: 100; margin: 16px 0;}
 h3 {
   font-size: 47px;
   line-height: 1.2;
@@ -37,13 +37,7 @@ dl {
 }
 dl dt, dl dd { margin: 0; }
 dl dt {
-  float: left;
-  width: 42%;
   clear: left;
-}
-dl dd {
-  float: left;
-  width: 58%;
 }
 
 h2 a, h2 a:link, h2 a:visited, h2 a:active, h2 a:hover {
@@ -96,23 +90,23 @@ pre {
   z-index: 100;
 }
 
-.right-menu {
-  float: right;
+.menu {
+  text-align: center;
 }
 
-.right-menu > ul {
+.menu > ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.right-menu > ul > li {
+.menu > ul > li {
   display: inline-block;
   line-height: 45px;
   height: 45px;
 }
 
-.right-menu > ul > li > a {
+.menu > ul > li > a {
   display: inline-block;
   line-height: 45px;
   height: 45px;
@@ -122,7 +116,7 @@ pre {
   margin-left: 16px;
 }
 
-.right-menu > ul > li > a:hover {
+.menu > ul > li > a:hover {
   color: #00c7b7;
 }
 
@@ -233,6 +227,11 @@ pre {
 }
 .card .description {
   min-height: 5em;
+  margin: 40px 0 30px 0;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .stats {
@@ -557,10 +556,7 @@ a.deploy-btn-interior img {
   .navbar {
     height: 90px;
   }
-  .navbar .right-menu {
-    float: none;
-  }
-  .navbar .right-menu a { margin-left: 0; }
+  .navbar .menu a { margin-left: 0; }
   .navbar .container {
     padding: 0 12px;
   }

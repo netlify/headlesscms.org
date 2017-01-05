@@ -5,51 +5,14 @@ title: Top Content Management Systems for JAMstack Sites
 <div class="main landing">
   <ul class="projects">
     <% projects.each_with_index do |project, index| %>
-      <li class="project lang-<%= project.language.downcase.gsub(/\s/, '-').gsub('.', '') %>"
-          data-stars="<%= project.stars %>"
-          data-forks="<%= project.forks %>"
-          data-issues="<%= project.issues %>"
-          data-title="<%= project.title %>"
-          data-language="<%= project.language.downcase.gsub(/\s/, '-') %>">
+      <li class="project">
         <div class="card">
           <h4 class="title"><a href="<%= project.url %>"><%= project.title %></a></h4>
           <h6 class="url"><a href="<%= project.homepage %>"><%= project.homepage.sub(/^https?:\/\//, '') %></a></small></h6>
-          <ul class="stats">
-            <li title="Stars">
-              <i class="fa fa-star"></i>
-              <span class="stat"><%= project.stars %></span>
-              <span class="trend <%= project.stars_trend %>" title="Difference since last week">
-                <%= project.stars_diff %>
-                <%= caret_icon(project.stars_diff) %>
-              </span>
-            </li>
-            <li title="Forks">
-              <i class="fa fa-code-fork"></i>
-              <span class="stat"><%= project.forks %></span>
-              <span class="trend <%= project.forks_trend %>" title="Difference since last week">
-                <%= project.forks_diff %>
-                <%= caret_icon(project.forks_diff) %>
-              </span>
-            </li>
-            <li title="Open Issues">
-              <i class="fa fa-bug"></i>
-              <span class="stat"><%= project.issues %></span>
-              <span class="trend" title="Difference since last week">
-                <%= project.issues_diff %>
-                <%= caret_icon(project.issues_diff) %>
-              </span>
-            </li>
-          </ul>
           <div class="description"><%= project.description %></div>
           <dl>
-            <dt>Language:</dt>
-            <dd><%= project.language %></dd>
-
-            <dt>Templates:</dt>
-            <dd><%= project.templates %></dd>
-
-            <dt>License:</dt>
-            <dd><%= project.license %></dd>
+            <dt><strong>Open Source:</strong> <%= project.opensource %></dt>
+            <dt><strong>Supported Site Generators:</strong> <%= project.supportedgenerators %></dt>
           </dl>
           <% if project.startertemplaterepo %>
             <div class="deploy">
