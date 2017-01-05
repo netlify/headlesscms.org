@@ -1,4 +1,4 @@
-# JAMstack CMS
+# jamstackcms
 
 [jamstackcms.com](http://www.jamstackcms.com), a leaderboard of top open-source static site content management systems.
 
@@ -16,7 +16,7 @@ Make sure to follow the following rules:
 
 ## Running locally
 
-JAMstack CMS is built with Middleman. To install and run locally:
+jamstackcms is built with Middleman. To install and run locally:
 
     git clone https://github.com/netlify/staticgen.git
     cd jamstackcms
@@ -36,7 +36,7 @@ Then middleman will use the Gist you specified to archive stats (stars, forks an
 
 ## Netlify
 
-JAMstack CMS is built and maintained by [Netlify](https://www.netlify.com), a hosting and automation service for static websites and apps.
+jamstackcms is built and maintained by [Netlify](https://www.netlify.com), a hosting and automation service for static websites and apps.
 
 ## License
 This project is licensed under the [MIT license](http://opensource.org/licenses/MIT).

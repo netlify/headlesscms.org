@@ -78,8 +78,10 @@ pre {
   margin: 31px 0 0;
 }
 .hero h2 {
-  margin-top: 0;
+  margin: 0 auto 40px auto;
   color: #efefef;
+  max-width: 660px;
+  line-height: 58px;
 }
 .hero a.logo, .hero a.logo:link, .hero a.logo:active, .hero a.logo:hover {
   color: #fff;

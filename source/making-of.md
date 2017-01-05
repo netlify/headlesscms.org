@@ -1,27 +1,27 @@
 ---
-title: About StaticGen
+title: About JAMstackCMS
 layout: making-of
 ---
 
-# The Making of StaticGen
+# The Making of JAMstackCMS
 
 How do you build an up to date scoreboard for Github projects as a CDN backed static site with no moving parts?
 
 The answer, of course, is a static site generator with some cool tooling around it.
 
-This post will show you all the tricks we used to take StaticGen static.
+This post will show you all the tricks we used to take JAMstackCMS static.
 
 ## Tools of the Trade
 
-StaticGen is built with [Middleman](/middleman), one of the most popular Ruby based static site generators. The site is hosted on [Netlify](https://www.netlify.com).
+JAMstackCMS is built with [Middleman](/middleman), one of the most popular Ruby based static site generators. The site is hosted on [Netlify](https://www.netlify.com).
 
-All the source for StaticGen is in [this repository](https://github.com/netlify/staticgen) on Github, and each time we push a new commit or accept a pull request, [Netlify](https://netlify.com) will run a middleman build and do a deploy of the generated site. Netlify will also auto-deploy the site once a day regardless of changes in the repository. We'll see why later.
+All the source for JAMstackCMS is in [this repository](https://github.com/netlify/JAMstackCMS) on Github, and each time we push a new commit or accept a pull request, [Netlify](https://netlify.com) will run a middleman build and do a deploy of the generated site. Netlify will also auto-deploy the site once a day regardless of changes in the repository. We'll see why later.
 
 ## Data Sources
 
-StaticGen combines data from the Github API with our own list of static site generators and some historical data on each of the static site generators we list.
+JAMstackCMS combines data from the Github API with our own list of static site generators and some historical data on each of the static site generators we list.
 
-Building a site like StaticGen with a static site generator, means changing the way we think about our data sources.
+Building a site like JAMstackCMS with a static site generator, means changing the way we think about our data sources.
 
 When building a dynamic site, we're always forced to focus on latency and query times. The #1 demand on our datasource will be that we can query and fetch data fast enough to get acceptable page load times.
 
@@ -43,11 +43,11 @@ Enter Gist! Since we already need some Github API credentials to work with the G
 
 When we start the build, we read a JSON document from a Gist with all the historical data we already have on the static site generators. Whenever we fetch new data from the Github API for a project, we add it to our in-memory archive, and once the build is done, we write a new version of our JSON archive to the Gist.
 
-Again, since latency or write time is really not a concern, as long as it's something reasonable for a build cycle, we can go for stupidly simple solutions. All of our StaticGen history can be found in [this gist](https://gist.github.com/biilmann/db8c50bf9fb8d0c0284b).
+Again, since latency or write time is really not a concern, as long as it's something reasonable for a build cycle, we can go for stupidly simple solutions. All of our JAMstackCMS history can be found in [this gist](https://gist.github.com/biilmann/db8c50bf9fb8d0c0284b).
 
 ## High level overview
 
-Each time Netlify runs a build of staticgen.com, Middleman will follow the following steps:
+Each time Netlify runs a build of JAMstackCMS.com, Middleman will follow the following steps:
 
 1. Get the list of projects from markdown files in the `/projects` folder
 2. Load the archive from the Gist
@@ -59,13 +59,13 @@ Then Netlify deploys the resulting `/build` directory
 
 ## Nitty Gritty Details
 
-That's all you need to know for a high-level idea of how StaticGen works, and the ideas above can no doubt be adapted to all kind of sites that need to create reports, charts, rankings, etc, from API data that doesn't need to be updated instantly.
+That's all you need to know for a high-level idea of how JAMstackCMS works, and the ideas above can no doubt be adapted to all kind of sites that need to create reports, charts, rankings, etc, from API data that doesn't need to be updated instantly.
 
 But lets dive into the nitty gritty details of how we're doing this with Middleman.
 
 ## The Basic Middleman Setup
 
-Middleman has excellent support for blog-like collections, so the main data-source in StaticGen is a folder with a markdown file for each Github project we want to list and track.
+Middleman has excellent support for blog-like collections, so the main data-source in JAMstackCMS is a folder with a markdown file for each Github project we want to list and track.
 
 Each file has some metadata expressed as YAML front-matter, eg.:
 
@@ -83,7 +83,7 @@ description: Hand-crafted, modern frontend development.
 
 The body text is then the description of the static site generator written in Markdown.
 
-To access our pages, we can use the `sitemap` feature of Middleman. For a start we could do this straight from our templates (and in fact, while doing the first drafts of the design that's how StaticGen started out), but for StaticGen I wanted to decorate each of these pages with some more metadata fetched from Github's API.
+To access our pages, we can use the `sitemap` feature of Middleman. For a start we could do this straight from our templates (and in fact, while doing the first drafts of the design that's how JAMstackCMS started out), but for JAMstackCMS I wanted to decorate each of these pages with some more metadata fetched from Github's API.
 
 To get this done, I wrote an extension to Middleman, with the end goal of exposing a sorted list of projects to the templates so we could do stuff like this:
 
@@ -102,7 +102,7 @@ To get this done, I wrote an extension to Middleman, with the end goal of exposi
 
 Middleman has a solid extension system, that makes it straight forward to achieve something like this, once you get the hang of it.
 
-The basic convention for Middleman extensions is to have a an extension class that in itself does little else than register helpers and resource list manipulators (more on those later), and then delegate the more specific tasks of filtering resources, or exposing methods to templates to more specified classes. Here's an annotated version of the Github extension we're using for StaticGen:
+The basic convention for Middleman extensions is to have a an extension class that in itself does little else than register helpers and resource list manipulators (more on those later), and then delegate the more specific tasks of filtering resources, or exposing methods to templates to more specified classes. Here's an annotated version of the Github extension we're using for JAMstackCMS:
 
 ```ruby
 # The top level module for our extension.
@@ -145,9 +145,9 @@ The meat of our GitHub extension is all in the RepoData class that we registered
 
 Middleman's sitemap is quite a powerful abstraction over all the page-like resources that makes up our Middleman site.
 
-Our RepoData class implements a `manipulate_resource_list` method, that will receive the list of resources that makes up our sitemap. Since it's a manipulator, it can filter or modify this list and return a new list. In theory you could have several extensions registering resource manipulators, and the resources from the sitemap would then get chained through them based on priority. For StaticGen the RepoData instance is our only resource manipulator.
+Our RepoData class implements a `manipulate_resource_list` method, that will receive the list of resources that makes up our sitemap. Since it's a manipulator, it can filter or modify this list and return a new list. In theory you could have several extensions registering resource manipulators, and the resources from the sitemap would then get chained through them based on priority. For JAMstackCMS the RepoData instance is our only resource manipulator.
 
-Here's a quick look at a slightly simplyfied version of our resource manipulator for StaticGen:
+Here's a quick look at a slightly simplyfied version of our resource manipulator for JAMstackCMS:
 
 ```ruby
 def manipulate_resource_list(resources)
@@ -176,9 +176,9 @@ In our case we add methods for accessing stars, forks and issues through the Git
 
 ## Deploying to Netlify
 
-We now have a Middleman project that can get the relevant data from the Github API and generate StaticGen. Next step is to make sure StaticGen stays up to date.
+We now have a Middleman project that can get the relevant data from the Github API and generate JAMstackCMS. Next step is to make sure JAMstackCMS stays up to date.
 
-All of StaticGen is open-source, and we're really keen on getting people to send us pull requests with new static site generators or improve our data on the ones we're currently listing. Github handles all of this for us, but we want to make sure changes go live as soon as we merge in a pull request.
+All of JAMstackCMS is open-source, and we're really keen on getting people to send us pull requests with new static site generators or improve our data on the ones we're currently listing. Github handles all of this for us, but we want to make sure changes go live as soon as we merge in a pull request.
 
 Netlify makes it straight forward to setup continuous deployments from a Github repository and we've added our GITHUB_TOKEN as an environment variable in the Netlify backend.
 
@@ -188,9 +188,9 @@ Netlify also lets us setup an inbound webhook we can use to let other services t
 
 ## Final words
 
-The first version of StaticGen was (ironically) a dynamic site, and we ran into lots of problem around caching Github API lookups and suffered from pretty abysmal performance.
+The first version of JAMstackCMS was (ironically) a dynamic site, and we ran into lots of problem around caching Github API lookups and suffered from pretty abysmal performance.
 
-Turning StaticGen into a static site made it perform at a whole other level, and leveraging Github means we have an awesome process in place for adding content and letting people contribute. We've had more than 50 pull requesets since we launched StaticGen.
+Turning JAMstackCMS into a static site made it perform at a whole other level, and leveraging Github means we have an awesome process in place for adding content and letting people contribute. We've had more than 50 pull requesets since we launched JAMstackCMS.
 
 The techniques we've used can be useful for just about any site that runs some kind of daily or hourly reporting.
 
