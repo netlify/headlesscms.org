@@ -76,7 +76,7 @@ pre {
   margin: 0 auto 40px auto;
   color: #313D3E;
   max-width: 660px;
-  line-height: 58px;
+  line-height: 36px;
   font-weight: 100;
   font-size: 24px;
 }
@@ -90,6 +90,7 @@ pre {
   margin-bottom: 18px;
   border-bottom: 1px solid #aaa;
   background: #313D3E;
+  overflow: hidden;
   z-index: 100;
 }
 
@@ -537,6 +538,15 @@ a.deploy-btn-interior img {
     margin: 0;
   }
 
+  .navbar {
+    height: initial;
+  }
+  .menu > ul > li {
+    display: block;
+    text-align: center;
+  }
+  .navbar .menu a { margin-left: 0; }
+
   .project {
     display: block;
     width: 100%;
@@ -558,10 +568,6 @@ a.deploy-btn-interior img {
 }
 
 @media all and (max-width: 800px) {
-  .navbar {
-    height: 90px;
-  }
-  .navbar .menu a { margin-left: 0; }
   .navbar .container {
     padding: 0 12px;
   }
