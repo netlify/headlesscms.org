@@ -90,8 +90,8 @@ pre {
   z-index: 100;
 }
 
-.menu {
-  text-align: center;
+.menu.right {
+  text-align: right;
 }
 
 .menu > ul {
