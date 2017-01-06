@@ -58,24 +58,27 @@ pre {
 }
 
 .hero {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4d9abf+0,00c7b7+100 */
-  background: #4d9abf; /* Old browsers */
-  background: -moz-linear-gradient(45deg,  #4d9abf 0%, #00c7b7 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg,  #4d9abf 0%,#00c7b7 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg,  #4d9abf 0%,#00c7b7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d9abf', endColorstr='#00c7b7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: url('/images/jam-watermark.svg') no-repeat 0 0;
+  background-size: cover;
   text-align: center;
   padding: 29px 0;
 }
 .hero h1 {
   margin: 31px 0 0;
 }
+.hero h1 img {
+  height: auto;
+  width: 400px;
+  max-width: 80%;
+  margin: 0 auto;
+}
 .hero h2 {
   margin: 0 auto 40px auto;
-  color: #efefef;
+  color: #313D3E;
   max-width: 660px;
   line-height: 58px;
   font-weight: 100;
+  font-size: 24px;
 }
 .hero a.logo, .hero a.logo:link, .hero a.logo:active, .hero a.logo:hover {
   color: #fff;
@@ -86,7 +89,7 @@ pre {
   height: 45px;
   margin-bottom: 18px;
   border-bottom: 1px solid #aaa;
-  background: #222;
+  background: #313D3E;
   z-index: 100;
 }
 
@@ -514,7 +517,19 @@ a.deploy-btn-interior img {
   text-shadow: 0 1px rgba(0, 0, 0, 0.4);
 }
 
-.share-button { margin: auto; top: 0; left: 0; bottom: 0; right: 0; margin-bottom: 24px; }
+.share-button {
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 24px;
+}
+
+.share-button.share-button-top.sharer-0 label {
+  background: #00C7B7 !important;
+  color: white !important;
+}
 
 
 @media all and (max-width: 499px) {
