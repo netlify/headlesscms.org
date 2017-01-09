@@ -1,6 +1,11 @@
 {{ partial "head" . }}
   <div class="main">
     <div class="sheet">
+      {{ if eq .Params.opensource "Yes" }}
+        <div class="tag">open source</div>
+      {{ else }}
+        <div class="tag proprietary">proprietary</div>
+      {{ end }}
       <h1>{{ .Title }}</h1>
       <div class="links">
         <a href="{{ .Params.homepage }}"><i class="fa fa-home"></i> {{ .Params.homepage }}</a>
@@ -15,6 +20,13 @@
 
 
       <div class="text">
+      <h7>Supported Site Generators:</h7>
+        <ul>
+          {{ range .Params.supportedgenerators }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+
         {{ .Content }}
 
         {{ if .Params.startertemplaterepo }}
