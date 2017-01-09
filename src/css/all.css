@@ -86,7 +86,8 @@ pre {
   text-decoration: none;
 }
 
-.staticgen-promo a {
+.staticgen-promo a,
+.text a {
   color: #00c7b7;
   text-decoration: none;
 

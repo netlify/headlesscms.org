@@ -23,8 +23,8 @@ There is a starter template (created by clicking below) is built using Casper wi
     <h3>Get started with 1 click</h3>
     <p>Introducing the "Deploy to Netlify" button on select JAMstack CMSs to help you deploy new sites from generator-specific templates with a single click. Get a site up with a JAMstack CMS in minutes, with custom domain, HTTPS and continuous delivery completely free of charge.<br><br>
     Want your own Deploy to Netlify button? <a href="https://www.netlify.com/docs/deploy_button/">Learn more here</a></p>
-      <em>Click below to give it a try with {{ .Params.title }}'s template.</em>
-      <a class="deploy-btn-interior inline" href="https://app.netlify.com/start/deploy?repository=https://github.com/{{ .Params.startertemplaterepo }}" alt="Deploy to Netlify" title="Deploy to Netlify">
+      <em>Click below to give it a try with Netlify CMS's template.</em>
+      <a class="deploy-btn-interior inline" href="https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/casper-cms-template" alt="Deploy to Netlify" title="Deploy to Netlify">
         <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify">
       </a>
     </p>
