@@ -3,7 +3,9 @@ title: Siteleaf
 repo: siteleaf
 homepage: https://www.siteleaf.com/
 opensource: "No"
-supportedgenerators: Jekyll, Hugo
+supportedgenerators:
+  - Jekyll
+  - Hugo
 description: Siteleaf is a content management system designed for a better web.
 ---
 ## Siteleaf
