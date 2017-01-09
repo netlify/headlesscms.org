@@ -289,7 +289,7 @@ pre {
 }
 
 .landing .deploy-to-netlify {
-  margin: 0 0 20px 0;
+  margin: 0;
 }
 
 .landing .deploy-to-netlify h3 {
