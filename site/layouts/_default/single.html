@@ -11,11 +11,6 @@
         <a href="{{ .Params.homepage }}"><i class="fa fa-home"></i> {{ .Params.homepage }}</a>
         <span class="separator">|</span>
         <a href="https://github.com/{{ .Params.repo }}"><i class="fa fa-github"></i> https://github.com/{{ .Params.repo }}</a>
-        {{ if .Params.startertemplaterepo }}
-          <a class="deploy-btn-interior pull-right" href="https://app.netlify.com/start/deploy?repository=https://github.com/{{ .Params.startertemplaterepo }}" alt="Deploy to Netlify" title="Deploy to Netlify">
-            <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify">
-          </a>
-        {{ end }}
       </div>
 
 
@@ -28,21 +23,6 @@
         </ul>
 
         {{ .Content }}
-
-        {{ if .Params.startertemplaterepo }}
-          <div class="promo">
-            <div class="deploy-to-netlify">
-              <h3>Get started with 1 click</h3>
-              <p>Introducing the "Deploy to Netlify" button on select JAMstack CMSs to help you deploy new sites from generator-specific templates with a single click. Get a site up with a JAMstack CMS in minutes, with custom domain, HTTPS and continuous delivery completely free of charge.<br><br>
-              Want your own Deploy to Netlify button? <a href="https://www.netlify.com/docs/deploy_button/">Learn more here</a></p>
-                <em>Click below to give it a try with {{ .Params.title }}'s template.</em>
-                <a class="deploy-btn-interior inline" href="https://app.netlify.com/start/deploy?repository=https://github.com/{{ .Params.startertemplaterepo }}" alt="Deploy to Netlify" title="Deploy to Netlify">
-                  <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify">
-                </a>
-              </p>
-            </div>
-          </div>
-        {{ end }}
       </div>
 
     </div>

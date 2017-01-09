@@ -3,16 +3,14 @@
   <ul class="projects">
     {{ range $index, $id := where .Site.Pages.ByDate.Reverse "Section" "projects" }}
       <li class="project">
-        <div class="card">
+        <a href="{{ .Permalink }}" class="card">
           {{ if eq (lower .Params.opensource) "yes" }}
             <div class="tag">open source</div>
           {{ else }}
             <div class="tag proprietary">proprietary</div>
           {{ end }}
-          <h4 class="title"><a href="{{ .Permalink }}">
-            {{ .Title }}
-          </a></h4>
-          <h6 class="url"><a href="{{ .Params.homepage }}">{{ .Params.homepage }}</a></small></h6>
+          <h4 class="title">{{ .Title }}</h4>
+          <h6 class="url">{{ .Params.homepage }}</h6>
           <div class="description">{{ .Params.description }}</div>
           <h7>Supported Site Generators:</h7>
           <ul>
@@ -20,21 +18,7 @@
               <li>{{ . }}</li>
             {{ end }}
           </ul>
-          {{ if .Params.startertemplaterepo }}
-            <div class="deploy">
-              <a class="deploy-btn" href="https://app.netlify.com/start/deploy?repository=https://github.com/{{ .Params.startertemplaterepo }}" alt="Deploy to Netlify" title="Deploy to Netlify">
-                <img src="/images/deploy-btn-wire-large.svg" title="Deploy to Netlify">
-              </a>
-            </div>
-          {{ end }}
-        </div>
-        {{ if eq $index 2 }}
-          <li id="deploy-to-netlify" class="project deploy-to-netlify">
-            <h3>Get started with 1 click</h3>
-            <p>Deploy new sites from generator-specific templates with a single click. Get a site up with a JAMstack CMS in minutes, with custom domain, HTTPS and continuous delivery completely free of charge.<br><br>
-            Want your own Deploy to Netlify button? <a href="https://www.netlify.com/docs/deploy_button/">Learn more here</a></p>
-          </li>
-        {{ end }}
+        </a>
       </li>
     {{ end }}
   </ul>

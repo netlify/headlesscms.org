@@ -1,4 +1,4 @@
-baseurl: "https://www.jamstackcms.com/"
+baseurl: "/"
 languageCode: "en-us"
 title: "JAMstackCMS | Top Content Management Systems for JAMstack Sites"
 metaDataFormat: "yaml"

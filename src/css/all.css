@@ -30,9 +30,6 @@ h7 {
 
 small { font-size: 66.67%; }
 
-a, a:link, a:active, a:visited, a:hover { color: #00c7b7; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
 dl {
   overflow: hidden;
   margin: 6px 0 0;
@@ -212,14 +209,32 @@ pre {
   background: #fff;
   border: 1px solid #eee;
   border-radius: 8px;
-  padding: 18px;
-  margin: 0 0 18px;
+  color: #313D3E;
+  display: block;
   font-size: 14px;
+  margin: 0 0 18px;
+  padding: 18px;
+  text-decoration: none;
 
   ul {
     padding: 10px 0 0 20px;
   }
+
+  &:visited,
+  &:active,
+  &:hover {
+    color: #313D3E;
+    text-decoration: none;
+  }
+
+  .url {
+    font-style: italic;
+    font-weight: normal;
+    color: #999;
+    margin: 0;
+  }
 }
+
 .card .title {
   margin: 11px -18px 0px;
   padding: 12px 18px 6px;
@@ -249,19 +264,6 @@ pre {
   }
 }
 
-.card .title a, .card .title a:visited, .card .title a:active, .card .title a:hover {
-  color: #444;
-  text-decoration: none;
-}
-.card .url {
-  margin: 0;
-  font-size: 12px;
-}
-.card .url a, .card .url a:visited, .card .url a:active, .card .url a:hover {
-  text-decoration: none;
-  color: #666;
-  font-weight: normal;
-}
 .card .description {
   margin: 40px 0 30px 0;
   min-height: 66px;
