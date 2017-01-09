@@ -236,12 +236,27 @@ pre {
   font-weight: normal;
 }
 .card .description {
-  min-height: 5em;
   margin: 40px 0 30px 0;
+  min-height: 66px;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+
+  &.too-long {
+    max-height: 66px;
+    overflow: hidden;
+    position: relative;
+    text-align: justify;
+
+    &:before {
+      background: white;
+      bottom: 0;
+      content: '...';
+      position: absolute;
+      right: 0;
+    }
+  }
 }
 
 .stats {
