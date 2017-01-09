@@ -3,7 +3,12 @@ title: Contentful
 repo: contentful
 homepage: https://www.contentful.com/
 opensource: "No"
-supportedgenerators: Middleman, Jekyll, Metalsmith, Roots, AWS Lambda
+supportedgenerators:
+  - Middleman
+  - Jekyll
+  - Metalsmith
+  - Roots
+  - AWS Lambda
 description: Contentful is a content management developer platform with an API at its core.
 ---
 ## Contentful

@@ -3,7 +3,9 @@ title: Forestry
 repo: forestryio
 homepage: https://forestry.io
 opensource: "No"
-supportedgenerators: Jekyll, Hugo
+supportedgenerators:
+  - Jekyll
+  - Hugo
 description: Build a custom CMS for Jekyll and Hugo.
 ---
 ## Forestry

@@ -3,7 +3,11 @@ title: DatoCMS
 repo: datocms
 homepage: https://www.datocms.com/
 opensource: "No"
-supportedgenerators: Middleman, Jekyll, Hugo, Metalsmith
+supportedgenerators:
+  - Middleman
+  - Jekyll
+  - Hugo
+  - Metalsmith
 description: DatoCMS is a fully customizable administrative area for your static websites. Use your favorite website generator, let your clients publish new content independently, host the site anywhere you like.
 ---
 ## DatoCMS

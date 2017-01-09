@@ -23,6 +23,10 @@ h3 {
 }
 h4 { font-size: 31px; }
 h5 { font-size: 29px; }
+h7 {
+  font-size: 14px;
+  font-weight: bold;
+}
 
 small { font-size: 66.67%; }
 
@@ -211,23 +215,46 @@ pre {
   padding: 18px;
   margin: 0 0 18px;
   font-size: 14px;
+
+  ul {
+    padding: 10px 0 0 20px;
+  }
 }
 .card .title {
-  margin: -18px -18px 0px;
+  margin: 11px -18px 0px;
   padding: 12px 18px 6px;
-/*  background: #0971B2;*/
   font-weight: normal;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  text-align: center;
 }
+
+.card .tag {
+  background: #00C7B7;
+  border-radius: 3px;
+  color: white;
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 12px;
+  margin: 0 auto;
+  padding: 6px 5px 4px 7px;
+  position: absolute;
+  text-transform: uppercase;
+  width: 92px;
+
+  &.proprietary {
+    background: #bbb;
+    width: 88px;
+  }
+}
+
 .card .title a, .card .title a:visited, .card .title a:active, .card .title a:hover {
   color: #444;
   text-decoration: none;
 }
 .card .url {
   margin: 0;
-  text-align: center;
   font-size: 12px;
 }
 .card .url a, .card .url a:visited, .card .url a:active, .card .url a:hover {

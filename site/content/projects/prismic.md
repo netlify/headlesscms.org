@@ -3,7 +3,8 @@ title: Prismic
 repo: prismicio
 homepage: https://prismic.io/
 opensource: "No"
-supportedgenerators: All
+supportedgenerators:
+  - All
 description: An API-based CMS backend for your Websites & Apps
 ---
 ## Prismic

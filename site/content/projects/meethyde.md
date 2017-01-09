@@ -3,7 +3,8 @@ title: Meet Hyde
 repo: meethyde/meethyde
 homepage: http://meethyde.com
 opensource: "Yes"
-supportedgenerators: Jekyll
+supportedgenerators:
+  - Jekyll
 description: Use MeetHyde to create and edit posts and pages, manage the images in your repository and use the markdown editor to easily insert them in your pages or posts.
 ---
 ## Meet Hyde

@@ -3,7 +3,8 @@ title: CloudCannon
 repo: CloudCannon
 homepage: http://cloudcannon.com
 opensource: "No"
-supportedgenerators: Jekyll
+supportedgenerators:
+  - Jekyll
 description: The Cloud CMS for Jekyll - build Jekyll or static websites, have your team and clients update inline.
 ---
 ## Cloud Cannon

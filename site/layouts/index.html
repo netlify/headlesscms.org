@@ -4,13 +4,22 @@
     {{ range $index, $id := where .Site.Pages.ByDate.Reverse "Section" "projects" }}
       <li class="project">
         <div class="card">
-          <h4 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+          {{ if eq (lower .Params.opensource) "yes" }}
+            <div class="tag">open source</div>
+          {{ else }}
+            <div class="tag proprietary">proprietary</div>
+          {{ end }}
+          <h4 class="title"><a href="{{ .Permalink }}">
+            {{ .Title }}
+          </a></h4>
           <h6 class="url"><a href="{{ .Params.homepage }}">{{ .Params.homepage }}</a></small></h6>
           <div class="description">{{ .Params.description }}</div>
-          <dl>
-            <dt><strong>Open Source:</strong> {{ .Params.opensource }}</dt>
-            <dt><strong>Supported Site Generators:</strong> {{ .Params.supportedgenerators }}</dt>
-          </dl>
+          <h7>Supported Site Generators:</h7>
+          <ul>
+            {{ range .Params.supportedgenerators }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
           {{ if .Params.startertemplaterepo }}
             <div class="deploy">
               <a class="deploy-btn" href="https://app.netlify.com/start/deploy?repository=https://github.com/{{ .Params.startertemplaterepo }}" alt="Deploy to Netlify" title="Deploy to Netlify">

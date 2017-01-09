@@ -3,7 +3,8 @@ title: BowTie
 repo: bowtie-io
 homepage: https://bowtie.io/
 opensource: "No"
-supportedgenerators: Jekyll
+supportedgenerators:
+  - Jekyll
 description: BowTie professional site builder. Build fast and lean websites for your clients that don't skimp on features.
 ---
 ## BowTie
