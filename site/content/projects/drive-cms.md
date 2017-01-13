@@ -3,8 +3,11 @@ title: Google Drive CMS
 repo: max-barry/google-drive-cms
 homepage: https://www.drivecms.xyz
 opensource: "Yes"
+typeofcms: "Headless"
 supportedgenerators:
   - All
+application:
+  - Small Blogs
 description: The Google Drive CMS uses a combination of Google Sheets and Google Docs to maintain content on a website. These documents are sent to a site or a supporting service (e.g. a Firebase database) via a POST request to an API the admin specifies.
 ---
 ## Drive CMS

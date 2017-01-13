@@ -2,7 +2,7 @@
 <div class="main landing">
   <ul class="projects">
     {{ range $index, $id := where .Site.Pages.ByDate.Reverse "Section" "projects" }}
-      <li class="project">
+      <li class="project {{ .Title | urlize }}">
         <a href="{{ .Permalink }}" class="card">
           {{ if eq (lower .Params.opensource) "yes" }}
             <div class="tag">open source</div>
@@ -12,9 +12,23 @@
           <h4 class="title">{{ .Title }}</h4>
           <h6 class="url">{{ .Params.homepage }}</h6>
           <div class="description">{{ .Params.description }}</div>
+          <h7>Type:</h7>
+          <p class="type">
+            {{ if .Params.typeofcms }}
+              {{ .Params.typeofcms }}
+            {{ else }}
+              Unknown
+            {{ end }}
+          </p>
           <h7>Supported Site Generators:</h7>
           <ul>
             {{ range .Params.supportedgenerators }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          <h7>Application:</h7>
+          <ul>
+            {{ range .Params.application }}
               <li>{{ . }}</li>
             {{ end }}
           </ul>

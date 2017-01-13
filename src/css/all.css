@@ -102,7 +102,6 @@ pre {
 .navbar {
   height: 45px;
   margin-bottom: 18px;
-  border-bottom: 1px solid #aaa;
   background: #313D3E;
   overflow: hidden;
   z-index: 100;
@@ -217,8 +216,12 @@ pre {
 .projects {
   margin-right: -24px;
 }
+
+.project.google-drive-cms h4 {
+  font-size: 24px;
+  margin-top: 19px;
+}
 .card {
-/*  background: rgba(255,255,255,0.8);*/
   background: #fff;
   border: 1px solid #eee;
   border-radius: 8px;
@@ -230,7 +233,16 @@ pre {
   text-decoration: none;
 
   ul {
-    padding: 10px 0 0 20px;
+    padding: 10px 0 8px 20px;
+  }
+
+  .type {
+    display: inline;
+
+    + h7 {
+      display: block;
+      margin-top: 8px;
+    }
   }
 
   &:visited,
@@ -245,6 +257,9 @@ pre {
     font-weight: normal;
     color: #999;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -269,7 +284,6 @@ pre {
   padding: 6px 5px 4px 7px;
   position: absolute;
   text-transform: uppercase;
-  width: 92px;
 
   &.proprietary {
     background: #bbb;

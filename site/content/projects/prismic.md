@@ -3,8 +3,12 @@ title: Prismic
 repo: prismicio
 homepage: https://prismic.io/
 opensource: "No"
+typeofcms: "Headless"
 supportedgenerators:
   - All
+application:
+  - Blogs
+  - Small Personal Sites
 description: An API-based CMS backend for your Websites & Apps
 ---
 ## Prismic

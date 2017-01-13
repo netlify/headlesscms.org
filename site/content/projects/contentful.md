@@ -3,12 +3,20 @@ title: Contentful
 repo: contentful
 homepage: https://www.contentful.com/
 opensource: "No"
+typeofcms: "Headless"
 supportedgenerators:
   - Middleman
   - Jekyll
   - Metalsmith
   - Roots
   - AWS Lambda
+application:
+  - Blogs
+  - Small Personal Sites
+  - Landing Pages
+  - SMB Sites
+  - Larger Commercial Sites
+  - Enterprise
 description: Contentful is a content management developer platform with an API at its core.
 ---
 ## Contentful

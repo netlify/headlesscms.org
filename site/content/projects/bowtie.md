@@ -5,6 +5,9 @@ homepage: https://bowtie.io/
 opensource: "No"
 supportedgenerators:
   - Jekyll
+application:
+  - Blogs
+  - Small Personal Sites
 description: BowTie professional site builder. Build fast and lean websites for your clients that don't skimp on features.
 ---
 ## BowTie
