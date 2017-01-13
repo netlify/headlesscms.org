@@ -15,7 +15,7 @@ This site itself is built with [Victor Hugo](https://github.com/netlify/victor-h
 
 ## Explanation of Categories
 
-### Type: Git-based / Headless / Other.
+### Type: Git-based / Headless / Generator Specific.
 
 Here we focus on what type of CMS it fall under.
 
