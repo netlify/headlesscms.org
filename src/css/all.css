@@ -57,7 +57,9 @@ pre {
 }
 
 .hero {
-  background: url('/images/jam-watermark.svg') no-repeat 0 0;
+  background: #FF5F6D;
+  background: -webkit-linear-gradient(-45deg, #FF5F6D , #FFC371);
+  background: linear-gradient(-45deg, #FF5F6D , #FFC371);
   background-size: cover;
   text-align: center;
   padding: 29px 0;
@@ -86,13 +88,13 @@ pre {
 
 .staticgen-promo a,
 .text a {
-  color: #00c7b7;
+  color: #5f90ff;
   text-decoration: none;
 
   &:link,
   &:active,
   &:hover {
-    color: #00c7b7;
+    color: #5f90ff;
     text-decoration: none;
   }
 }
@@ -136,7 +138,7 @@ pre {
 }
 
 .menu > ul > li > a:hover {
-  color: #00c7b7;
+  color: #5f90ff;
 }
 
 .main, .container {
@@ -274,7 +276,7 @@ pre {
 }
 
 .tag {
-  background: #00C7B7;
+  background: #5f90ff;
   border-radius: 3px;
   color: white;
   display: block;
@@ -602,8 +604,8 @@ a.deploy-btn-interior img {
 }
 
 .share-button.share-button-top.sharer-0 label {
-  background: #00C7B7 !important;
-  color: white !important;
+  background: white !important;
+  color: #FF886F !important;
 }
 
 

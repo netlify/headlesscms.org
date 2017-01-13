@@ -1,12 +1,12 @@
 ---
-title: About JAMstackCMS
+title: About HeadlessCMS
 url: '/about/'
 layout: page
 ---
 
-# About JAMstackCMS
+# About HeadlessCMS
 
-JAMstackCMS is a overview of the top Content Management tools for [JAMstack](https://www.jamstack.org/) sites.
+headlessCMS is a overview of the top Content Management tools for [JAMstack](https://www.jamstack.org/) sites.
 
 Basically any content management tool that can manage content on sites or apps that can be hosted _directly_ on a CDN, can be included on this list.
 It’s run by Netlify, a automation and deployment service for JAMstack sites and apps, as a way to promote a JAMstack approach to building websites.

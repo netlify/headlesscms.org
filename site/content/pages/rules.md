@@ -6,7 +6,7 @@ layout: page
 
 # The Rules
 
-Everybody is welcome to contribute to JAMstackCMS, just fork the [GitHub repo](https://github.com/netlify/jamstackcms#forkdestinationbox) and send a pull request. Each Content Management System is a markdown file in the `site/content/projects` directory.
+Everybody is welcome to contribute to headlessCMS, just fork the [GitHub repo](https://github.com/netlify/headlessCMS#forkdestinationbox) and send a pull request. Each Content Management System is a markdown file in the `site/content/projects` directory.
 
 We'll only accept pull requests adding new CMSs if they follow the following rules:
 
