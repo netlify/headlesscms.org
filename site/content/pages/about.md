@@ -19,15 +19,15 @@ This site itself is built with [Victor Hugo](https://github.com/netlify/victor-h
 
 Here we focus on what type of CMS it fall under.
 
-*Git-based*
+**Git-based ([learn more here](https://www.thoughtworks.com/radar/techniques/git-based-cms-git-for-non-code))**
 
 With a git-based CMS you are pushing changes to git that then triggers a new build of your site.
 
-*Headless*
+**Headless ([learn more here](https://css-tricks.com/what-is-a-headless-cms/))**
 
 A headless CMS is purely API driven. It does need to run every time a site has a visitor, but it’s an external api instead of having to run it as part of your site. These are often great if you have several different apps or sites pulling the same managed content.
 
-*Generator specific*
+**Generator Specific**
 
 CMS that needs a site specific generator to work.
 
