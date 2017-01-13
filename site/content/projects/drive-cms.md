@@ -8,7 +8,7 @@ supportedgenerators:
   - All
 application:
   - Small Blogs
-description: The Google Drive CMS uses a combination of Google Sheets and Google Docs to maintain content on a website. These documents are sent to a site or a supporting service (e.g. a Firebase database) via a POST request to an API the admin specifies.
+description: Uses a combination of Google Sheets and Docs to maintain content on a website.
 ---
 ## Drive CMS
 The Google Drive CMS uses a combination of Google Sheets and Google Docs to maintain content on a website. These documents are sent to a site or a supporting service (e.g. a Firebase database) via a POST request to an API the admin specifies.

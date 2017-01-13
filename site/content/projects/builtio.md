@@ -10,7 +10,7 @@ application:
   - Blogs
   - Small Personal Sites
   - Landing Pages
-description: Built.io Contentstack fulfils enterprise requirements without the feature bloat that makes traditional CMS so cumbersome.
+description: Fulfils enterprise requirements without the feature bloat like with traditional CMS's.
 ---
 ## Built.io Contentstack
 

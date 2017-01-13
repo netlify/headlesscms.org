@@ -12,7 +12,7 @@ supportedgenerators:
 application:
   - Blogs
   - Small Personal Sites
-description: DatoCMS is a fully customizable administrative area for your static websites. Use your favorite website generator, let your clients publish new content independently, host the site anywhere you like.
+description: A fully customizable administrative area for your static websites.
 ---
 ## DatoCMS
 DatoCMS is a fully customizable administrative area for your static websites. Use your favorite website generator, let your clients publish new content independently, host the site anywhere you like.

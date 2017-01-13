@@ -12,7 +12,7 @@ supportedgenerators:
 application:
   - Blogs
   - Small Personal Sites
-description: An API-first approach to content management, built around JSON and a high performance cloud architecture.
+description: An API-first approach, built around JSON and a high performance cloud architecture.
 ---
 ## Definitions for Cloud CMS (noun)
 

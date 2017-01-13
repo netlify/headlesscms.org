@@ -15,13 +15,21 @@ This site itself is built with [Victor Hugo](https://github.com/netlify/victor-h
 
 ## Explanation of Categories
 
-### Type: Git-based / Headless / Generator Specific
+### Type: Git-based / Headless / Other.
 
 Here we focus on what type of CMS it fall under.
-Git-based means that you are typically working locally and then pushing changes to Git, from where you then push a new build of your site.
-Headless CMS’ are purely API driven.
 
-Others are, well, those that aren’t Git-based or Headless.. They include ones like Lektor that works uniquely with it’s own site generator..
+*Git-based*
+
+With a git-based CMS you are pushing changes to git that then triggers a new build of your site.
+
+*Headless*
+
+A headless CMS is purely API driven. It does need to run every time a site has a visitor, but it’s an external api instead of having to run it as part of your site. These are often great if you have several different apps or sites pulling the same managed content.
+
+*Generator specific*
+
+CMS that needs a site specific generator to work.
 
 ### Site generators supported: All, or listed.
 
@@ -29,11 +37,12 @@ Site generators or Static Site Generators are a must use build tool for modern w
 
 Each project might call for a different generator, so it’s important to know which site generators are supported by which CMS.
 
-### Application:
-
-This is to help you find out what CMS suits your need:
-Is this CMS made with smaller projects like blogs in mind (like Google Drive CMS), or is the scope for larger projects...
-
 ### Open-source: Yes / No.
 
 Tells you if it’s Open source (read free).
+
+### Application:
+
+This is to help you find out what CMS suits your need:
+
+Is this CMS made with smaller projects like blogs in mind (like Google Drive CMS), or is the scope for larger projects...

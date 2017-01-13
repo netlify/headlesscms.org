@@ -89,7 +89,6 @@ pre {
 .staticgen-promo a,
 .text a {
   color: #00c7b7;
-  display: block;
   text-decoration: none;
 
   &:link,
@@ -98,6 +97,10 @@ pre {
     color: #00c7b7;
     text-decoration: none;
   }
+}
+
+.staticgen-promo a {
+  display: block;
 }
 
 .navbar {

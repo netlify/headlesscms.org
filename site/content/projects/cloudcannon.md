@@ -9,7 +9,7 @@ supportedgenerators:
 application:
   - Blogs
   - Small Personal Sites
-description: The Cloud CMS for Jekyll - build Jekyll or static websites, have your team and clients update inline.
+description: The Cloud CMS for Jekyll - build Jekyll or static websites, make updates inline.
 ---
 ## Cloud Cannon
 The Cloud CMS for Jekyll - build Jekyll or static websites, have your team and clients update inline.

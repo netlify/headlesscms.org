@@ -10,7 +10,7 @@ application:
   - Blogs
   - Small Personal Sites
   - Landing Pages
-description: A flexible and powerful static content management system for building complex and beautiful websites out of flat files.
+description: A flexible and powerful static CMS for building sites out of flat files.
 ---
 ## Lektor
 A flexible and powerful static content management system for building complex and beautiful websites out of flat files — for people who do not want to make a compromise between a CMS and a static blog engine.
