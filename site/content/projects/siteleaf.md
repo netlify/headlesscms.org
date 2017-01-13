@@ -3,6 +3,7 @@ title: Siteleaf
 repo: siteleaf
 homepage: https://www.siteleaf.com/
 opensource: "No"
+typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
   - Hugo

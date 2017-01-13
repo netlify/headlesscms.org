@@ -3,6 +3,7 @@ title: Meet Hyde
 repo: meethyde/meethyde
 homepage: http://meethyde.com
 opensource: "Yes"
+typeofcms: "Generator Specific"
 supportedgenerators:
   - Jekyll
 application:

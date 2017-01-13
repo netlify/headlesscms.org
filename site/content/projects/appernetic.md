@@ -3,6 +3,7 @@ title: Appernetic
 repo: appernetic
 homepage: https://appernetic.io
 opensource: "Yes"
+typeofcms: "Git-based"
 supportedgenerators:
   - Hugo
 application:

@@ -3,6 +3,7 @@ title: Jekyll Admin
 repo: jekyll/jekyll-admin
 homepage: https://jekyll.github.io/jekyll-admin/
 opensource: "Yes"
+typeofcms: "Generator Specific"
 supportedgenerators:
   - Jekyll
 application:

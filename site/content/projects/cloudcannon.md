@@ -3,6 +3,7 @@ title: CloudCannon
 repo: CloudCannon
 homepage: http://cloudcannon.com
 opensource: "No"
+typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
 application:

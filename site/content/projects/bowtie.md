@@ -3,6 +3,7 @@ title: BowTie
 repo: bowtie-io
 homepage: https://bowtie.io/
 opensource: "No"
+typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
 application:

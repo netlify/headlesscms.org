@@ -15,7 +15,7 @@ This site itself is built with [Victor Hugo](https://github.com/netlify/victor-h
 
 ## Explanation of Categories
 
-### Type: Git-based / Headless / Other.
+### Type: Git-based / Headless / Generator Specific
 
 Here we focus on what type of CMS it fall under.
 Git-based means that you are typically working locally and then pushing changes to Git, from where you then push a new build of your site.
