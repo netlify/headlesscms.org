@@ -89,6 +89,7 @@ pre {
 .staticgen-promo a,
 .text a {
   color: #00c7b7;
+  display: block;
   text-decoration: none;
 
   &:link,
@@ -350,6 +351,7 @@ pre {
 
 .landing .staticgen-promo h3 {
   font-size: 24px;
+  line-height: 30px;
   margin: 26px 0 16px 0;
 }
 
