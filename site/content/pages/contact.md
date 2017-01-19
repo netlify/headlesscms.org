@@ -11,7 +11,7 @@ Any questions to which CMS might be best suited for you or your company? Contact
 
 <div class="inner contact" id="contact">
   <div class="contact-form">
-    <form id="contact-us" name="contact" action="thank-you" netlify netlify-honeypot="bot-field">
+    <form id="contact-us" name="contact" action="/thank-you" netlify netlify-honeypot="bot-field">
       <p class="hidden"><label>Bot field: <input name="bot-field"></label></p>
       <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
         <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
