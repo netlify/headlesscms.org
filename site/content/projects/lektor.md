@@ -3,7 +3,7 @@ title: Lektor
 repo: lektor/lektor
 homepage: https://www.getlektor.com/
 opensource: "Yes"
-typeofcms: "Generator Specific"
+typeofcms: "Desktop"
 supportedgenerators:
   - Lektor
 application:

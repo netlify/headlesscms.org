@@ -6,16 +6,17 @@ layout: page
 
 # About HeadlessCMS
 
-headlessCMS is a overview of the top Content Management tools for [JAMstack](https://www.jamstack.org/) sites.
+Headless CMS (also known as JAMstack CMS or Decoupled CMS) is an overview of the top Content Management tools for [JAMstack](https://www.jamstack.org/) sites.
 
-Basically any content management tool that can manage content on sites or apps that can be hosted _directly_ on a CDN, can be included on this list.
-It’s run by Netlify, a automation and deployment service for JAMstack sites and apps, as a way to promote a JAMstack approach to building websites.
+Basically any content management tool that can manage content on sites or apps and can be hosted directly on a CDN, can be included on this list.
 
-This site itself is built with [Victor Hugo](https://github.com/netlify/victor-hugo), an opensource boilerplate for Hugo (a site generator). Every day [Netlify](https://www.netlify.com) builds and deploys the site. The source-code is available on GitHub and you’re more than welcome to contribute as long as you follow the rules.
+It’s run by [Netlify](https://www.netlify.com), an automation and deployment service for JAMstack sites and apps, as a way to promote a JAMstack approach to building websites.
+
+This site itself is built with [Victor Hugo](https://github.com/netlify/victor-hugo), an opensource boilerplate for Hugo (a site generator). Every day Netlify builds and deploys the site. The source-code is available on GitHub and you’re more than welcome to contribute as long as you follow [the rules](/rules).
 
 ## Explanation of Categories
 
-### Type: Git-based / Headless / Generator Specific.
+### Type: Git-based / API Driven / Desktop
 
 Here we focus on what type of CMS it fall under.
 

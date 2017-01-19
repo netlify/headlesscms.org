@@ -3,7 +3,7 @@ title: Cloud CMS
 repo: gitana
 homepage: https://www.cloudcms.com/
 opensource: "No"
-typeofcms: "Headless"
+typeofcms: "API Driven"
 supportedgenerators:
   - React
   - Angular

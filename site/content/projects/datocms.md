@@ -3,7 +3,7 @@ title: DatoCMS
 repo: datocms
 homepage: https://www.datocms.com/
 opensource: "No"
-typeofcms: "Headless"
+typeofcms: "API Driven"
 supportedgenerators:
   - Middleman
   - Jekyll

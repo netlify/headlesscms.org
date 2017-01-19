@@ -3,7 +3,7 @@ title: Built.io
 repo: builtio-contentstack
 homepage: https://www.built.io/products/contentstack/overview
 opensource: "No"
-typeofcms: "Headless"
+typeofcms: "API Driven"
 supportedgenerators:
   - All
 application:

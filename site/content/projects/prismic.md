@@ -3,7 +3,7 @@ title: Prismic
 repo: prismicio
 homepage: https://prismic.io/
 opensource: "No"
-typeofcms: "Headless"
+typeofcms: "API Driven"
 supportedgenerators:
   - All
 application:

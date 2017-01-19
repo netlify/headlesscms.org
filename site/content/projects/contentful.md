@@ -3,7 +3,7 @@ title: Contentful
 repo: contentful
 homepage: https://www.contentful.com/
 opensource: "No"
-typeofcms: "Headless"
+typeofcms: "API Driven"
 supportedgenerators:
   - Middleman
   - Jekyll

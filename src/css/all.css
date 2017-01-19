@@ -157,9 +157,6 @@ pre {
 }
 
 .sheet {
-  background: #fff;
-  border: #eee;
-  border-radius: 3px;
   padding: 12px 47px 47px;
 }
 .sheet h1 {
@@ -384,6 +381,15 @@ pre {
   margin-bottom: 10px;
 }
 
+.primary-btn {
+  background: #5f90ff;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-weight: regular;
+  padding: 16px 24px;
+}
+
 .deploy {
   display: block;
   margin: 22px 0 0 0;
@@ -605,6 +611,66 @@ a.deploy-btn-interior img {
 .share-button.share-button-top.sharer-0 label {
   background: white !important;
   color: #FF886F !important;
+}
+
+#contact {
+  padding: 10px 0 10px;
+
+  .contact-text {
+    margin: 45px auto;
+  }
+
+  .mail-message-area {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .mail-message {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.7s;
+    margin: 0 auto;
+    border-radius: 0;
+  }
+
+  .not-visible-message {
+    height: 0px;
+    opacity: 0;
+  }
+
+  .visible-message {
+    height: auto;
+    opacity: 1;
+    margin: 25px auto 0;
+  }
+
+  .form {
+    width: 100%;
+    padding: 15px;
+    background: #f8f8f8;
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    margin-bottom: 25px;
+    color: #727272;
+    font-size: 18px;
+    transition: all 0.4s;
+    &:hover {
+      border: 1px solid #5f90ff;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid #5f90ff;
+    }
+  }
+
+  .textarea {
+    height: 200px;
+    max-height: 200px;
+    max-width: 100%;
+  }
+
+  input {
+    position: relative;
+  }
 }
 
 
