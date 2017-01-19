@@ -272,6 +272,10 @@ pre {
   border-top-right-radius: 3px;
 }
 
+.hidden {
+  display: none;
+}
+
 .tag {
   background: #5f90ff;
   border-radius: 3px;
