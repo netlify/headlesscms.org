@@ -265,8 +265,8 @@ pre {
 }
 
 .card .title {
-  margin: 11px -18px 0px;
-  padding: 12px 18px 6px;
+  margin: 0 -18px 0px;
+  padding: 0 18px 6px;
   font-weight: normal;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -276,14 +276,13 @@ pre {
   background: #5f90ff;
   border-radius: 3px;
   color: white;
-  display: block;
+  display: inline-block;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 12px;
   margin: 0 auto;
   padding: 6px 5px 4px 7px;
-  position: absolute;
   text-transform: uppercase;
 
   &.proprietary {
