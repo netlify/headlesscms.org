@@ -14,4 +14,4 @@ We'll only accept pull requests adding new CMSs if they follow the following rul
 - **Stick to the format:** Fill out all the same fields as the other CMS's in source/projects.
 - **Short description:** Keep all the details for the body text, keep the description for the overview page short and sweet.
 
-There are lots of traditional CMS listing out here, but for this one we're focusing on [JAMStack](https://www.jamstack.org) solutions that will work for sites built with static site generators or similar modern buildtools.
+There are lots of traditional CMS listing out there, but for this one we're focusing on [JAMStack](https://www.jamstack.org) solutions that will work for sites built with static site generators or similar modern buildtools.
