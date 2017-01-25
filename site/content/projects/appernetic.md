@@ -6,9 +6,6 @@ opensource: "Yes"
 typeofcms: "Git-based"
 supportedgenerators:
   - Hugo
-application:
-  - Blogs
-  - Small Personal Sites
 description: The bridge between the simplicity of static websites and user-friendliness of CMS.
 ---
 ## Prose

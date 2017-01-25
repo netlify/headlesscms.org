@@ -6,10 +6,6 @@ opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-application:
-  - Blogs
-  - Small Personal Sites
-  - Landing Pages
 description: Fulfils enterprise requirements without the feature bloat like with traditional CMS's.
 ---
 ## Built.io Contentstack

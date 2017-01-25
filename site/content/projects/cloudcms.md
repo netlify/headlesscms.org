@@ -4,14 +4,6 @@ repo: gitana
 homepage: https://www.cloudcms.com/
 opensource: "No"
 typeofcms: "API Driven"
-supportedgenerators:
-  - React
-  - Angular
-  - Ember
-  - Node
-application:
-  - Blogs
-  - Small Personal Sites
 description: An API-first approach, built around JSON and a high performance cloud architecture.
 ---
 ## Definitions for Cloud CMS (noun)

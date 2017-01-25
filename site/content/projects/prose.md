@@ -6,9 +6,6 @@ opensource: "Yes"
 typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
-application:
-  - Blogs
-  - Small Personal Sites
 description: A simple content authoring environment for CMS-free websites.
 ---
 ## Prose

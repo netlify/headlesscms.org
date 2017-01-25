@@ -7,9 +7,6 @@ typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
   - Hugo
-application:
-  - Blogs
-  - Small Personal Sites
 description: Siteleaf is a content management system designed for a better web.
 ---
 ## Siteleaf

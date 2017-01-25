@@ -6,9 +6,6 @@ opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
-application:
-  - Blogs
-  - Small Personal Sites
 description: Build fast and lean websites for your clients that don't skimp on features.
 ---
 ## BowTie

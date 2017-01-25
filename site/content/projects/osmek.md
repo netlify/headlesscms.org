@@ -5,10 +5,6 @@ opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-application:
-  - Blogs
-  - Small Personal Sites
-  - Landing Pages
 description: Say goodbye to CMS, and say hello to Osmek, the original Content API.
 ---
 ## Osmek isn't just a CMS, it's a Content API.
