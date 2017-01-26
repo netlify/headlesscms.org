@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: netlify/jamstackcms # Path to your Github repository
+  branch: master # Branch to update (master by default)
+
+media_folder: "img/uploads" # Folder where user uploaded files should go
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "projects" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Projects" # Used in the UI, ie.: "New Post"
+    folder: "site/content/projects" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Repo", name: "repo", widget: "string"}
+      - {label: "Home Page URL", name: "homepage", widget: "string"}
+      - {label: "Open Source", name: "opensource", widget: "string"}
+      - {label: "Type", name: "typeofcms", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    folder: "site/content/pages" # The path to the folder where the documents are stored
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "URL", name: "url", widget: "string"}
+      - {label: "Layout", name: "layout", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}

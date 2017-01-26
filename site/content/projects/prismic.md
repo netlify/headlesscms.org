@@ -6,9 +6,6 @@ opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-application:
-  - Blogs
-  - Small Personal Sites
 description: An API-based CMS backend for your Websites & Apps
 ---
 ## Prismic

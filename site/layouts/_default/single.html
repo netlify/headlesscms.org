@@ -3,8 +3,6 @@
     <div class="sheet">
       {{ if eq .Params.opensource "Yes" }}
         <div class="tag">open source</div>
-      {{ else }}
-        <div class="tag proprietary">proprietary</div>
       {{ end }}
       <h1>{{ .Title }}</h1>
       <div class="links">

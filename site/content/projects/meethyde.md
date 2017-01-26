@@ -6,9 +6,6 @@ opensource: "Yes"
 typeofcms: "Generator Specific"
 supportedgenerators:
   - Jekyll
-application:
-  - Blogs
-  - Small Personal Sites
 description: Use Hyde to manage posts, pages, and images in your repository.
 ---
 ## Meet Hyde

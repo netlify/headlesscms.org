@@ -6,9 +6,6 @@ opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
-application:
-  - Blogs
-  - Small Personal Sites
 description: The Cloud CMS for Jekyll - build Jekyll or static websites, make updates inline.
 ---
 ## Cloud Cannon
