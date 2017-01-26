@@ -7,9 +7,6 @@ typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
   - Hugo
-application:
-  - Blogs
-  - Small Personal Sites
 description: Build a custom CMS for Jekyll and Hugo.
 ---
 ## Forestry

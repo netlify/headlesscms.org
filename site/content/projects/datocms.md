@@ -9,9 +9,6 @@ supportedgenerators:
   - Jekyll
   - Hugo
   - Metalsmith
-application:
-  - Blogs
-  - Small Personal Sites
 description: A fully customizable administrative area for your static websites.
 ---
 ## DatoCMS

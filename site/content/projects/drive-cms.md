@@ -6,8 +6,6 @@ opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-application:
-  - Small Blogs
 description: Uses a combination of Google Sheets and Docs to maintain content on a website.
 ---
 ## Drive CMS

@@ -6,10 +6,6 @@ opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-application:
-  - Blogs
-  - Small Personal Sites
-  - Landing Pages
 description: An API-first CMS for rapidly building CMS-powered websites in any programming language.
 ---
 ## Add a CMS to your website in under 10 minutes

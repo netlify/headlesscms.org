@@ -3,13 +3,9 @@ title: Jekyll Admin
 repo: jekyll/jekyll-admin
 homepage: https://jekyll.github.io/jekyll-admin/
 opensource: "Yes"
-typeofcms: "Generator Specific"
+typeofcms: "Git-based"
 supportedgenerators:
   - Jekyll
-application:
-  - Blogs
-  - Small Personal Sites
-  - Landing Pages
 description: A Jekyll plugin that provides users with a traditional CMS-style graphical interface.
 ---
 ## Jekyll Admin

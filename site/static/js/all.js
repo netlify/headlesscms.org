@@ -7,7 +7,10 @@ $(function() {
     }
   });
 
-  $(".navbar").pin()
+  $(window).on('resize', function(){
+    $('.navbar').attr('style', '').removeData('pin');
+    $('.navbar').pin();
+  });
 
   var sortAscending = {title: true};
 

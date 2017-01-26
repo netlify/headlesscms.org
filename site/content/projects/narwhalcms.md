@@ -9,10 +9,6 @@ supportedgenerators:
   - Backbone
   - Ember
   - React
-application:
-  - Blogs
-  - Small Personal Sites
-  - Landing Pages
 description: A hosted content management system that exposes your content via a self-documenting API.
 ---
 ## Narwhal CMS
