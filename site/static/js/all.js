@@ -7,6 +7,7 @@ $(function() {
     }
   });
 
+  // This is still buggy and just a band-aid
   $(window).on('resize', function(){
     $('.navbar').attr('style', '').removeData('pin');
     $('.navbar').pin();
