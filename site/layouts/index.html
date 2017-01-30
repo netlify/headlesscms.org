@@ -1,7 +1,7 @@
 {{ partial "head" . }}
 <div class="main landing">
   <ul class="projects">
-    {{ range $index, $id := where .Site.Pages.ByDate.Reverse "Section" "projects" }}
+    {{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
       <li class="project {{ .Title | urlize }}">
         <a href="{{ .Permalink }}" class="card">
           {{ if eq (lower .Params.opensource) "yes" }}
