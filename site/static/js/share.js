@@ -148,6 +148,15 @@ Share = (function(_super) {
           caption: null,
           text: null,
           image: null
+        },
+        hacker_news: {
+          enabled: true,
+          url: null,
+          title: null
+        },
+        reddit: {
+          enabled: true,
+          url: null
         }
       }
     };
@@ -272,6 +281,14 @@ Share = (function(_super) {
     return this.popup("https://plus.google.com/share?url=" + this.config.networks.google_plus.url);
   };
 
+  Share.prototype.network_hacker_news = function() {
+    return this.popup("https://news.ycombinator.com/submitlink?u=" + this.config.networks.hacker_news.url + "&t=" + this.config.networks.hacker_news.title);
+  };
+
+  Share.prototype.network_reddit = function() {
+    return this.popup("https://www.reddit.com/submit?url=" + this.config.networks.reddit.url);
+  };
+
   Share.prototype.inject_icons = function() {
     return this.inject_stylesheet("https://www.sharebutton.co/fonts/v2/entypo.min.css");
   };
@@ -312,7 +329,7 @@ Share = (function(_super) {
   };
 
   Share.prototype.inject_html = function(instance) {
-    return instance.innerHTML = "<label class='entypo-" + this.config.ui.button_icon + "'><span>" + this.config.ui.button_text + "</span></label><div class='social " + this.config.ui.flyout + "'><ul><li class='entypo-twitter' data-network='twitter'></li><li class='entypo-facebook' data-network='facebook'></li><li class='entypo-gplus' data-network='google_plus'></li></ul></div>";
+    return instance.innerHTML = "<label class='entypo-" + this.config.ui.button_icon + "'><span>" + this.config.ui.button_text + "</span></label><div class='social " + this.config.ui.flyout + "'><ul><li class='entypo-twitter' data-network='twitter'></li><li class='entypo-facebook' data-network='facebook'></li><li class='entypo-hn' data-network='hacker_news'></li><li class='entypo-reddit' data-network='reddit'></li><li class='entypo-gplus' data-network='google_plus'></li></ul></div>";
   };
 
   Share.prototype.inject_facebook_sdk = function() {
