@@ -1,14 +1,15 @@
 ---
 title: Siteleaf
 repo: siteleaf
-homepage: https://www.siteleaf.com/
-opensource: "No"
-typeofcms: "Git-based"
+homepage: 'https://www.siteleaf.com/'
+opensource: 'No'
 supportedgenerators:
   - Jekyll
   - Hugo
+typeofcms: Git-based
 description: Siteleaf is a content management system designed for a better web.
 ---
+
 ## Siteleaf
 Siteleaf is a content management system designed for a better web, built for developers, and loved by everyone.
 
@@ -20,3 +21,6 @@ Easy for non-technical clients, writers, and producers.
 
 ### Free your content
 Access by API or generate static sites to S3, GitHub, FT.
+
+
+Siteleaf is brought to you by Oak, a New York agency.
