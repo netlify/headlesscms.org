@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: netlify/jamstackcms # Path to your Github repository
+  repo: netlify/headlesscms.org # Path to your Github repository
   branch: master # Branch to update (master by default)
 
 media_folder: "img/uploads" # Folder where user uploaded files should go

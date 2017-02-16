@@ -1,6 +1,6 @@
-# jamstackcms
+# headlesscms.org
 
-[jamstackcms.com](http://www.jamstackcms.com), a leaderboard of top open-source static site content management systems.
+[headlesscms.org](http://www.headlesscms.org), a leaderboard of top open-source static site content management systems.
 
 ## Contributing
 
@@ -39,7 +39,7 @@ npm run build
 
 ## Netlify
 
-jamstackcms is built and maintained by [Netlify](https://www.netlify.com), a hosting and automation service for static websites and apps.
+headlesscms.org is built and maintained by [Netlify](https://www.netlify.com), a hosting and automation service for static websites and apps.
 
 ## License
 This project is licensed under the [MIT license](http://opensource.org/licenses/MIT).
