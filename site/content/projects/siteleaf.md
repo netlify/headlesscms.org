@@ -5,7 +5,6 @@ homepage: 'https://www.siteleaf.com/'
 opensource: 'No'
 supportedgenerators:
   - Jekyll
-  - Hugo
 typeofcms: Git-based
 description: Siteleaf is a content management system designed for a better web.
 ---
