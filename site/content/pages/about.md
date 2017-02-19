@@ -29,7 +29,7 @@ The advantages of this approach is huge, and it works with [JAMstack](https://ww
 
 ## Who makes this
 
-Headlesscms.com is run by [Netlify](https://www.netlify.com), an automation and deployment service for Headless CMS and JAMstack sites  in general, as a way to promote the JAMstack approach to building websites.
+Headlesscms.org is run by [Netlify](https://www.netlify.com), an automation and deployment service for Headless CMS and JAMstack sites  in general, as a way to promote the JAMstack approach to building websites.
 
 ## How is it made
 
