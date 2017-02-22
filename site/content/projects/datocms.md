@@ -9,6 +9,8 @@ supportedgenerators:
   - Jekyll
   - Hugo
   - Metalsmith
+  - GatsbyJS
+  - Phenomic
 description: A fully customizable administrative area for your static websites.
 ---
 ## DatoCMS
