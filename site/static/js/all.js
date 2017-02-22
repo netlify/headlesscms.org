@@ -7,11 +7,22 @@ $(function() {
     }
   });
 
+
+  var winWidth = $(window).width();
+
+  var stickyHeader = function () {
+    winWidth = $(window).width();
+
+    if (winWidth >= 768) {
+      $('.navbar').attr('style', '').removeData('pin');
+      $('.navbar').pin();
+    }
+  }
+
+  stickyHeader();
+
   // This is still buggy and just a band-aid
-  $(window).on('resize', function(){
-    $('.navbar').attr('style', '').removeData('pin');
-    $('.navbar').pin();
-  });
+  $(window).on('resize', stickyHeader());
 
   var sortAscending = {title: true};
 
