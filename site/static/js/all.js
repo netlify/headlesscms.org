@@ -7,22 +7,13 @@ $(function() {
     }
   });
 
-
-  var winWidth = $(window).width();
-
-  var stickyHeader = function () {
-    winWidth = $(window).width();
-
-    if (winWidth >= 768) {
-      $('.navbar').attr('style', '').removeData('pin');
-      $('.navbar').pin();
-    }
-  }
-
-  stickyHeader();
-
   // This is still buggy and just a band-aid
-  $(window).on('resize', stickyHeader());
+  $(window).on('resize', function(){
+    $('.navbar').attr('style', '').removeData('pin');
+    $('.navbar').pin({
+      minWidth: 500
+    });
+  });
 
   var sortAscending = {title: true};
 
