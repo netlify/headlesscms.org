@@ -8,6 +8,7 @@ supportedgenerators:
   - Middleman
   - Jekyll
   - Metalsmith
+  - Spike
   - Roots
   - AWS Lambda
 description: Contentful is a content management developer platform with an API at its core.
