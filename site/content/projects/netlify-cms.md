@@ -1,7 +1,7 @@
 ---
 title: Netlify CMS
 repo: netlify/netlify-cms
-homepage: https://github.com/netlify/netlify-cms
+homepage: https://www.netlifycms.org
 opensource: "Yes"
 typeofcms: "Git-based"
 supportedgenerators:
