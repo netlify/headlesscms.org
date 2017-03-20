@@ -6,7 +6,7 @@ layout: page
 
 # Contact
 
-This page is OS, and anyone can contribute. Check [The Rules](%22/rules%22) on how to go about it.
+This page is OS, and anyone can contribute. Check [The Rules](/rules) on how to go about it.
 <br/>
 <br/>
 
