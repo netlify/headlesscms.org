@@ -6,7 +6,7 @@ layout: page
 
 # The Rules
 
-Everybody is welcome to contribute to headlessCMS.org, just fork the [GitHub repo](https://github.com/netlify/headlessCMS#forkdestinationbox) and send a pull request. Each Content Management System is a markdown file in the `site/content/projects` directory.
+Everybody is welcome to contribute to headlessCMS.org, just fork the [GitHub repo](https://github.com/netlify/headlesscms.org) and send a pull request. Each Content Management System is a markdown file in the `site/content/projects` directory.
 
 We'll only accept pull requests adding new CMS' if they follow these rules:
 
