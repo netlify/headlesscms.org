@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .notification {
-  background: #313D3E;
+  background: #5f90ff;
   box-sizing: border-box;
   color: white;
   padding: 16px 24px;
@@ -11,12 +11,13 @@
 
   em {
     font-style: normal;
-    color: #8B8B8B;
+    color: rgba(255,255,255,0.2);
     padding: 0 8px;
   }
 
   .text-link {
-    color: #5f90ff;
+    color: #313D3E;
+    font-weight: bold;
     text-decoration: underline;
   }
 }
@@ -129,7 +130,6 @@ pre {
 
 .navbar {
   height: 45px;
-  margin-bottom: 18px;
   background: #313D3E;
   overflow: hidden;
   z-index: 100;
