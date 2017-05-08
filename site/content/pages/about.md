@@ -75,7 +75,7 @@ For some API-driven CMS Like Contentful and Prismic, you can also just use the a
 
 ### Site generators supported: All, or listed.
 
-Site generators or Static Site Generators are a must-use build tool for modern websites. They basically make it much easier to create, build and compile a moder website. They come and all shapes and sizes, and even though HTML, CSS and Javascript always comes out the other end, the language the site generators are written in varies.
+Site generators or Static Site Generators are a must-use build tool for modern websites. They basically make it much easier to create, build and compile a modern website. They come and all shapes and sizes, and even though HTML, CSS and Javascript always comes out the other end, the language the site generators are written in varies.
 
 Each project might call for a different generator, so it’s important to know which site generators are supported by which Headless CMS.
 
