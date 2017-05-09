@@ -10,20 +10,12 @@ description: An API-first CMS with frontend editing capabilites for rapidly buil
 ---
 ## The quickest and most flexible way to make your content editable.
 
-Storyblok is a decoupled/headless cms - we removed the front-end component (the head) and, what remains is our content delivery RESTful API.
+Storyblok is a headless CMS in which you can create components nested in Stories (If you want to create a website you can go with - a story equals to a page). The key concepts behind Storyblok are highly inspired by the BEM methodology.
 
-Most of the Content Management Systems force you into a specific way on how to develop a website. 
-With Storyblok you can just plug in the service to your template. 
-There is no need to take care of CMS installation or database setup.
+## Unlimited nested components
 
-## Reusable Components
+The author of a story can create a nested tree of [components](https://www.storyblok.com/docs/terminology/component) and input content in an easy and fast responding interface. You can find more in our [Introduction](https://www.storyblok.com/docs/Prologue/Introduction). You can then call the read-only CDN with the JSON tree and render your components in a loop.
 
-The key concepts behind Storyblok are highly inspired by the BEM methodology. 
-The author of a story can create a nested tree of components and input content in an easy and fast responding interface.
-You can then call the read-only CDN with the JSON tree and render your components in a loop.
+## Free technology choice
 
-## Side By Side Editing
-
-One major difference to other API Driven CMS Systems is the way we allow developer to edit side by side to their real content.
-With storyblok you can edit your website, app or similar with just one line of a comment - that's it.
-
+As with most API Driven CMS out there you have free choice of technology, we went one step further and not only created SDKs, we directly added the possibility to use Themes and Boilerplates to start from scratch - to even be more efficient while boostrapping new projects. 
