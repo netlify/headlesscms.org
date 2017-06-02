@@ -8,6 +8,10 @@ supportedgenerators:
   - All
 description: A CMS for static site generators - seamless integration with Netlify.
 startertemplaterepo: bdougie/casper-cms-template
+images:
+  - path: /images/netlify-cms1.png
+  - path: /images/netlify-cms2.png
+  - path: /images/netlify-cms3.png
 ---
 ## Netlify CMS
 

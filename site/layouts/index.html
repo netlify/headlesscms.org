@@ -24,6 +24,8 @@
           <ul>
             {{ range .Params.supportedgenerators }}
               <li>{{ . }}</li>
+            {{ if .Params.images }}
+              <img class="photos-inside" src="/images/photos.svg">
             {{ end }}
           </ul>
         </a>
