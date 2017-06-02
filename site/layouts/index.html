@@ -2,38 +2,41 @@
 <div class="main landing">
   <ul class="projects">
     {{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
-      <li class="project {{ .Title | urlize }}">
-        <a href="{{ .Permalink }}" class="card">
-          {{ if eq (lower .Params.opensource) "yes" }}
-            <div class="tag">open source</div>
-          {{ else }}
-            <div class="tag proprietary"></div>
-          {{ end }}
-          <h4 class="title">{{ .Title }}</h4>
-          <h6 class="url">{{ .Params.homepage }}</h6>
-          <div class="description">{{ .Params.description }}</div>
-          <h7>Type:</h7>
-          <p class="type">
-            {{ if .Params.typeofcms }}
-              {{ .Params.typeofcms }}
+      {{ if ne .Title "Projects" }}
+        <li class="project {{ .Title | urlize }}">
+          <a href="{{ .Permalink }}" class="card">
+            {{ if eq (lower .Params.opensource) "yes" }}
+              <div class="tag">open source</div>
             {{ else }}
-              Unknown
+              <div class="tag proprietary"></div>
             {{ end }}
-          </p>
-          <h7>Supported Site Generators:</h7>
-          <ul>
-            {{ range .Params.supportedgenerators }}
-              <li>{{ . }}</li>
             {{ if .Params.images }}
               <img class="photos-inside" src="/images/photos.svg">
             {{ end }}
-          </ul>
-        </a>
-      </li>
-      {{ if eq $index 2 }}
-        <li id="staticgen-promo" class="project staticgen-promo">
-          <h3>Also visit <a href="https://www.staticgen.com" target="_blank">staticgen.com</a> for a ranked list of open-source site generators!</h3>
+            <h4 class="title">{{ .Title }}</h4>
+            <h6 class="url">{{ .Params.homepage }}</h6>
+            <div class="description">{{ .Params.description }}</div>
+            <h7>Type:</h7>
+            <p class="type">
+              {{ if .Params.typeofcms }}
+                {{ .Params.typeofcms }}
+              {{ else }}
+                Unknown
+              {{ end }}
+            </p>
+            <h7>Supported Site Generators:</h7>
+            <ul>
+              {{ range .Params.supportedgenerators }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </a>
         </li>
+        {{ if eq $index 2 }}
+          <li id="staticgen-promo" class="project staticgen-promo">
+            <h3>Also visit <a href="https://www.staticgen.com" target="_blank">staticgen.com</a> for a ranked list of open-source site generators!</h3>
+          </li>
+        {{ end }}
       {{ end }}
     {{ end }}
   </ul>
