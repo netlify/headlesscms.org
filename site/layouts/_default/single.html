@@ -10,8 +10,13 @@
         <span class="separator">|</span>
         <a href="https://github.com/{{ .Params.repo }}"><i class="fa fa-github"></i> https://github.com/{{ .Params.repo }}</a>
       </div>
-
-
+      {{ if .Params.images }}
+      <div class="images">
+        {{ range .Params.images }}
+          <img src="{{ .path }}" class="responsive"/>
+        {{ end }}
+      </div>
+      {{ end }}
       <div class="text">
       <h7>Supported Site Generators:</h7>
         <ul>
