@@ -35,5 +35,4 @@ Webhooks and localization are available to help you communicate with external se
 
 ### Integrations
 
-Cosmic JS offers integrations with third-party services.  Connect your GitHub account and deploy your GitHub repos to the Cosmic App Server in a few clicks.  
-Connect your Slack channel to be notified whenever content has been changed within your Bucket.
+Cosmic JS offers integrations with third-party services.  Connect your GitHub account and deploy your GitHub repos to the Cosmic App Server in a few clicks.  Connect to your Slack channel to be notified whenever content has been changed within your Bucket.
