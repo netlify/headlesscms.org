@@ -30,7 +30,7 @@ Cosmic JS offers both a [REST and GraphQL API](https://cosmicjs.com/docs) for yo
 
 ### Webhooks and Localization
 
-Webhooks and localization are available to manage help you communicate with external services as well as communicate to a global audience.
+Webhooks and localization are available to help you communicate with external services as well as communicate to a global audience.
 
 
 ### Integrations
