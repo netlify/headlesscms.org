@@ -1,10 +1,10 @@
 ---
-title: The Rules
-url: /rules/
+title: Contribute
+url: /contribute/
 layout: page
 ---
 
-# The Rules
+# Contribute
 
 Everybody is welcome to contribute to headlessCMS.org, just fork the [GitHub repo](https://github.com/netlify/headlesscms.org) and send a pull request. Each Content Management System is a markdown file in the `site/content/projects` directory.
 
