@@ -18,6 +18,10 @@ It provides a standard platform that is API ready along with demo content and ex
 
 Contenta is based of of Drupal, which is a powerful, robust content management system built on object-oriented PHP. Drupal runs websites such as whitehouse.gov, grammy.com, harvard.edu, and millions more.
 
-### Example (and Open Source) API Consumers
+## API ready with excellent documentation.
+
+A HTTP API is provided ready to use with full auto-generated documentation, and a Contenta knowledge hub is manually curated to provide a list of excellent resources on decoupled Drupal.
+
+## Example (and Open Source) API Consumers
 
 Many example consumers in different technologies such as Angular, Elm, React, Ember, Ionic, and Vue show you how easy is to build a Contenta project.
