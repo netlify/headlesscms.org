@@ -6,18 +6,21 @@ opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-description: An API-first CMS with frontend editing capabilites for rapidly building CMS-powered websites, native apps or other innovative ideas in any programming language.
+description: Headless & API-based CMS as a Service. Not only a CMS for your editors. Clean and structured JSON for you as developer.
 ---
-## The quickest and most flexible way to make your content editable.
 
-Storyblok is a service that lets you plugin frontend editing capabilities to any template engine, framework or system of your choice. Built to increase productivity and promote reusable components.
+## What is Storyblok
 
-You will be able to create components nested in Stories (If you want to create a website you can go with - a story equals to a page). The key concepts behind Storyblok are highly inspired by the BEM methodology.
+Storyblok builds a bridge between content creators and developers - without to force the developer into a technology. The main mission of Storyblok is to make the web faster - in development and maintenance! We want the content creator to write articles, stories and even build landing pages in one platform and still allow the developers to access the information in well structured content from an performant API.
 
-## Unlimited nested components
+### For whom?
 
-The author of a story can create a nested tree of [components](https://www.storyblok.com/docs/terminology/component) and input content in an easy and fast responding interface. You can find more in our [Introduction](https://www.storyblok.com/docs/Prologue/Introduction). You can then call the read-only CDN with the JSON tree and render your components in a loop.
+Storyblok is for developers who like to take their time and do things right, building out their HTML, CSS, and JavaScript by hand. This is not a site builder or some sort of design tool.
 
-## Free technology choice
+### For what?
 
-As with most API Driven CMS out there you have free choice of technology, we went one step further and not only created SDKs, we directly added the possibility to use Themes and Boilerplates to start from scratch - to even be more efficient while boostrapping new projects. 
+Storyblok was built to be unbelievable scalable and flexible, to the point that even its own feature set can adapt perfectly to the scope of the project (have a look at the Apps section in your Space). Whether you’re building a portfolio site or a big corporate site, Storyblok is a scalable and flexible choice for that. You can even use Storyblok in existing projects and enrich the content of any system with editorial content.
+
+### Tech Specs
+
+Storyblok is a headless, API-based SaaS CMS built with Ruby on Rails and VueJS as it’s core, but you don’t need to know Ruby or VueJs to use it. You can go with your favorite technologies and build awesome stuff with us. If you need more than a simple to use Content Delivery API and looking for a full stack you can still opt-in our Cloud Rendering Service without losing the access to your data at all.
