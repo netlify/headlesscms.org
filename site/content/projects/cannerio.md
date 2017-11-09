@@ -18,3 +18,5 @@ Canner CMS is the next generation CMS platform, we help you build your projects 
 ## Starter Template
 
 Here is a starter template [app-demo](https://github.com/Canner/app-demo), and follow step-by-step tutorial [here](https://docs.canner.io/en/get-started).
+
+See more demos [HTML5UP websites with CMS on Canner](https://github.com/Canner/canner-html5up-demo)
