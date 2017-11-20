@@ -16,7 +16,7 @@ It provides a standard platform that is API ready along with demo content and ex
 
 ## Free Open Source Software to be hosted anywhere
 
-Contenta is based of of Drupal, which is a powerful, robust content management system built on object-oriented PHP. Drupal runs websites such as whitehouse.gov, grammy.com, harvard.edu, and millions more.
+Contenta is based off of Drupal, which is a powerful, robust content management system built on object-oriented PHP. Drupal runs websites such as whitehouse.gov, grammy.com, harvard.edu, and millions more.
 
 ## API ready with excellent documentation.
 
