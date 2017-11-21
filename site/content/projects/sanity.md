@@ -2,7 +2,7 @@
 title: Sanity
 repo: sanity-io/sanity
 homepage: https://www.sanity.io
-opensource: "Yes"
+opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
