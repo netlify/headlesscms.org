@@ -2,12 +2,16 @@
 title: Sanity
 repo: sanity-io/sanity
 homepage: https://www.sanity.io
-opensource: "Yes"
+opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
 description: Sanity is the fully customizable, headless CMS.
 ---
+
+<a href="https://sanity.io">
+  <img alt="Sanity" src="/images/sanity-io-1.svg" style="display: block; height: 4em; width: auto; padding: 1em 0; box-shadow: none"/>
+</a>
 
 Sanity is a headless, real-time CMS where the front end is an open source
 React-based construction kit and the back end is a graph-oriented cloud
@@ -45,3 +49,5 @@ your favourite language or framework below? Get in touch!
 
 * [JS Client](https://www.sanity.io/docs/client-libraries/js-client)
 * [PHP Client](https://www.sanity.io/docs/client-libraries/php-client)
+
+<img src="/images/sanity-io-2.png" alt="Responsive real-time editor" />
