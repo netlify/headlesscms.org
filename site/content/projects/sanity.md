@@ -9,7 +9,7 @@ supportedgenerators:
 description: Sanity is the fully customizable, headless CMS.
 ---
 
-<a href="https://sanity.io">
+<a href="https://www.sanity.io">
   <img alt="Sanity" src="/images/sanity-io-1.svg" style="display: block; height: 4em; width: auto; padding: 1em 0; box-shadow: none"/>
 </a>
 
@@ -20,6 +20,9 @@ datastore with a globally distributed CDN.
 ## Quick start
 
 `npm install -g @sanity/cli && sanity init`
+
+[Get started](https://www.sanity.io/docs/introduction/getting-started) with
+Sanity.
 
 ## Real-time CMS
 
