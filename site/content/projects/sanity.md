@@ -19,10 +19,13 @@ datastore with a globally distributed CDN.
 
 ## Quick start
 
-`npm install -g @sanity/cli && sanity init`
+<pre style="color: white; background-color: #444; padding: 0.5em 1em;">
+npm install -g @sanity/cli && sanity init
+</pre>
 
-[Get started](https://www.sanity.io/docs/introduction/getting-started) with
-Sanity.
+Read the
+[documentation](https://www.sanity.io/docs/introduction/getting-started) on how
+to get started
 
 ## Real-time CMS
 
