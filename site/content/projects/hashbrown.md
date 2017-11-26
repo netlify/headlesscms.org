@@ -3,7 +3,7 @@ title: HashBrown
 repo: Putaitu/hashbrown-cms
 homepage: http://hashbrown.rocks
 opensource: "Yes"
-typeofcms: "Deployment based"
+typeofcms: "API Driven"
 supportedgenerators:
   - All
 description: HashBrown is a headless CMS that can support any content structure or deployment flow you can imagine.
