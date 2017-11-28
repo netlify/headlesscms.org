@@ -9,19 +9,13 @@ supportedgenerators:
 description: Sanity is the fully customizable, headless CMS.
 ---
 
-<a href="https://www.sanity.io">
-  <img alt="Sanity" src="/images/sanity-io-1.svg" style="display: block; height: 4em; width: auto; padding: 1em 0; box-shadow: none"/>
-</a>
-
 Sanity is a headless, real-time CMS where the front end is an open source
 React-based construction kit and the back end is a graph-oriented cloud
 datastore with a globally distributed CDN.
 
 ## Quick start
 
-<pre style="color: white; background-color: #444; padding: 0.5em 1em;">
-npm install -g @sanity/cli && sanity init
-</pre>
+`npm install -g @sanity/cli && sanity init`
 
 Read the
 [documentation](https://www.sanity.io/docs/introduction/getting-started) on how
@@ -55,5 +49,3 @@ your favourite language or framework below? Get in touch!
 
 * [JS Client](https://www.sanity.io/docs/client-libraries/js-client)
 * [PHP Client](https://www.sanity.io/docs/client-libraries/php-client)
-
-<img src="/images/sanity-io-2.png" alt="Responsive real-time editor" />
