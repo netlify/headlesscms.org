@@ -1,6 +1,5 @@
 ---
 title: Headless
-repo: headless-rest
 homepage: https://www.headless.rest
 opensource: "No"
 typeofcms: "API Driven"

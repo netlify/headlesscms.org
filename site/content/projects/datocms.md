@@ -1,7 +1,7 @@
 ---
 title: DatoCMS
-repo: datocms
 homepage: https://www.datocms.com/
+twitter: datocms
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

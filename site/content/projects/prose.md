@@ -1,6 +1,6 @@
 ---
 title: Prose
-repo: /prose/prose
+repo: prose/prose
 homepage: http://prose.io
 opensource: "Yes"
 typeofcms: "Git-based"

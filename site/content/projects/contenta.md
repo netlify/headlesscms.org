@@ -1,7 +1,8 @@
 ---
 title: Contenta
-repo: contentacms
+repo: contentacms/contenta_jsonapi
 homepage: http://www.contentacms.org
+twitter: contentacms
 opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:

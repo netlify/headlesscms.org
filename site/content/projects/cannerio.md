@@ -1,7 +1,7 @@
 ---
 title: CannerIO CMS
-repo: Canner
 homepage: https://www.canner.io
+twitter: cannerio
 opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:

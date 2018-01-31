@@ -1,7 +1,7 @@
 ---
 title: Siteleaf
-repo: siteleaf
 homepage: 'https://www.siteleaf.com/'
+twitter: siteleaf
 opensource: 'No'
 supportedgenerators:
   - Jekyll

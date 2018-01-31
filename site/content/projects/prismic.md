@@ -1,7 +1,7 @@
 ---
 title: Prismic
-repo: prismicio
 homepage: https://prismic.io/
+twitter: prismicio
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

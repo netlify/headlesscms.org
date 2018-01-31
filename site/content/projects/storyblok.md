@@ -1,7 +1,7 @@
 ---
 title: Storyblok
-repo: storyblok
 homepage: https://www.storyblok.com/
+twitter: storyblok
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

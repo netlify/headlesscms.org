@@ -1,6 +1,7 @@
 ---
 title: Osmek
 homepage: http://osmek.com/
+twitter: osmek
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

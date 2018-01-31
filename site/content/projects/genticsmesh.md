@@ -2,6 +2,7 @@
 title: Gentics Mesh
 repo: gentics/mesh
 homepage: https://getmesh.io
+twitter: genticsmesh
 opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:

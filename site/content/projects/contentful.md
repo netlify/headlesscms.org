@@ -1,7 +1,7 @@
 ---
 title: Contentful
-repo: contentful
 homepage: https://www.contentful.com/
+twitter: contentful
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

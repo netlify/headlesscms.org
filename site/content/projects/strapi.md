@@ -2,6 +2,7 @@
 title: Strapi
 repo: strapi/strapi
 homepage: https://strapi.io/
+twitter: strapijs
 opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:

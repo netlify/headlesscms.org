@@ -1,7 +1,7 @@
 ---
 title: Forestry
-repo: forestryio
 homepage: https://forestry.io
+twitter: forestryio
 opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:

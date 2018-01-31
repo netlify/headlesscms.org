@@ -1,7 +1,7 @@
 ---
 title: Built.io
-repo: builtio-contentstack
 homepage: https://www.built.io/products/contentstack/overview
+twitter: builtio
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

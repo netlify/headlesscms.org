@@ -1,7 +1,7 @@
 ---
 title: Typewriter
-repo: typewriter-software
 homepage: https://www.typewriter.cloud/
+twitter: typewritersoft
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

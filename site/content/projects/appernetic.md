@@ -1,7 +1,7 @@
 ---
 title: Appernetic
-repo: appernetic
 homepage: https://appernetic.io
+twitter: appernetic
 opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:

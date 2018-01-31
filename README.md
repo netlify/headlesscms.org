@@ -28,8 +28,19 @@ npm install
 npm start
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
+In order to successfully retrieve Twitter followers and GitHub stars, you will need authentication keys for both services.
+
+For GitHub, all you'll need is a personal access token. This can be generated at <https://github.com/settings/tokens>. For Twitter, you need to create an application at <https://apps.twitter.com> and use the "Consumer Key" and "Consumer Secret". When deploying, you must set the environment variables `HEADLESS_CMS_GITHUB_TOKEN`, `HEADLESS_CMS_TWITTER_KEY`, and `HEADLESS_CMS_TWITTER_SECRET`. If you are developing locally, you can set these in a `.env` file at the root of the repo like so:
+
+```
+HEADLESS_CMS_GITHUB_TOKEN=examplekey123abc
+HEADLESS_CMS_TWITTER_KEY=examplekey231abc
+HEADLESS_CMS_TWITTER_SECRET=examplekey321abc
+```
+
+Retrieval of stars and followers is cached locally for 15min in the directory `.generated-data-cache`, to prevent hammering the APIs when doing a lot of rebuilds in succession. Deleting that directory will cause the stars and followers to be refetched. Since that directory is ignored by git, clean repo builds will always retrieve fresh data
+
+Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or refresh the page when stylesheets or content changes.
 
 To build your static output to the `/dist` folder, use:
 

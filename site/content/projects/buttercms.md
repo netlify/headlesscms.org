@@ -1,7 +1,7 @@
 ---
 title: Butter CMS
-repo: buttercms
 homepage: https://buttercms.com/
+twitter: buttercms
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
