@@ -1,7 +1,7 @@
 ---
 title: GraphCMS
-repo: graphcms
 homepage: https://graphcms.com/
+twitter: graph_cms
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

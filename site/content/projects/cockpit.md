@@ -2,6 +2,7 @@
 title: Cockpit
 repo: agentejo/cockpit
 homepage: https://getcockpit.com
+twitter: getcockpit
 opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:

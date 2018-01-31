@@ -1,7 +1,7 @@
 ﻿---
 title: Kentico Cloud
-repo: kentico
 homepage: https://kenticocloud.com/
+twitter: kenticocloud
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

@@ -1,6 +1,5 @@
 ---
 title: Watson Content Hub
-repo: wch
 homepage: https://www.ibm.com/us-en/marketplace/cloud-cms-solution
 opensource: "No"
 typeofcms: "API Driven"

@@ -1,7 +1,7 @@
 ---
 title: Cosmic JS
-repo: cosmicjs
 homepage: https://cosmicjs.com
+twitter: cosmic_js
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

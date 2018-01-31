@@ -1,7 +1,7 @@
 ---
 title: Fridge
-repo: fridge-cms
 homepage: https://www.fridgecms.com/
+twitter: fridgecms
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:

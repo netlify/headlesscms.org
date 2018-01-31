@@ -8,7 +8,13 @@
       <div class="links">
         <a href="{{ .Params.homepage }}"><i class="fa fa-home"></i> {{ .Params.homepage }}</a>
         <span class="separator">|</span>
-        <a href="https://github.com/{{ .Params.repo }}"><i class="fa fa-github"></i> https://github.com/{{ .Params.repo }}</a>
+        {{ if $.Site.Data.projects }}
+          {{ if .Params.twitter }}
+            <a href="https://twitter.com/{{ .Params.twitter }}"><i class="fa fa-twitter"></i> {{ .Params.twitter }} ({{ with index $.Site.Data.projects.projects .Title }}{{ .followers }}{{ end }})</a>
+            <span class="separator">|</span>
+          {{ end }}
+          <a href="https://github.com/{{ .Params.repo }}"><i class="fa fa-github"></i> https://github.com/{{ .Params.repo }} ({{ with index $.Site.Data.projects.projects .Title }}{{ .stars }}{{ end }})</a>
+        {{ end }}
       </div>
       {{ if .Params.images }}
       <div class="images">

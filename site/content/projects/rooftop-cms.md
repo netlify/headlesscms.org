@@ -1,7 +1,8 @@
 ---
 title: Rooftop
-repo: rooftopcms
+repo: rooftopcms/rooftop-cms
 homepage: https://www.rooftopcms.com/
+twitter: rooftopcms
 opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:

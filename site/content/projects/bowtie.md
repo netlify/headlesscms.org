@@ -1,7 +1,7 @@
 ---
 title: BowTie
-repo: bowtie-io
 homepage: https://bowtie.io/
+twitter: bowtie_io
 opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:

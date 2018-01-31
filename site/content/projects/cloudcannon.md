@@ -1,7 +1,7 @@
 ---
 title: CloudCannon
-repo: CloudCannon
 homepage: http://cloudcannon.com
+twitter: cloudcannon
 opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:

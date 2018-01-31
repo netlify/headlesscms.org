@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import cp from "child_process";
 import gutil from "gulp-util";
+import shell from "gulp-shell";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import neatgrid from "postcss-neat";
@@ -16,7 +17,9 @@ const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
 const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 
-gulp.task("hugo", (cb) => buildSite(cb));
+gulp.task("generateData", shell.task('npm run generate-data'));
+
+gulp.task("hugo", ["generateData"], (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
 gulp.task("build", ["css", "js", "fonts", "images", "hugo"]);
@@ -73,12 +76,14 @@ gulp.task("server", ["hugo", "css", "js", "fonts", "images"], () => {
   gulp.watch("./src/images/**/*", ["images"]);
   gulp.watch("./src/fonts/**/*", ["fonts"]);
   gulp.watch("./site/**/*", ["hugo"]);
+  // gulp.watch("./site/content/projects/*", ["generateData"]);
 });
 
 function buildSite(cb, options) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
 
   return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+    console.log(code);
     if (code === 0) {
       browserSync.reload();
       cb();

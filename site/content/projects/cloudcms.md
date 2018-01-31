@@ -1,7 +1,7 @@
 ---
 title: Cloud CMS
-repo: gitana
 homepage: https://www.cloudcms.com/
+twitter: cloudcms
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
