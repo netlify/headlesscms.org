@@ -20,7 +20,7 @@ const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 gulp.task("generateData", shell.task('npm run generate-data'));
 
 gulp.task("hugo", ["generateData"], (cb) => buildSite(cb));
-gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
+gulp.task("hugo-preview", ["generateData"], (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
 gulp.task("build", ["css", "js", "fonts", "images", "hugo"]);
 gulp.task("build-preview", ["css", "js", "fonts", "images", "hugo-preview"]);
