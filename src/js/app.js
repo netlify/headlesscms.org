@@ -13,6 +13,12 @@ const getFilterFunction = filters =>
   function() {
     const $this = $(this);
 
+    if (filters.openSource === "" && $this.hasClass("cards-header")) {
+      return true;
+    } else if ($this.hasClass("cards-header")) {
+      return false;
+    }
+
     if ($this.hasClass("staticgen-promo")) {
       return true;
     }
@@ -47,7 +53,7 @@ const getFilterFunction = filters =>
 
 const refilterOnSelectChange = (selector, getNewFiltersFromValue) => {
   $(selector).change(function(e) {
-    console.log(e);
+    console.log($(this).val());
     const newFilters = getNewFiltersFromValue(
       listControlState.filters,
       $(this).val(),
@@ -62,6 +68,30 @@ const refilter = filters => {
 };
 
 $(document).ready(() => {
+  $('.landing .card').matchHeight();
+
+  $(".card .description").each(function() {
+    if ($(this).height() > 66) {
+      $(this).addClass("too-long");
+    }
+  });
+
+  const share = new Share("#share-button-top", {
+    networks: {
+      facebook: {
+        app_id: "1604147083144211",
+      }
+    }
+  });
+
+  // This is still buggy and just a band-aid
+  $(window).on('resize', function(){
+    $('.navbar').attr('style', '').removeData('pin');
+    $('.navbar').pin({
+      minWidth: 500
+    });
+  });
+
   $(".projects").isotope({
     layoutMode: "fitRows",
     getSortData: {
@@ -86,6 +116,12 @@ $(document).ready(() => {
 
   $("select[name='sort']").change(function(e) {
     const val = $(this).val();
+    console.log(val);
+    if (val === "stars") {
+      $(".projects").addClass("show-headers");
+    } else {
+      $(".projects").removeClass("show-headers");
+    }
     $(".projects").isotope({
       sortBy: [val, "title"],
       sortAscending: {
@@ -97,10 +133,4 @@ $(document).ready(() => {
   });
   // sort on load
   $("select[name='sort']").change();
-
-  $(".card .description").each(function() {
-    if ($(this).height() > 66) {
-      $(this).addClass("too-long");
-    }
-  });
 });
