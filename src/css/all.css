@@ -251,6 +251,21 @@ pre {
   font-size: 24px;
   margin-top: 7px;
 }
+.cards-header {
+  display: none;
+}
+.show-headers .cards-header {
+  display: block;
+  width: 100%;
+  padding: 24px 0;
+  font-size: 36px;
+  clear: both;
+}
+.show-headers .cards-header:after {
+  clear: both;
+  content: "";
+  display: block;
+}
 .card {
   background: #fff;
   border: 1px solid #eee;
@@ -735,20 +750,6 @@ a.deploy-btn-interior img {
     text-align: center;
   }
   .navbar .menu a { margin-left: 0; }
-  
-  .projects-sort-filter-toolbar {
-    margin-top: 36px;
-    margin-bottom: 36px;
-  }
-
-  .project {
-    display: block;
-    width: 100%;
-    padding: 20px 20px 0;
-  }
-  .projects {
-    margin-right: 0;
-  }
 }
 
 @media all and (min-width: 500px) {
@@ -763,7 +764,9 @@ a.deploy-btn-interior img {
 
 @media all and (max-width: 700px) {
   .projects-sort-filter-toolbar {
-    padding: 0 20px;
+    padding: 0 24px;
+    margin-top: 36px;
+    margin-bottom: 36px;
   }
   .projects-sort {
     float: none;
@@ -785,7 +788,18 @@ a.deploy-btn-interior img {
     height: 48px;
     line-height: 48px;
   }
+  .project {
+    display: block;
+    width: 100%;
+    padding: 20px 20px 0;
+  }
+  .projects {
+    margin-right: 0;
+  }
 
+  .show-headers .cards-header {
+    padding: 0 20px;
+  }
 }
 
 @media all and (max-width: 800px) {

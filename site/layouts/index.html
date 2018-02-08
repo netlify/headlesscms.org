@@ -35,14 +35,22 @@
       <div>Sort:</div>
       <div class="dropdown">
         <select name="sort" class="dropdown-select">
-          <option value="title">Title</option>
           <option value="stars" selected>Stars</option>
           <option value="followers">Followers</option>
+          <option value="title">Title</option>
         </select>
       </div>
     </div>
   </div>
   <ul class="projects">
+    <li
+      class="cards-header cards-header-open-source"
+      data-stars="999999999999999999"
+      >Open Source</li>
+    <li
+      class="cards-header cards-header-closed-source"
+      data-stars="1"
+      >Closed Source</li>
     {{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
       {{ if ne .Title "Projects" }}
         <li
@@ -68,11 +76,11 @@
             <h4 class="title">{{ .Title }}</h4>
             <h6 class="url">{{ .Params.homepage }}</h6>
             {{ if $.Site.Data.projects }}
-              {{ if gt (index .Site.Data.projects.projects .Title).followers 0 }}
-                <div>{{ (index $.Site.Data.projects.projects .Title).followers }} followers</div>
-              {{ end }}
               {{ if gt (index .Site.Data.projects.projects .Title).stars 0 }}
                 <div>{{ (index $.Site.Data.projects.projects .Title).stars }} stars</div>
+              {{ end }}
+              {{ if gt (index .Site.Data.projects.projects .Title).followers 0 }}
+                <div>{{ (index $.Site.Data.projects.projects .Title).followers }} followers</div>
               {{ end }}
             {{ end }}
             <div class="description">{{ .Params.description }}</div>
@@ -92,11 +100,6 @@
             </ul>
           </a>
         </li>
-        {{ if eq $index 2 }}
-          <li id="staticgen-promo" class="project staticgen-promo">
-            <h3>Also visit <a href="https://www.staticgen.com" target="_blank">staticgen.com</a> for a ranked list of open-source site generators!</h3>
-          </li>
-        {{ end }}
       {{ end }}
     {{ end }}
   </ul>
