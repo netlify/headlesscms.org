@@ -1,6 +1,21 @@
-node_modules/
-dist/
-# Ignore Mac DS_Store files
-**/.DS_Store
-.env
-.generated-data-cache
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+tmp
