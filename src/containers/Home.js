@@ -41,7 +41,6 @@ const Project = ({
       <p className="type">{type || 'Unknown'}</p>
       <h6>Supported Site Generators:</h6>
       <ul>
-        {generators.map((generator, idx) => <li key={idx}>{generator}</li>)}
       </ul>
     </a>
   </li>
@@ -65,7 +64,7 @@ const Home = props =>
         <h2 className="cards-header">Open Source</h2>
         <h2 className="cards-header">Closed Source</h2>
         <ul className="projects">
-          {projects.map(project => <Project project={project}/>)}
+          {projects.map(project => <Project {...project}/>)}
         </ul>
       </div>
     );
