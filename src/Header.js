@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-static'
+import logo from './images/headless-logo.svg'
 
 const Header = ({}) =>
   <div>
     <div className="hero">
       <h1>
         <Link to="/" title="headlessCMS">
-          <img alt="headlessCMS" src=""/>
+          <img alt="headlessCMS" src={logo}/>
         </Link>
       </h1>
       <h2>A List of Content Management Systems for JAMstack Sites</h2>
