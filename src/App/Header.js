@@ -10,17 +10,39 @@ const ShareButtonWrapper = styled.div`
   justify-content: center;
 
   > * {
-    margin: 0 6px;
+    margin: 0 4px;
+  }
+`
+
+const ShareButton = styled(({ type, url, color, className }) => {
+  const shareText = `
+headlessCMS is a leaderboard of the top Content Management Systems (CMS) for
+JAMstack sites. Promoting a static approach to building websites.
+  `
+  const components = {
+    twitter: { Button: TwitterShareButton, Icon: TwitterIcon },
+    reddit: { Button: RedditShareButton, Icon: RedditIcon },
+  }
+  const { Button, Icon } = components[type];
+
+  return (
+    <Button url={url} title={shareText} className={className}>
+      <Icon size={40} round={true} iconBgStyle={{ fill: '#313d3e' }}/>
+    </Button>
+  )
+})`
+  cursor: pointer;
+
+  &:hover {
+    circle {
+      transition: fill 0.1s ease;
+      fill: ${({ color }) => color} !important;
+    }
   }
 `
 
 const Header = () => {
   const shareUrl = 'https://headlesscms.org'
-  const shareIconSize = 40
-  const shareText = `
-headlessCMS is a leaderboard of the top Content Management Systems (CMS) for
-JAMstack sites. Promoting a static approach to building websites.
-  `
   return (
     <div>
       <div className="hero">
@@ -32,12 +54,8 @@ JAMstack sites. Promoting a static approach to building websites.
         <h2>A List of Content Management Systems for JAMstack Sites</h2>
 
         <ShareButtonWrapper>
-          <TwitterShareButton url={shareUrl} title={shareText}>
-            <TwitterIcon size={shareIconSize} round={true}/>
-          </TwitterShareButton>
-          <RedditShareButton url={shareUrl} title={shareText}>
-            <RedditIcon size={shareIconSize} iconBgStyle={{ fill: '#ff4500' }} round={true}/>
-          </RedditShareButton>
+          <ShareButton type="twitter" url={shareUrl} color="#1da1f2"/>
+          <ShareButton type="reddit" url={shareUrl} color="#ff4500"/>
         </ShareButtonWrapper>
 
         <GitHubCorner
