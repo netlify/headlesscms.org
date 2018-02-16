@@ -1,3 +1,5 @@
+import path from 'path'
+import fs from 'fs-extra'
 import { map, pick, pickBy, isEmpty, find, chunk, flatten, filter, fromPairs, mapValues } from 'lodash'
 import { differenceInDays } from 'date-fns'
 import Octokit from '@octokit/rest'
@@ -10,7 +12,8 @@ const TWITTER_CONSUMER_SECRET = process.env.TWITTER_CONSUMER_SECRET;
 const TWITTER_ACCESS_TOKEN_KEY = process.env.TWITTER_ACCESS_TOKEN_KEY;
 const TWITTER_ACCESS_TOKEN_SECRET = process.env.TWITTER_ACCESS_TOKEN_SECRET;
 const PROJECTS_PATH = 'site/content/projects';
-const GIST_ARCHIVE_FILENAME = 'headless-cms-archive.json';
+const ARCHIVE_FILENAME = 'headless-cms-archive.json';
+const LOCAL_ARCHIVE_PATH = `tmp/${ARCHIVE_FILENAME}`;
 const GIST_ARCHIVE_DESCRIPTION = 'HEADLESSCMS.ORG DATA ARCHIVE';
 
 const octokit = Octokit()
@@ -61,6 +64,20 @@ async function getAllProjectData(projects) {
   return { timestamp, data };
 }
 
+async function getLocalArchive() {
+  try {
+    return await fs.readJson(path.join(process.cwd(), LOCAL_ARCHIVE_PATH))
+  }
+  catch(e) {
+    console.log('Local archive not found, fetching new data.')
+  }
+}
+
+function updateLocalArchive(data) {
+  return fs.outputJson(path.join(process.cwd(), LOCAL_ARCHIVE_PATH), data)
+}
+
+
 async function getArchive() {
   const gists = await octokit.gists.getAll({ per_page: 100 });
   const gistArchive = find(gists.data, { description: GIST_ARCHIVE_DESCRIPTION });
@@ -68,20 +85,20 @@ async function getArchive() {
     return;
   }
   const gistArchiveContent = await octokit.gists.get({ id: gistArchive.id });
-  const archive = JSON.parse(gistArchiveContent.data.files[GIST_ARCHIVE_FILENAME].content);
+  const archive = JSON.parse(gistArchiveContent.data.files[ARCHIVE_FILENAME].content);
   return { ...archive, id: gistArchive.id }
 }
 
 function createGist(content) {
   return octokit.gists.create({
-    files: { [GIST_ARCHIVE_FILENAME]: { content } },
+    files: { [ARCHIVE_FILENAME]: { content } },
     public: true,
     description: GIST_ARCHIVE_DESCRIPTION,
   });
 }
 
 function editGist(content, id) {
-  return octokit.gists.edit({ id, files: { [GIST_ARCHIVE_FILENAME]: { content } } });
+  return octokit.gists.edit({ id, files: { [ARCHIVE_FILENAME]: { content } } });
 }
 
 async function updateArchive({ timestamp, data }, archive) {
@@ -90,20 +107,29 @@ async function updateArchive({ timestamp, data }, archive) {
     : { timestamp, data };
   const content = JSON.stringify(preppedData);
   await archive ? editGist(content, archive.id) : createGist(content);
-  return preppedData.data;
+  return preppedData
+}
+
+function archiveAgeInDays(archive) {
+  return archive && differenceInDays(Date.now(), archive.timestamp)
 }
 
 async function run(projects) {
-  const archive = await getArchive();
-  const archiveAgeInDays = archive && differenceInDays(Date.now(), archive.timestamp);
+  const localArchive = await getLocalArchive()
+  if (archiveAgeInDays(localArchive) < 1) {
+    return localArchive.data
+  }
 
-  if (archiveAgeInDays < 1) {
+  const archive = await getArchive();
+  if (archiveAgeInDays(archive) < 1) {
+    await updateLocalArchive(archive);
     return archive.data
   }
 
   const projectData = await getAllProjectData(projects);
-
-  return updateArchive(projectData, archive);
+  const updatedArchive = updateArchive(projectData, archive);
+  await updateLocalArchive(updatedArchive)
+  return archive.data
 }
 
 export default run
