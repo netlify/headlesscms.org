@@ -9,6 +9,7 @@
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
+    "@atlaskit/dropdown-menu": "^3.11.9",
     "@octokit/rest": "^14.0.9",
     "axios": "^0.16.2",
     "babel-plugin-import-glob": "^2.0.0",
