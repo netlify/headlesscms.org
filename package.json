@@ -1,3 +1,4 @@
+{
   "name": "headlesscms",
   "version": "2.0.0",
   "main": "index.js",
@@ -9,12 +10,7 @@
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
-    "@atlaskit/dropdown-menu": "^3.11.9",
     "@octokit/rest": "^14.0.9",
-    "axios": "^0.16.2",
-    "babel-plugin-import-glob": "^2.0.0",
-    "babel-plugin-module-resolver": "^3.1.0",
-    "babel-plugin-transform-md-import-to-string": "^1.0.6",
     "date-fns": "^1.29.0",
     "gray-matter": "^3.1.1",
     "marked": "^0.3.14",
@@ -26,13 +22,15 @@
     "react-router": "^4.2.0",
     "react-share": "^2.0.0",
     "react-static": "^5.1.8",
-    "remark-frontmatter": "^1.2.0",
     "slug": "^0.9.1",
     "styled-components": "^3",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
+    "babel-plugin-import-glob": "^2.0.0",
+    "babel-plugin-module-resolver": "^3.1.0",
     "babel-plugin-styled-components": "^1.3.0",
+    "babel-plugin-transform-md-import-to-string": "^1.0.6",
     "eslint-config-react-tools": "1.x.x",
     "serve": "^6.1.0"
   },
