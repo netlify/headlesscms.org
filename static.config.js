@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
-import { map, mapValues, find, uniq, flatten, sortBy } from 'lodash'
+import { map, mapValues, find, uniq, flatten, sortBy, pickBy } from 'lodash'
 import decamelize from 'decamelize'
 import dateFns from 'date-fns'
 import { toSlug } from 'Scripts/util'
@@ -87,7 +87,7 @@ async function getProjects() {
   const projects = projectDetails.map(project => {
     const slug = toSlug(project.title)
     const data = projectData[slug]
-    return { ...project, ...data }
+    return pickBy({ ...project, ...data }, val => val)
   })
 
   return projects
@@ -128,9 +128,9 @@ export default {
         }
       },
       {
-        path: '/projects/',
+        path: 'projects',
         children: projects.map(project => ({
-          path: `/${project.slug}`,
+          path: project.slug,
           component: 'src/Project/Project',
           getData: () => ({
             ...project,
@@ -140,7 +140,7 @@ export default {
         }))
       },
       ...[ 'about', 'contribute', 'contact'  ].map(key => ({
-        path: `/${key}`,
+        path: key,
         component: 'src/Page',
         getData: () => {
           const { title, content } = find(pages, { key })
@@ -170,7 +170,7 @@ export default {
           <Head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link type="image/x-icon" rel="shortcut icon" href="/images/favicon.ico"/>
+            <link type="image/x-icon" rel="shortcut icon" href="favicon.ico"/>
 
             <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible"/>
 

@@ -45,7 +45,7 @@ async function getTwitterFollowers(screenNames) {
   const chunkedScreenNames = chunk(screenNames, 100);
   const chunkedFollowers = await Promise.all(chunkedScreenNames.map(async names => {
     const users = await twitterClient.post('users/lookup', { screen_name: names.join(',') });
-    return map(users, user => [ user.screen_name, user.followers_count ]);
+    return map(users, user => [ user.screen_name.toLowerCase(), user.followers_count ]);
   }));
   return fromPairs(flatten(chunkedFollowers));
 }
@@ -57,7 +57,7 @@ async function getAllProjectData(projects) {
   const gitHubRepos = map(projects, 'repo').filter(val => val);
   const gitHubReposData = await getAllProjectGitHubData(gitHubRepos);
   const data = projects.reduce((obj, { slug, repo, twitter }) => {
-    const twitterData = twitter ? { followers: twitterFollowers[twitter] } : {};
+    const twitterData = twitter ? { followers: twitterFollowers[twitter.toLowerCase()] } : {};
     const gitHubData = repo ? { ...(gitHubReposData[repo]) } : {};
     return { ...obj, [slug]: [{ timestamp, ...twitterData, ...gitHubData }] };
   }, {});
@@ -115,20 +115,16 @@ function archiveAgeInDays(archive) {
 }
 
 async function run(projects) {
-  /*
   const localArchive = await getLocalArchive()
   if (localArchive && archiveAgeInDays(localArchive) < 1) {
     return localArchive.data
   }
-  */
 
   const archive = await getArchive();
-  /*
   if (archive && archiveAgeInDays(archive) < 1) {
     await updateLocalArchive(archive);
     return archive.data
   }
-  */
 
   const projectData = await getAllProjectData(projects);
   const updatedArchive = await updateArchive(projectData, archive);
