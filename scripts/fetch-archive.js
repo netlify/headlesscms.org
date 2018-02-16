@@ -6,11 +6,11 @@ import Octokit from '@octokit/rest'
 import Twitter from 'twitter'
 import { toSlug } from 'Scripts/util'
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const TWITTER_CONSUMER_KEY = process.env.TWITTER_CONSUMER_KEY;
-const TWITTER_CONSUMER_SECRET = process.env.TWITTER_CONSUMER_SECRET;
-const TWITTER_ACCESS_TOKEN_KEY = process.env.TWITTER_ACCESS_TOKEN_KEY;
-const TWITTER_ACCESS_TOKEN_SECRET = process.env.TWITTER_ACCESS_TOKEN_SECRET;
+const GITHUB_TOKEN = process.env.HEADLESS_CMS_GITHUB_TOKEN;
+const TWITTER_CONSUMER_KEY = process.env.HEADLESS_CMS_TWITTER_CONSUMER_KEY;
+const TWITTER_CONSUMER_SECRET = process.env.HEADLESS_CMS_TWITTER_CONSUMER_SECRET;
+const TWITTER_ACCESS_TOKEN_KEY = process.env.HEADLESS_CMS_TWITTER_ACCESS_TOKEN_KEY;
+const TWITTER_ACCESS_TOKEN_SECRET = process.env.HEADLESS_CMS_TWITTER_ACCESS_TOKEN_SECRET;
 const PROJECTS_PATH = 'site/content/projects';
 const ARCHIVE_FILENAME = 'headless-cms-archive.json';
 const LOCAL_ARCHIVE_PATH = `tmp/${ARCHIVE_FILENAME}`;
