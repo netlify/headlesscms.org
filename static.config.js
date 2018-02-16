@@ -11,6 +11,8 @@ import rehypeStringify from 'rehype-stringify'
 import fetchArchive from './scripts/fetch-archive'
 import * as projectsMarkdown from './content/projects/*.md'
 
+const SITE_URL = 'https://headlesscms.org'
+
 async function markdownToHtml(markdown) {
   const result = await unified()
     .use(remarkParse)
@@ -123,7 +125,8 @@ export default {
         component: 'src/Home/Home',
         getData: () => {
           const { types, generators } = generateFilters(projects)
-          return { projects, types, generators }
+          const shareText = `Check out headlessCMS, a leaderboard of content management systems for JAMstack sites.`;
+          return { projects, types, generators, shareUrl: SITE_URL, shareText }
         }
       },
       {
@@ -131,7 +134,11 @@ export default {
         children: projects.map(project => ({
           path: `/${project.slug}`,
           component: 'src/Project/Project',
-          getData: () => ({ ...project }),
+          getData: () => ({
+            ...project,
+            shareUrl: `${SITE_URL}/projects/${project.slug}`,
+            shareText: `Check out ${project.title}, a headless CMS for JAMstack sites on the headlessCMS.org leaderboard.`,
+          }),
         }))
       },
       {
@@ -146,6 +153,7 @@ export default {
     meta.styleTags = sheet.getStyleElement()
     return html
   },
+  siteRoot: SITE_URL,
   Document: class CustomHtml extends Component {
     render () {
       const { Html, Head, Body, children, renderMeta } = this.props
