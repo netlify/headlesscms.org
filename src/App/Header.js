@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-static'
+import { Link, RouteData } from 'react-static'
 import styled from 'styled-components'
 import { TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon } from 'react-share'
 import GitHubCorner from 'react-github-corner'
@@ -14,11 +14,7 @@ const ShareButtonWrapper = styled.div`
   }
 `
 
-const ShareButton = styled(({ type, url, color, className }) => {
-  const shareText = `
-headlessCMS is a leaderboard of the top Content Management Systems (CMS) for
-JAMstack sites. Promoting a static approach to building websites.
-  `
+const ShareButton = styled(({ type, url, color, className, text }) => {
   const components = {
     twitter: { Button: TwitterShareButton, Icon: TwitterIcon },
     reddit: { Button: RedditShareButton, Icon: RedditIcon },
@@ -26,7 +22,7 @@ JAMstack sites. Promoting a static approach to building websites.
   const { Button, Icon } = components[type];
 
   return (
-    <Button url={url} title={shareText} className={className}>
+    <Button url={url} title={text} className={className}>
       <Icon size={40} round={true} iconBgStyle={{ fill: '#313d3e' }}/>
     </Button>
   )
@@ -41,9 +37,8 @@ JAMstack sites. Promoting a static approach to building websites.
   }
 `
 
-const Header = () => {
-  const shareUrl = 'https://headlesscms.org'
-  return (
+const Header = () =>
+  <RouteData render={({ shareUrl, shareText }) =>
     <div>
       <div className="hero">
         <h1>
@@ -54,8 +49,8 @@ const Header = () => {
         <h2>A List of Content Management Systems for JAMstack Sites</h2>
 
         <ShareButtonWrapper>
-          <ShareButton type="twitter" url={shareUrl} color="#1da1f2"/>
-          <ShareButton type="reddit" url={shareUrl} color="#ff4500"/>
+          <ShareButton type="twitter" url={shareUrl} color="#1da1f2" text={shareText}/>
+          <ShareButton type="reddit" url={shareUrl} color="#ff4500" text={shareText}/>
         </ShareButtonWrapper>
 
         <GitHubCorner
@@ -77,7 +72,6 @@ const Header = () => {
         </div>
       </div>
     </div>
-  );
-}
+  }/>
 
 export default Header
