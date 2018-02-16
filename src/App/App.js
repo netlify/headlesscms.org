@@ -217,9 +217,6 @@ const AppStyles = styled.div`
   .links a:hover {
       color: #222;
   }
-  .sheet .links {
-      margin-bottom: 45px;
-  }
   .sheet p {
       margin: 0 0 16px;
   }

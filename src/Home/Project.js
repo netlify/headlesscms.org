@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-static'
 import styled from 'styled-components'
 import Octicon from 'react-component-octicons'
 import { EntypoTwitter } from 'react-entypo'
@@ -125,30 +126,29 @@ const Project = ({
   issuesPrevious = 0,
   images,
   description,
+  slug,
 }) => {
   const stats = { stars, starsPrevious, issues, issuesPrevious, forks, forksPrevious }
 
   return (
-    <li className="project">
-      <a href="#" className="card">
-        <div className={`tag ${openSource ? '' : 'proprietary'}`}>
-          {openSource ? 'open source' : null}
-        </div>
-        {images ? <img className="photos-inside" src={photos}/> : null}
-        <h4 className="title">{title}</h4>
-        {followers ? <TwitterFollowers followers={followers}/> : null}
-        {openSource ? <OpenSourceStats {...stats}/> : null }
-        <div className="description">{description}</div>
-        <DataPoint>
-          <DataPointTitle>Type:</DataPointTitle>
-          <p className="type">{type || 'Unknown'}</p>
-        </DataPoint>
-        <DataPoint>
-          <DataPointTitle>Supported Site Generators:</DataPointTitle>
-          <p>{generators.join(', ')}</p>
-        </DataPoint>
-      </a>
-    </li>
+    <Link to={`/projects/${slug}`} className="card">
+      <div className={`tag ${openSource ? '' : 'proprietary'}`}>
+        {openSource ? 'open source' : null}
+      </div>
+      {images ? <img className="photos-inside" src={photos}/> : null}
+      <h4 className="title">{title}</h4>
+      {followers ? <TwitterFollowers followers={followers}/> : null}
+      {openSource ? <OpenSourceStats {...stats}/> : null }
+      <div className="description">{description}</div>
+      <DataPoint>
+        <DataPointTitle>Type:</DataPointTitle>
+        <p className="type">{type || 'Unknown'}</p>
+      </DataPoint>
+      <DataPoint>
+        <DataPointTitle>Supported Site Generators:</DataPointTitle>
+        <p>{generators.join(', ')}</p>
+      </DataPoint>
+    </Link>
   )
 }
 
