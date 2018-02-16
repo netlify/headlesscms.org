@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, RouteData } from 'react-static'
+import { Link, RouteData, Head } from 'react-static'
 import styled from 'styled-components'
 import { TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon } from 'react-share'
 import GitHubCorner from 'react-github-corner'
@@ -38,8 +38,13 @@ const ShareButton = styled(({ type, url, color, className, text }) => {
 `
 
 const Header = () =>
-  <RouteData render={({ shareUrl, shareText }) =>
+  <RouteData render={({ title, shareUrl, shareText }) =>
     <div>
+      <Head>
+        <title>
+          {`${title ? `${title} | headlessCMS` : 'headlessCMS | Top Content Management Systems for JAMstack sites'}`}
+        </title>
+      </Head>
       <div className="hero">
         <h1>
           <Link to="/" title="headlessCMS">
