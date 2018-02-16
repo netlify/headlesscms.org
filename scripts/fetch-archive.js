@@ -45,7 +45,7 @@ async function getTwitterFollowers(screenNames) {
   const chunkedScreenNames = chunk(screenNames, 100);
   const chunkedFollowers = await Promise.all(chunkedScreenNames.map(async names => {
     const users = await twitterClient.post('users/lookup', { screen_name: names.join(',') });
-    return map(users, user => [ user.screen_name.toLowerCase(), user.followers_count ]);
+    return map(users, user => [ user.screen_name, user.followers_count ]);
   }));
   return fromPairs(flatten(chunkedFollowers));
 }
@@ -115,21 +115,25 @@ function archiveAgeInDays(archive) {
 }
 
 async function run(projects) {
+  /*
   const localArchive = await getLocalArchive()
-  if (archiveAgeInDays(localArchive) < 1) {
+  if (localArchive && archiveAgeInDays(localArchive) < 1) {
     return localArchive.data
   }
+  */
 
   const archive = await getArchive();
-  if (archiveAgeInDays(archive) < 1) {
+  /*
+  if (archive && archiveAgeInDays(archive) < 1) {
     await updateLocalArchive(archive);
     return archive.data
   }
+  */
 
   const projectData = await getAllProjectData(projects);
-  const updatedArchive = updateArchive(projectData, archive);
+  const updatedArchive = await updateArchive(projectData, archive);
   await updateLocalArchive(updatedArchive)
-  return archive.data
+  return updatedArchive.data
 }
 
 export default run

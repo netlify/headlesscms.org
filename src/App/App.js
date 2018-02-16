@@ -553,18 +553,18 @@ const AppStyles = styled.div`
     display: inline-block;
     position: relative;
     overflow: hidden;
-    height: 28px;
+    height: 32px;
     width: 150px;
     background: #f2f2f2;
     border: 1px solid;
     border-color: white #f7f7f7 whitesmoke;
     border-radius: 3px;
-    background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-    background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-    background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+
+    margin-right: 10px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 
   .navbar .dropdown {
@@ -600,12 +600,11 @@ const AppStyles = styled.div`
     position: relative;
     width: 130%;
     margin: 0;
-    padding: 6px 8px 6px 10px;
-    height: 28px;
-    line-height: 14px;
-    font-size: 12px;
+    padding: 8px 8px 8px 10px;
+    height: 32px;
+    line-height: 1.2;
+    font-size: 14px;
     color: #62717a;
-    text-shadow: 0 1px white;
     background: #f2f2f2; /* Fallback for IE 8 */
     background: rgba(0, 0, 0, 0) !important; /* "transparent" doesn't work with Opera */
     border: 0;
@@ -737,7 +736,7 @@ const AppStyles = styled.div`
     .projects-sort-filter-toolbar .dropdown .dropdown-select {
       font-size: 16px;
       height: 48px;
-      line-height: 48px;
+      line-height: 2;
     }
     .project {
       display: block;

@@ -1,43 +1,136 @@
 import React from 'react'
 import { RouteData } from 'react-static'
+import styled from 'styled-components'
+import { partial, sortBy, reverse, map, find, difference, filter } from 'lodash'
 import Project from './Project'
 
-const Dropdown = ({ name, emptyLabel, options }) => {
+const SORTS = [
+  { field: 'stars', label: 'GitHub stars', reverse: true },
+  { field: 'followers', label: 'Twitter followers', reverse: true },
+  { field: 'title', label: 'Title' },
+]
+
+const Dropdown = ({ emptyLabel, options, selection, onChange }) => {
   return (
     <div className="dropdown">
-      <select name={name} className="dropdown-select">
-        {emptyLabel ? <option value="" selected>{emptyLabel}</option> : null}
+      <select value={selection} className="dropdown-select" onChange={onChange}>
+        {emptyLabel ? <option value="">{emptyLabel}</option> : null}
         {Object.entries(options).map(([ key, value ]) =>
-          <option key={key} value={key}>{value}</option>
+          <option key={key} value={value}>{value}</option>
         )}
       </select>
     </div>
   );
 };
 
-const Home = props =>
-  <RouteData render={({ types = [], generators = [], licenses = [], sorts = [], projects = [] }) => {
+const ControlLabel = styled.div`
+  font-weight: 600;
+`
+
+class Home extends React.Component {
+  state = {
+    filter: {
+      license: 'Open source',
+    },
+    sort: SORTS[0].label,
+  }
+
+  canShow = (project) => {
+    const { license, ssg, type } = this.state.filter
+    const shouldHide = (license === 'Open source' && !project.openSource)
+      || (license === 'Closed source' && project.openSource)
+      || (ssg && (!project.generators.includes(ssg) && !project.generators.includes('All')))
+      || (type && project.type !== type)
+    return !shouldHide
+  }
+
+  getSort = label => {
+    return find(SORTS, { label }) || {}
+  }
+
+  sort = projects => {
+    const { sort } = this.state
+    const sortObj = find(SORTS, { label: sort }) || {}
+    const sorted = sortBy(projects, sortObj.field)
+
+    if (sortObj.reverse) {
+      const withSortField = filter(sorted, sortObj.field)
+      const withoutSortField = difference(sorted, withSortField)
+      return [ ...reverse(withSortField), ...withoutSortField ]
+    }
+
+    return sorted
+  }
+
+  filter = projects => {
+    return projects.filter(this.canShow)
+  }
+
+  handleFilterChange = (filter, event) => {
+    this.setState({
+      filter: {
+        ...this.state.filter,
+        [filter]: event.target.value,
+      }
+    })
+  }
+
+  handleSortChange = event => {
+    this.setState({ sort: event.target.value })
+  }
+
+  render() {
+    const { type, ssg, license } = this.state.filter
+    const { sort } = this.state
+    const licenses = [ 'Open source', 'Closed source' ]
+    const sorts = map(SORTS, 'label')
     return (
-      <div className="main landing">
-        <div className="projects-sort-filter-toolbar">
-          <div className="projects-filters">
-            <div>Filter:</div>
-            <Dropdown name="filter-by-type" emptyLabel="Any CMS Type" options={types}/>
-            <Dropdown name="filter-by-generator" emptyLabel="Any SSG" options={generators}/>
-            <Dropdown name="filter-by-license" emptyLabel="Any License" options={licenses}/>
+      <RouteData render={({ types = [], generators = [], projects = [] }) => {
+        const visibleProjects = this.sort(this.filter(projects))
+        return (
+          <div className="main landing">
+            <div className="projects-sort-filter-toolbar">
+              <div className="projects-filters">
+                <ControlLabel>Filter</ControlLabel>
+                <Dropdown
+                  emptyLabel="Any CMS Type"
+                  options={types}
+                  selection={type}
+                  onChange={partial(this.handleFilterChange, 'type')}
+                />
+                <Dropdown
+                  emptyLabel="Any SSG"
+                  options={generators}
+                  selection={ssg}
+                  onChange={partial(this.handleFilterChange, 'ssg')}
+                />
+                <Dropdown
+                  emptyLabel="Any License"
+                  options={licenses}
+                  selection={license}
+                  onChange={partial(this.handleFilterChange, 'license')}
+                />
+              </div>
+              <div className="projects-sort">
+                <ControlLabel>Sort</ControlLabel>
+                <Dropdown
+                  name="sort"
+                  options={sorts}
+                  selection={sort}
+                  onChange={this.handleSortChange}
+                />
+              </div>
+            </div>
+            <h2 className="cards-header">Open Source</h2>
+            <h2 className="cards-header">Closed Source</h2>
+            <ul className="projects">
+              {visibleProjects.map(project => <Project key={project.slug} { ...project }/>)}
+            </ul>
           </div>
-          <div className="projects-sort">
-            <div>Sort:</div>
-            <Dropdown name="sort" options={sorts}/>
-          </div>
-        </div>
-        <h2 className="cards-header">Open Source</h2>
-        <h2 className="cards-header">Closed Source</h2>
-        <ul className="projects">
-          {projects.map(project => <Project {...project}/>)}
-        </ul>
-      </div>
-    );
-  }}/>
+        );
+      }}/>
+    )
+  }
+}
 
 export default Home;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
-import { map, mapValues, find } from 'lodash'
+import { map, mapValues, find, uniq, flatten, sortBy } from 'lodash'
 import dateFns from 'date-fns'
 import { toSlug } from 'Scripts/util'
 import grayMatter from 'gray-matter'
@@ -20,6 +20,52 @@ function markdownToHtml(markdown) {
     .contents
 }
 
+function processMarkdownFiles(files) {
+  return map(files, file => grayMatter(file).data)
+}
+
+function mapProjectFrontMatter({
+  title,
+  repo,
+  homepage,
+  opensource,
+  supportedgenerators,
+  twitter,
+  typeofcms,
+  description,
+  images,
+  startertemplaterepo,
+}) {
+  return {
+    title,
+    slug: toSlug(title),
+    repo,
+    homepage,
+    openSource: opensource.toLowerCase() === 'yes',
+    generators: supportedgenerators,
+    twitter,
+    type: typeofcms,
+    description,
+    images,
+    starterTemplateRepo: startertemplaterepo,
+  }
+}
+
+function extractRelevantProjectData(data) {
+  return mapValues(data, project => {
+    const timestamps = map(project, 'timestamp');
+    const currentTimestamp = dateFns.max(...timestamps).getTime()
+    const previousWeekTimestamp = dateFns.closestTo(dateFns.subWeeks(Date.now(), 1), timestamps).getTime()
+    const { followers, forks, stars, issues } = find(project, { timestamp: currentTimestamp }) || {}
+    const {
+      forks: forksPrevious,
+      stars: starsPrevious,
+      issues: issuesPrevious,
+    } = find(project, { timestamp: previousWeekTimestamp }) || {}
+    return { followers, forks, stars, issues, forksPrevious, starsPrevious, issuesPrevious }
+  })
+}
+
 export default {
   getSiteData: () => ({
     title: 'React Static',
@@ -30,88 +76,37 @@ export default {
         path: '/',
         component: 'src/Home/Home',
         getData: async () => {
-          const projectDetails = map(projectsMarkdown, project => {
-            const {
-              title,
-              repo,
-              homepage,
-              opensource,
-              supportedgenerators,
-              twitter,
-              typeofcms,
-              description,
-              images,
-              startertemplaterepo,
-            } = grayMatter(project).data
+          /**
+           * Get project details from frontmatter.
+           */
+          const projectDetails = processMarkdownFiles(projectsMarkdown).map(mapProjectFrontMatter)
 
-            return {
-              title,
-              repo,
-              homepage,
-              openSource: opensource.toLowerCase() === 'yes',
-              generators: supportedgenerators,
-              twitter,
-              type: typeofcms,
-              description,
-              images,
-              starterTemplateRepo: startertemplaterepo,
-            }
-          })
-
-          const projectDataRaw = await fetchArchive(projectDetails.map(({ title, repo, twitter }) => ({
-            slug: toSlug(title),
-            repo,
-            twitter,
-          })))
-
-          const projectData = mapValues(projectDataRaw, project => {
-            const timestamps = map(project, 'timestamp');
-            const currentTimestamp = dateFns.max(...timestamps).getTime()
-            const previousWeekTimestamp = dateFns.closestTo(dateFns.subWeeks(Date.now(), 1), timestamps).getTime()
-            const { followers, forks, stars, issues } = find(project, { timestamp: currentTimestamp }) || {}
-            const {
-              forks: forksPrevious,
-              stars: starsPrevious,
-              issues: issuesPrevious,
-            } = find(project, { timestamp: previousWeekTimestamp }) || {}
-            return { followers, forks, stars, issues, forksPrevious, starsPrevious, issuesPrevious }
-          });
+          /**
+           * Generate dropdown filter values from frontmatter
+           */
+          const types = sortBy(uniq(map(projectDetails, 'type')))
+          const generators = sortBy(uniq(flatten(map(projectDetails, 'generators'))))
 
 
+          /**
+           * Get external project data.
+           */
+          const projectDataRaw = await fetchArchive(projectDetails)
+          const projectData = extractRelevantProjectData(projectDataRaw)
+
+          /**
+           * Combine project details from frontmatter and project data from
+           * external sources, using the sluggified title as the link, since
+           * the sluggified titles are used as top level keys in the collected
+           * external data.
+           */
           const projects = projectDetails.map(project => {
             const slug = toSlug(project.title)
             const data = projectData[slug]
             return { ...project, ...data }
           });
 
-          return {
-            types: {
-              api_driven: 'API Driven',
-              git_based: 'Git-based',
-            },
-            generators: {
-              all: 'All',
-              custom: 'Custom',
-              gatsby: 'Gatsby JS',
-              hexo: 'Hexo',
-              hugo: 'Hugo',
-              jekyll: 'Jekyll',
-              metalsmith: 'Metalsmith',
-              middleman: 'Middleman',
-              phenomic: 'Phenomic',
-              spike: 'Spike',
-            },
-            licenses: {
-              open_source: 'Open source',
-              closed_source: 'Closed source',
-            },
-            sorts: {
-              stars: 'GitHub stars',
-              followers: 'Twitter followers',
-              title: 'Title',
-            },
-            projects,
-          };
+          return { types, generators, projects };
         }
       },
       {
@@ -148,7 +143,7 @@ export default {
             <meta property="og:description" content="headlessCMS is a leaderboard of the top Content Management Systems for JAMstack sites. Promoting a static approach to building websites." />
 
             <link href='//fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'/>
-            <link href='//fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'/>
+            <link href='//fonts.googleapis.com/css?family=Roboto:100,400,600,700' rel='stylesheet' type='text/css'/>
 
             {renderMeta.styleTags}
           </Head>
