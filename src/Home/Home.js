@@ -124,7 +124,11 @@ class Home extends React.Component {
             <h2 className="cards-header">Open Source</h2>
             <h2 className="cards-header">Closed Source</h2>
             <ul className="projects">
-              {visibleProjects.map(project => <Project key={project.slug} { ...project }/>)}
+              {visibleProjects.map(project =>
+                <li className="project">
+                  <Project key={project.slug} { ...project }/>
+                </li>
+              )}
             </ul>
           </div>
         );

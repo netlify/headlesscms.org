@@ -11,17 +11,19 @@ import rehypeStringify from 'rehype-stringify'
 import fetchArchive from './scripts/fetch-archive'
 import * as projectsMarkdown from './content/projects/*.md'
 
-function markdownToHtml(markdown) {
-  return unified()
+async function markdownToHtml(markdown) {
+  const result = await unified()
     .use(remarkParse)
     .use(remarkToRehype)
     .use(rehypeStringify)
     .process(markdown)
-    .contents
+  return result.contents
 }
 
-function processMarkdownFiles(files) {
-  return map(files, file => grayMatter(file).data)
+async function processMarkdown(markdown) {
+  const { content, data } = grayMatter(markdown)
+  const html = await markdownToHtml(content)
+  return { content: html, ...data }
 }
 
 function mapProjectFrontMatter({
@@ -35,6 +37,7 @@ function mapProjectFrontMatter({
   description,
   images,
   startertemplaterepo,
+  content,
 }) {
   return {
     title,
@@ -48,6 +51,7 @@ function mapProjectFrontMatter({
     description,
     images,
     starterTemplateRepo: startertemplaterepo,
+    content,
   }
 }
 
@@ -66,48 +70,69 @@ function extractRelevantProjectData(data) {
   })
 }
 
+/**
+ * Retrieve and format all project data.
+ */
+async function getProjects() {
+  /**
+   * Get project details from frontmatter.
+   */
+  const projectDetailsRaw = await Promise.all(map(projectsMarkdown, processMarkdown))
+  const projectDetails = await Promise.all(map(projectDetailsRaw, mapProjectFrontMatter))
+
+  /**
+   * Get external project data.
+   */
+  const projectDataRaw = await fetchArchive(projectDetails)
+  const projectData = extractRelevantProjectData(projectDataRaw)
+
+  /**
+   * Combine project details from frontmatter and project data from
+   * external sources, using the sluggified title as the link, since
+   * the sluggified titles are used as top level keys in the collected
+   * external data.
+   */
+  const projects = projectDetails.map(project => {
+    const slug = toSlug(project.title)
+    const data = projectData[slug]
+    return { ...project, ...data }
+  })
+
+  return projects
+}
+
+/**
+ * Generate dropdown filter values from frontmatter values.
+ */
+function generateFilters(projects) {
+  const types = sortBy(uniq(map(projects, 'type')))
+  const generators = sortBy(uniq(flatten(map(projects, 'generators'))))
+
+  return { types, generators }
+}
+
 export default {
   getSiteData: () => ({
     title: 'React Static',
   }),
   getRoutes: async () => {
+    const projects = await getProjects()
     return [
       {
         path: '/',
         component: 'src/Home/Home',
-        getData: async () => {
-          /**
-           * Get project details from frontmatter.
-           */
-          const projectDetails = processMarkdownFiles(projectsMarkdown).map(mapProjectFrontMatter)
-
-          /**
-           * Generate dropdown filter values from frontmatter
-           */
-          const types = sortBy(uniq(map(projectDetails, 'type')))
-          const generators = sortBy(uniq(flatten(map(projectDetails, 'generators'))))
-
-
-          /**
-           * Get external project data.
-           */
-          const projectDataRaw = await fetchArchive(projectDetails)
-          const projectData = extractRelevantProjectData(projectDataRaw)
-
-          /**
-           * Combine project details from frontmatter and project data from
-           * external sources, using the sluggified title as the link, since
-           * the sluggified titles are used as top level keys in the collected
-           * external data.
-           */
-          const projects = projectDetails.map(project => {
-            const slug = toSlug(project.title)
-            const data = projectData[slug]
-            return { ...project, ...data }
-          });
-
-          return { types, generators, projects };
+        getData: () => {
+          const { types, generators } = generateFilters(projects)
+          return { projects, types, generators }
         }
+      },
+      {
+        path: '/projects/',
+        children: projects.map(project => ({
+          path: `/${project.slug}`,
+          component: 'src/Project/Project',
+          getData: () => ({ ...project }),
+        }))
       },
       {
         is404: true,
