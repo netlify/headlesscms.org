@@ -1,31 +1,21 @@
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 import { map, mapValues, find, uniq, flatten, sortBy } from 'lodash'
+import decamelize from 'decamelize'
 import dateFns from 'date-fns'
 import { toSlug } from 'Scripts/util'
 import grayMatter from 'gray-matter'
-import unified from 'unified'
-import remarkParse from 'remark-parse'
-import remarkToRehype from 'remark-rehype'
-import rehypeStringify from 'rehype-stringify'
+import marked from 'marked'
 import fetchArchive from './scripts/fetch-archive'
 import * as projectsMarkdown from './content/projects/*.md'
+import * as pagesMarkdown from './content/pages/*.md'
 
 const SITE_URL = 'https://headlesscms.org'
 
-async function markdownToHtml(markdown) {
-  const result = await unified()
-    .use(remarkParse)
-    .use(remarkToRehype)
-    .use(rehypeStringify)
-    .process(markdown)
-  return result.contents
-}
-
-async function processMarkdown(markdown) {
+function processMarkdown(markdown, key) {
   const { content, data } = grayMatter(markdown)
-  const html = await markdownToHtml(content)
-  return { content: html, ...data }
+  const html = marked(content)
+  return { content: html, key: decamelize(key, '-'), ...data }
 }
 
 function mapProjectFrontMatter({
@@ -79,7 +69,7 @@ async function getProjects() {
   /**
    * Get project details from frontmatter.
    */
-  const projectDetailsRaw = await Promise.all(map(projectsMarkdown, processMarkdown))
+  const projectDetailsRaw = map(projectsMarkdown, processMarkdown)
   const projectDetails = await Promise.all(map(projectDetailsRaw, mapProjectFrontMatter))
 
   /**
@@ -113,20 +103,28 @@ function generateFilters(projects) {
   return { types, generators }
 }
 
+/**
+ * Retrieve and format markdown for unique pages.
+ */
+function getPages() {
+  return map(pagesMarkdown, processMarkdown)
+}
+
 export default {
   getSiteData: () => ({
     title: 'React Static',
   }),
   getRoutes: async () => {
     const projects = await getProjects()
+    const pages = await getPages()
+    const defaultShareText = `Check out headlessCMS, a leaderboard of content management systems for JAMstack sites.`;
     return [
       {
         path: '/',
         component: 'src/Home/Home',
         getData: () => {
           const { types, generators } = generateFilters(projects)
-          const shareText = `Check out headlessCMS, a leaderboard of content management systems for JAMstack sites.`;
-          return { projects, types, generators, shareUrl: SITE_URL, shareText }
+          return { projects, types, generators, shareUrl: SITE_URL, shareText: defaultShareText }
         }
       },
       {
@@ -141,9 +139,18 @@ export default {
           }),
         }))
       },
+      ...[ 'about', 'contribute', 'contact'  ].map(key => ({
+        path: `/${key}`,
+        component: 'src/Page',
+        getData: () => {
+          const { title, content } = find(pages, { key })
+          return { title, content, shareUrl: SITE_URL, shareText: defaultShareText }
+        }
+      })),
       {
         is404: true,
         component: 'src/App/404',
+        getData: () => ({ shareUrl: SITE_URL, shareText: defaultShareText }),
       },
     ]
   },
