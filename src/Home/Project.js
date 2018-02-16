@@ -35,9 +35,11 @@ const OpenSourceStat = styled(({ icon, value, change, indicateColor, label, clas
     <div>
       <strong>{value}</strong>
     </div>
+    {/* Commenting out for seven days, when we have enough data to use it.
     <OpenSourceStatChange title={`${label} in the last 7 days`} indicateColor={indicateColor}>
       {parseFloat(change, 10) > 0 ? `+${change}` : change}
     </OpenSourceStatChange>
+    */}
   </div>
 )`
   font-size: 18px;
