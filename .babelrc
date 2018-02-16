@@ -1,7 +1,7 @@
 {
   "extends": "react-static/.babelrc",
   "plugins": [
-    ["module-resolver", {
+    ["babel-plugin-module-resolver", {
       "alias": {
         "App": "./src/App/",
         "Home": "./src/Home/",
