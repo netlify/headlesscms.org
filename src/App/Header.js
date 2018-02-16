@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-static'
 import styled from 'styled-components'
-import logo from './images/headless-logo.svg'
 import { TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon } from 'react-share'
 import GitHubCorner from 'react-github-corner'
+import logo from 'Images/headless-logo.svg'
 
 const ShareButtonWrapper = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ const ShareButtonWrapper = styled.div`
 
 const Header = () => {
   const shareUrl = 'https://headlesscms.org'
-  const shareIconSize = '40'
+  const shareIconSize = 40
   const shareText = `
 headlessCMS is a leaderboard of the top Content Management Systems (CMS) for
 JAMstack sites. Promoting a static approach to building websites.

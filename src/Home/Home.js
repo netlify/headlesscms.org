@@ -1,5 +1,6 @@
 import React from 'react'
 import { RouteData } from 'react-static'
+import Project from './Project'
 
 const Dropdown = ({ name, emptyLabel, options }) => {
   return (
@@ -13,37 +14,6 @@ const Dropdown = ({ name, emptyLabel, options }) => {
     </div>
   );
 };
-
-const Project = ({
-  title,
-  repo,
-  homepage,
-  open_source: openSource,
-  type,
-  supported_generators: generators = [],
-  stars,
-  followers,
-  images,
-  description,
-}) =>
-  <li className="project">
-    <a href="#" className="card">
-      <div className={`tag ${openSource ? '' : 'proprietary'}`}>
-        {openSource ? 'open source' : null}
-      </div>
-      {images ? <img className="photos-inside" src="/images/photos.svg"/> : null}
-      <h4 className="title">{title}</h4>
-      <h6 className="url">{homepage}</h6>
-      {stars ? <div>{stars} stars</div> : null}
-      {followers ? <div>{followers} followers</div> : null}
-      <div className="description">{description}</div>
-      <h6>Type:</h6>
-      <p className="type">{type || 'Unknown'}</p>
-      <h6>Supported Site Generators:</h6>
-      <ul>
-      </ul>
-    </a>
-  </li>
 
 const Home = props =>
   <RouteData render={({ types = [], generators = [], licenses = [], sorts = [], projects = [] }) => {
