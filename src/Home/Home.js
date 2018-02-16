@@ -79,6 +79,26 @@ class Home extends React.Component {
     this.setState({ sort: event.target.value })
   }
 
+  renderProjects = projects => {
+    const renderedProjects = projects.map(project =>
+      <li className="project">
+        <Project key={project.slug} { ...project }/>
+      </li>
+    )
+    renderedProjects[3] = (
+      <li className="project staticgen-promo">
+        <h3>
+          Also visit
+          <a href="https://www.staticgen.com" target="_blank">
+            staticgen.com
+          </a>
+          for a ranked list of open source static site generators!
+        </h3>
+      </li>
+    )
+    return renderedProjects
+  }
+
   render() {
     const { type, ssg, license } = this.state.filter
     const { sort } = this.state
@@ -124,11 +144,7 @@ class Home extends React.Component {
             <h2 className="cards-header">Open Source</h2>
             <h2 className="cards-header">Closed Source</h2>
             <ul className="projects">
-              {visibleProjects.map(project =>
-                <li className="project">
-                  <Project key={project.slug} { ...project }/>
-                </li>
-              )}
+              {this.renderProjects(visibleProjects)}
             </ul>
           </div>
         );
