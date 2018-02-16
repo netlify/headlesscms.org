@@ -1,7 +1,13 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Message = styled.h1`
+  text-align: center;
+  margin: 200px 60px;
+`
 
 export default () => (
   <div>
-    <h1>404 - Oh no's! We couldn't find that page :(</h1>
+    <Message>Sorry, couldn't find that page.</Message>
   </div>
 )
