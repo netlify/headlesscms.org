@@ -2,9 +2,9 @@ import React from 'react'
 import { Router, Link } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
+import Routes from 'react-static-routes'
 import Header from './Header'
 import Footer from './Footer'
-import Routes from 'react-static-routes'
 
 injectGlobal`
   * {
@@ -321,6 +321,7 @@ const AppStyles = styled.div`
     }
 
     .url {
+      font-size: 12px;
       font-style: italic;
       font-weight: normal;
       color: #999;
@@ -362,8 +363,8 @@ const AppStyles = styled.div`
   }
 
   .card .description {
-    margin: 40px 0 30px 0;
-    min-height: 66px;
+    margin-top: 16px;
+    margin-bottom: 10px;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;

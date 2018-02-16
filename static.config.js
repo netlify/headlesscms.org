@@ -1,77 +1,122 @@
-import axios from 'axios'
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
+import { map, mapValues, find } from 'lodash'
+import dateFns from 'date-fns'
+import { toSlug } from 'Scripts/util'
+import grayMatter from 'gray-matter'
+import unified from 'unified'
+import remarkParse from 'remark-parse'
+import remarkToRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
+import fetchArchive from './scripts/fetch-archive'
+import * as projectsMarkdown from './content/projects/*.md'
+
+function markdownToHtml(markdown) {
+  return unified()
+    .use(remarkParse)
+    .use(remarkToRehype)
+    .use(rehypeStringify)
+    .process(markdown)
+    .contents
+}
 
 export default {
   getSiteData: () => ({
     title: 'React Static',
   }),
   getRoutes: async () => {
-    const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
     return [
       {
         path: '/',
-        component: 'src/containers/Home',
-        getData: () => ({
-          types: {
-            api_driven: 'API Driven',
-            git_based: 'Git-based',
-          },
-          generators: {
-            all: 'All',
-            custom: 'Custom',
-            gatsby: 'Gatsby JS',
-            hexo: 'Hexo',
-            hugo: 'Hugo',
-            jekyll: 'Jekyll',
-            metalsmith: 'Metalsmith',
-            middleman: 'Middleman',
-            phenomic: 'Phenomic',
-            spike: 'Spike',
-          },
-          licenses: {
-            open_source: 'Open source',
-            closed_source: 'Closed source',
-          },
-          sorts: {
-            stars: 'GitHub stars',
-            followers: 'Twitter followers',
-            title: 'Title',
-          },
-          projects: [{
-            title: 'Netlify CMS',
-            repo: 'netlify/netlify-cms',
-            homepage: 'https://www.netlifycms.org',
-            open_source: true,
-            type: 'git_based',
-            supported_generators: 'all',
-            description: 'A git based, client side CMS for static site generators.',
-            starter_template_repo: 'netlify-templates/one-click-hugo-cms',
-            images: '/images/netlify-cms1.png',
-          }],
-        }),
-      },
-      {
-        path: '/about',
-        component: 'src/containers/About',
-      },
-      {
-        path: '/blog',
-        component: 'src/containers/Blog',
-        getData: () => ({
-          posts,
-        }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
-          component: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
+        component: 'src/Home/Home',
+        getData: async () => {
+          const projectDetails = map(projectsMarkdown, project => {
+            const {
+              title,
+              repo,
+              homepage,
+              opensource,
+              supportedgenerators,
+              twitter,
+              typeofcms,
+              description,
+              images,
+              startertemplaterepo,
+            } = grayMatter(project).data
+
+            return {
+              title,
+              repo,
+              homepage,
+              openSource: opensource.toLowerCase() === 'yes',
+              generators: supportedgenerators,
+              twitter,
+              type: typeofcms,
+              description,
+              images,
+              starterTemplateRepo: startertemplaterepo,
+            }
+          })
+
+          const projectDataRaw = await fetchArchive(projectDetails.map(({ title, repo, twitter }) => ({
+            slug: toSlug(title),
+            repo,
+            twitter,
+          })))
+
+          const projectData = mapValues(projectDataRaw, project => {
+            const timestamps = map(project, 'timestamp');
+            const currentTimestamp = dateFns.max(...timestamps).getTime()
+            const previousWeekTimestamp = dateFns.closestTo(dateFns.subWeeks(Date.now(), 1), timestamps).getTime()
+            const { followers, forks, stars, issues } = find(project, { timestamp: currentTimestamp }) || {}
+            const {
+              forks: forksPrevious,
+              stars: starsPrevious,
+              issues: issuesPrevious,
+            } = find(project, { timestamp: previousWeekTimestamp }) || {}
+            return { followers, forks, stars, issues, forksPrevious, starsPrevious, issuesPrevious }
+          });
+
+
+          const projects = projectDetails.map(project => {
+            const slug = toSlug(project.title)
+            const data = projectData[slug]
+            return { ...project, ...data }
+          });
+
+          return {
+            types: {
+              api_driven: 'API Driven',
+              git_based: 'Git-based',
+            },
+            generators: {
+              all: 'All',
+              custom: 'Custom',
+              gatsby: 'Gatsby JS',
+              hexo: 'Hexo',
+              hugo: 'Hugo',
+              jekyll: 'Jekyll',
+              metalsmith: 'Metalsmith',
+              middleman: 'Middleman',
+              phenomic: 'Phenomic',
+              spike: 'Spike',
+            },
+            licenses: {
+              open_source: 'Open source',
+              closed_source: 'Closed source',
+            },
+            sorts: {
+              stars: 'GitHub stars',
+              followers: 'Twitter followers',
+              title: 'Title',
+            },
+            projects,
+          };
+        }
       },
       {
         is404: true,
-        component: 'src/containers/404',
+        component: 'src/App/404',
       },
     ]
   },
