@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import path from 'path'
 import fs from 'fs-extra'
 import { map, pick, pickBy, isEmpty, find, chunk, flatten, filter, fromPairs, mapValues } from 'lodash'

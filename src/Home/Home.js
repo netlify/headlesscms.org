@@ -49,7 +49,7 @@ const ProjectCard = ({ project }) =>
   </li>
 
 const withStaticGenPromo = arr => {
-  arr[3] = <StaticGenPromo/>
+  arr.splice(3, 0, <StaticGenPromo key="static-gen-promo"/>)
   return arr
 }
 
