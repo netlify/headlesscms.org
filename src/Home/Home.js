@@ -25,13 +25,83 @@ const Dropdown = ({ emptyLabel, options, selection, onChange }) => {
 
 const ControlLabel = styled.div`
   font-weight: 600;
+  margin-left: 5px;
 `
+
+const LicenseSectionHeader = styled.h2`
+  font-size: 32px;
+  font-weight: 600;
+  margin-left: 5px;
+  margin-top: 48px;
+`
+
+const StaticGenPromo = () =>
+  <li className="project staticgen-promo">
+    <h3>
+      Also visit <a href="https://www.staticgen.com" target="_blank">staticgen.com</a>
+      for a ranked list of open source static site generators!
+    </h3>
+  </li>
+
+const ProjectCard = ({ project }) =>
+  <li className="project">
+    <Project key={project.slug} { ...project }/>
+  </li>
+
+const withStaticGenPromo = arr => {
+  arr[3] = <StaticGenPromo/>
+  return arr
+}
+
+const ClearfixYesThisIsReallyHappening = styled.div`
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+`
+
+const Projects = ({ projects, filter, sort }) => {
+  const shouldUseLicenseSections = !filter.license && sort === 'GitHub stars'
+
+  if (shouldUseLicenseSections) {
+    const openSourceProjects = projects.filter(({ openSource }) => openSource)
+    const closedSourceProjects = projects.filter(({ openSource }) => !openSource)
+
+    return (
+      <div>
+        <ClearfixYesThisIsReallyHappening>
+          <LicenseSectionHeader>Open source</LicenseSectionHeader>
+          <ul className="projects">
+            {withStaticGenPromo(openSourceProjects.map(project =>
+              <ProjectCard key={project.slug} project={project}/>
+            ))}
+          </ul>
+        </ClearfixYesThisIsReallyHappening>
+        <ClearfixYesThisIsReallyHappening>
+          <LicenseSectionHeader>Closed source</LicenseSectionHeader>
+          <ul className="projects">
+            {closedSourceProjects.map(project => <ProjectCard key={project.slug} project={project}/>)}
+          </ul>
+        </ClearfixYesThisIsReallyHappening>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <ul className="projects">
+        {withStaticGenPromo(projects.map(project =>
+          <ProjectCard key={project.slug} project={project}/>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 class Home extends React.Component {
   state = {
-    filter: {
-      license: 'Open source',
-    },
+    filter: {},
     sort: SORTS[0].label,
   }
 
@@ -79,26 +149,6 @@ class Home extends React.Component {
     this.setState({ sort: event.target.value })
   }
 
-  renderProjects = projects => {
-    const renderedProjects = projects.map(project =>
-      <li className="project">
-        <Project key={project.slug} { ...project }/>
-      </li>
-    )
-    renderedProjects[3] = (
-      <li className="project staticgen-promo">
-        <h3>
-          Also visit
-          <a href="https://www.staticgen.com" target="_blank">
-            staticgen.com
-          </a>
-          for a ranked list of open source static site generators!
-        </h3>
-      </li>
-    )
-    return renderedProjects
-  }
-
   render() {
     const { type, ssg, license } = this.state.filter
     const { sort } = this.state
@@ -143,9 +193,7 @@ class Home extends React.Component {
             </div>
             <h2 className="cards-header">Open Source</h2>
             <h2 className="cards-header">Closed Source</h2>
-            <ul className="projects">
-              {this.renderProjects(visibleProjects)}
-            </ul>
+            <Projects projects={visibleProjects} filter={this.state.filter} sort={this.state.sort}/>
           </div>
         );
       }}/>
