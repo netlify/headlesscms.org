@@ -160,7 +160,7 @@ export default {
     meta.styleTags = sheet.getStyleElement()
     return html
   },
-  siteRoot: process.env.CONTEXT === 'production' ? SITE_URL : undefined,
+  siteRoot: SITE_URL,
   Document: class CustomHtml extends Component {
     render () {
       const { Html, Head, Body, children, renderMeta } = this.props
