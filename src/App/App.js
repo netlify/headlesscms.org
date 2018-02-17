@@ -6,6 +6,11 @@ import Routes from 'react-static-routes'
 import Header from './Header'
 import Footer from './Footer'
 
+/**
+ * Note: the styles on this page are a horrendous misuse of styled-components.
+ * These styles were ported over and should be updated and migrated to a
+ * proper styled-components implementation.
+ */
 injectGlobal`
   * {
     box-sizing: border-box;
