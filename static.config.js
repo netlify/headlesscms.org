@@ -57,8 +57,19 @@ function extractRelevantProjectData(data) {
       forks: forksPrevious,
       stars: starsPrevious,
       issues: issuesPrevious,
+      followers: followersPrevious,
     } = find(project, { timestamp: previousWeekTimestamp }) || {}
-    return { followers, forks, stars, issues, forksPrevious, starsPrevious, issuesPrevious }
+    return {
+      followers,
+      forks,
+      stars,
+      issues,
+      forksPrevious,
+      starsPrevious,
+      issuesPrevious,
+      followers,
+      followersPrevious,
+    }
   })
 }
 

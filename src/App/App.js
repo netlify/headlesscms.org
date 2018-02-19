@@ -194,7 +194,7 @@ const AppStyles = styled.div`
   }
 
   .main, .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -514,7 +514,7 @@ const AppStyles = styled.div`
   }
 
   .footer-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -744,6 +744,10 @@ const AppStyles = styled.div`
       display: block;
       width: 100%;
       padding: 20px 20px 0;
+
+      &:last-of-type {
+        padding-right: 0;
+      }
     }
     .projects {
       margin-right: 0;
@@ -760,6 +764,12 @@ const AppStyles = styled.div`
     }
   }
 
+  @media all and (min-width: 700px) {
+    .main {
+      padding: 0 20px;
+    }
+  }
+
   @media all and (min-width: 800px) {
     .project {
       float: left;
@@ -770,7 +780,7 @@ const AppStyles = styled.div`
     .project:nth-of-type(3n+1) { clear: both; }
   }
 
-  @media all and (min-width: 1000px) {
+  @media all and (min-width: 1200px) {
     .project {
       float: left;
       width: 25%;

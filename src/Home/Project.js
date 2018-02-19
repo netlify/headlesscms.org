@@ -24,39 +24,51 @@ const DataPointTitle = styled.h6`
 const OpenSourceStatChange = styled.div.attrs({ title: props => props.title })`
   ${props => props.indicateColor && parseFloat(props.children, 10) > 0 && 'color: #31bb47;'}
   ${props => props.indicateColor && parseFloat(props.children, 10) < 0 && 'color: #c91b1b;'}
-  font-size: 16px;
+  font-size: 14px;
 `
 
-const OpenSourceStat = styled(({ icon, value, change, indicateColor, label, className }) =>
-  <div title={label} className={className}>
-    <div>
-      <GitHubIcon name={icon}/>
+const OpenSourceStatIcon = styled.span`
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+`
+
+const OpenSourceStat = styled(({ Icon, value, change, indicateColor, label, className }) => {
+  const disabled = typeof value !== 'number'
+  const changeValue = parseFloat(change, 10) > 0 ? `+${change}` : change
+
+  return (
+    <div title={label} className={`${className} ${disabled ? 'disabled' : ''}`}>
+      <OpenSourceStatIcon>
+        <Icon/>
+      </OpenSourceStatIcon>
+      {disabled ? <div>N/A</div> :
+        <div>
+          <strong>{value}</strong>
+          <OpenSourceStatChange title={`${label} in the last 7 days`} indicateColor={indicateColor}>
+            {changeValue === 0 ? '--' : changeValue}
+          </OpenSourceStatChange>
+        </div>
+      }
     </div>
-    <div>
-      <strong>{value}</strong>
-    </div>
-    {/* Commenting out for seven days, when we have enough data to use it.
-    <OpenSourceStatChange title={`${label} in the last 7 days`} indicateColor={indicateColor}>
-      {parseFloat(change, 10) > 0 ? `+${change}` : change}
-    </OpenSourceStatChange>
-    */}
-  </div>
-)`
-  font-size: 18px;
+  )
+})`
+  font-size: 15px;
   text-align: center;
   color: #313d3e;
-  flex: none;
-  width: 33.3%;
-`
+  width: 25%;
 
-const GitHubIcon = styled(({ name, className }) =>
-  <span className={className}>
-    <Octicon name={name} zoom="100%"/>
-  </span>
-)`
-  display: inline-block;
-  width: 22px;
-  height: 22px;
+  & svg {
+    fill: #313d3e !important;
+  }
+
+  &.disabled {
+    color: #bbb;
+
+    & svg {
+      fill: #bbb !important;
+    }
+  }
 `
 
 const TwitterIcon = styled(({ className }) =>
@@ -66,11 +78,6 @@ const TwitterIcon = styled(({ className }) =>
   height: 16px !important;
 `
 
-const TwitterFollowers = ({ followers }) =>
-  <div>
-    <TwitterIcon/> <strong>{followers}</strong> followers
-  </div>
-
 const OpenSourceStats = styled(({
   stars,
   starsPrevious,
@@ -78,27 +85,36 @@ const OpenSourceStats = styled(({
   issuesPrevious,
   forks,
   forksPrevious,
+  followers,
+  followersPrevious,
   className,
 }) =>
   <div className={className}>
     <OpenSourceStat
-      icon="star"
+      Icon={() => <Octicon name="star" zoom="100%"/>}
       label="GitHub stars"
       value={stars}
       change={stars - starsPrevious}
       indicateColor={true}
     />
     <OpenSourceStat
-      icon="issue-opened"
+      Icon={() => <Octicon name="issue-opened" zoom="100%"/>}
       label="GitHub open issues"
       value={issues}
       change={issues - issuesPrevious}
     />
     <OpenSourceStat
-      icon="repo-forked"
+      Icon={() => <Octicon name="repo-forked" zoom="100%"/>}
       label="GitHub forks"
       value={forks}
       change={forks - forksPrevious}
+      indicateColor={true}
+    />
+    <OpenSourceStat
+      Icon={() => <TwitterIcon/>}
+      label="Twitter followers"
+      value={followers}
+      change={followers - followersPrevious}
       indicateColor={true}
     />
   </div>
@@ -120,17 +136,27 @@ const Project = ({
   type,
   generators = [],
   stars,
-  followers,
   forks,
   issues,
+  followers,
   starsPrevious = 0,
   forksPrevious = 0,
   issuesPrevious = 0,
+  followersPrevious = 0,
   images,
   description,
   slug,
 }) => {
-  const stats = { stars, starsPrevious, issues, issuesPrevious, forks, forksPrevious }
+  const stats = {
+    stars,
+    starsPrevious,
+    issues,
+    issuesPrevious,
+    forks,
+    forksPrevious,
+    followers,
+    followersPrevious,
+  }
 
   return (
     <Link to={`/projects/${slug}`} className="card">
@@ -139,8 +165,7 @@ const Project = ({
       </div>
       {images ? <img className="photos-inside" src={photos}/> : null}
       <h4 className="title">{title}</h4>
-      {followers ? <TwitterFollowers followers={followers}/> : null}
-      {openSource ? <OpenSourceStats {...stats}/> : null }
+      <OpenSourceStats {...stats}/>
       <div className="description">{description}</div>
       <DataPoint>
         <DataPointTitle>Type:</DataPointTitle>
