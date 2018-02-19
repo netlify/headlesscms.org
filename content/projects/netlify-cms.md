@@ -22,15 +22,15 @@ Netlify CMS is released under the MIT License. Please make sure you understand i
 
 ## Starter Template
 
-There is a starter template (created by clicking below) is built using Casper with Netlify CMS. Check out [https://github.com/netlify-templates](https://github.com/netlify-templates) for a list of other Netlify CMS starter templates, ready to go with just one click.
+There is a starter template (created by clicking below) that uses Hugo with Netlify CMS. Check out [the docs site](https://www.netlifycms.org/docs/start-with-a-template/) for other Netlify CMS starter templates, ready to go with just one click.
 
 <div class="promo">
   <div class="deploy-to-netlify">
     <h3>Get started with 1 click</h3>
-    <p>Introducing the "Deploy to Netlify" button on select JAMstack CMSs to help you deploy new sites from generator-specific templates with a single click. Get a site up with a JAMstack CMS in minutes, with custom domain, HTTPS and continuous delivery completely free of charge.<br><br>
+    <p>Introducing the "Deploy to Netlify" button on select JAMstack CMSs to help you deploy new sites from generator-specific templates with a single click. Get a site up with a JAMstack CMS in minutes with a custom domain, HTTPS, and continuous delivery completely free of charge.<br><br>
     Want your own Deploy to Netlify button? <a href="https://www.netlify.com/docs/deploy_button/">Learn more here</a></p>
-      <em>Click below to give it a try with Netlify CMS's template.</em>
-      <a class="deploy-btn-interior inline" href="https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/casper-cms-template" alt="Deploy to Netlify" title="Deploy to Netlify">
+      <em>Click below to give it a try with Netlify CMS's Hugo template.</em>
+      <a class="deploy-btn-interior inline" href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/one-click-hugo-cms" alt="Deploy to Netlify" title="Deploy to Netlify">
         <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify">
       </a>
     </p>
