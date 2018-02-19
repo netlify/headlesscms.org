@@ -10,6 +10,11 @@ const EntypoIcon = styled(({ Icon, className }) =>
   top: 1px;
 `
 
+const DetailLink = styled.div`
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 18px;
+`
 
 const SiteGenerators = styled.div`
   margin: 20px 0 28px;
@@ -40,18 +45,18 @@ const Project = () =>
         <h1>{title}</h1>
 
         <div className="links">
-          <a href={homepage}><EntypoIcon Icon={EntypoHome}/> {homepage}</a>
+          <DetailLink>
+            <a href={homepage}><EntypoIcon Icon={EntypoHome}/> {homepage}</a>
+          </DetailLink>
           {!twitter ? null :
-            <span>
-              <span className="separator">|</span>
+            <DetailLink>
               <a href={`https://twitter.com/${twitter}`}><EntypoIcon Icon={EntypoTwitter}/> {twitter} ({followers})</a>
-            </span>
+            </DetailLink>
           }
           {!repo ? null :
-            <span>
-              <span className="separator">|</span>
+            <DetailLink>
               <a href={`https://github.com/${repo}`}><EntypoIcon Icon={EntypoGithub}/> https://github.com/{repo} ({stars})</a>
-            </span>
+            </DetailLink>
           }
         </div>
 
