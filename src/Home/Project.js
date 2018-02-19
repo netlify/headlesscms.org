@@ -45,9 +45,12 @@ const OpenSourceStat = styled(({ Icon, value, change, indicateColor, label, clas
       {disabled ? <div>N/A</div> :
         <div>
           <strong>{value}</strong>
-          <OpenSourceStatChange title={`${label} in the last 7 days`} indicateColor={indicateColor}>
-            {changeValue === 0 ? '--' : changeValue}
-          </OpenSourceStatChange>
+          {/*
+            Commenting this out for now, until we have 7 days of data.
+            <OpenSourceStatChange title={`${label} in the last 7 days`} indicateColor={indicateColor}>
+              {changeValue === 0 ? '--' : changeValue}
+            </OpenSourceStatChange>
+          */}
         </div>
       }
     </div>
