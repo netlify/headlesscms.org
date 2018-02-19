@@ -30,7 +30,7 @@ const ControlLabel = styled.div`
 
 const LicenseSectionHeader = styled.h2`
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 400;
   margin-left: 5px;
   margin-top: 48px;
 `
