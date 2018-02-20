@@ -6,6 +6,7 @@ import { map, pick, pickBy, isEmpty, find, chunk, flatten, filter, fromPairs, ma
 import { differenceInMinutes } from 'date-fns'
 import Octokit from '@octokit/rest'
 import Twitter from 'twitter'
+import twitterFollowersCount from 'twitter-followers-count'
 import { toSlug } from 'Scripts/util'
 
 const GITHUB_TOKEN = process.env.HEADLESS_CMS_GITHUB_TOKEN
@@ -18,13 +19,12 @@ const ARCHIVE_FILENAME = 'headless-cms-archive.json'
 const LOCAL_ARCHIVE_PATH = `tmp/${ARCHIVE_FILENAME}`
 const GIST_ARCHIVE_DESCRIPTION = 'HEADLESSCMS.ORG DATA ARCHIVE'
 
-let octokit, twitterClient
+let octokit, getTwitterFollowers
 
 function authenticate() {
   octokit = Octokit()
   octokit.authenticate({ type: 'token', token: GITHUB_TOKEN })
-
-  twitterClient = new Twitter({
+  getTwitterFollowers = twitterFollowersCount({
     consumer_key: TWITTER_CONSUMER_KEY,
     consumer_secret: TWITTER_CONSUMER_SECRET,
     access_token_key: TWITTER_ACCESS_TOKEN_KEY,
@@ -47,15 +47,6 @@ async function getAllProjectGitHubData(repos) {
   return fromPairs(data)
 }
 
-async function getTwitterFollowers(screenNames) {
-  const chunkedScreenNames = chunk(screenNames, 100)
-  const chunkedFollowers = await Promise.all(chunkedScreenNames.map(async names => {
-    const users = await twitterClient.post('users/lookup', { screen_name: names.join(',') })
-    return map(users, user => [ user.screen_name.toLowerCase(), user.followers_count ])
-  }))
-  return fromPairs(flatten(chunkedFollowers))
-}
-
 async function getAllProjectData(projects) {
   const timestamp = Date.now()
   const twitterScreenNames = map(projects, 'twitter').filter(val => val)
@@ -63,7 +54,7 @@ async function getAllProjectData(projects) {
   const gitHubRepos = map(projects, 'repo').filter(val => val)
   const gitHubReposData = await getAllProjectGitHubData(gitHubRepos)
   const data = projects.reduce((obj, { slug, repo, twitter }) => {
-    const twitterData = twitter ? { followers: twitterFollowers[twitter.toLowerCase()] } : {}
+    const twitterData = twitter ? { followers: twitterFollowers[twitter] } : {}
     const gitHubData = repo ? { ...(gitHubReposData[repo]) } : {}
     return { ...obj, [slug]: [{ timestamp, ...twitterData, ...gitHubData }] }
   }, {})
