@@ -3,7 +3,7 @@ require('dotenv').config()
 import path from 'path'
 import fs from 'fs-extra'
 import { map, pick, pickBy, isEmpty, find, chunk, flatten, filter, fromPairs, mapValues } from 'lodash'
-import { differenceInDays } from 'date-fns'
+import { differenceInMinutes } from 'date-fns'
 import Octokit from '@octokit/rest'
 import Twitter from 'twitter'
 import { toSlug } from 'Scripts/util'
@@ -116,13 +116,18 @@ async function updateArchive({ timestamp, data }, archive) {
   return preppedData
 }
 
-function archiveAgeInDays(archive) {
-  return archive && differenceInDays(Date.now(), archive.timestamp)
+/**
+ * Check if archive is expired. Currently set to 1410 minutes, which is 30
+ * minutes short of 24 hours, just in case a daily refresh webhook gets called
+ * a little early.
+ */
+function archiveExpired(archive) {
+  return differenceInMinutes(Date.now(), archive.timestamp) > 1410
 }
 
 async function run(projects) {
   const localArchive = await getLocalArchive()
-  if (localArchive && archiveAgeInDays(localArchive) < 1) {
+  if (localArchive && !archiveExpired(localArchive)) {
     return localArchive.data
   }
 
@@ -130,7 +135,7 @@ async function run(projects) {
   authenticate()
 
   const archive = await getArchive()
-  if (archive && archiveAgeInDays(archive) < 1) {
+  if (archive && !archiveExpired(archive)) {
     await updateLocalArchive(archive)
     return archive.data
   }
