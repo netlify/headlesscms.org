@@ -7349,8 +7349,8 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 twitter-followers-count@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/twitter-followers-count/-/twitter-followers-count-1.0.2.tgz#280ab1451c0fed28fb39b69442ad8c67d1be948d"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/twitter-followers-count/-/twitter-followers-count-1.0.3.tgz#a236fbaf8fa72bdcfb43cb4ce8db1e0bc39c9b1f"
   dependencies:
     tiny-fns "^1.0.3"
     twitter "^1.7.1"
