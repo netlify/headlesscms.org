@@ -33,6 +33,11 @@ const LicenseSectionHeader = styled.h2`
   font-weight: 400;
   margin-left: 5px;
   margin-top: 48px;
+  padding: 0 22px;
+
+  @media (min-width: 700px) {
+    padding: 0;
+  }
 `
 
 const StaticGenPromo = () =>
