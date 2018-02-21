@@ -50,15 +50,16 @@ function mapProjectFrontMatter({
 function extractRelevantProjectData(data) {
   return mapValues(data, project => {
     const timestamps = map(project, 'timestamp');
-    const currentTimestamp = dateFns.max(...timestamps).getTime()
-    const previousWeekTimestamp = dateFns.closestTo(dateFns.subWeeks(Date.now(), 1), timestamps).getTime()
-    const { followers, forks, stars, issues } = find(project, { timestamp: currentTimestamp }) || {}
+    const newestTimestamp = dateFns.max(...timestamps).getTime()
+    const oldestTimestamp = dateFns.min(...timestamps).getTime()
+    const dataAgeInDays = dateFns.differenceInDays(Date.now(), oldestTimestamp)
+    const { followers, forks, stars, issues } = find(project, { timestamp: newestTimestamp }) || {}
     const {
       forks: forksPrevious,
       stars: starsPrevious,
       issues: issuesPrevious,
       followers: followersPrevious,
-    } = find(project, { timestamp: previousWeekTimestamp }) || {}
+    } = find(project, { timestamp: oldestTimestamp }) || {}
     return {
       followers,
       forks,
@@ -69,6 +70,7 @@ function extractRelevantProjectData(data) {
       issuesPrevious,
       followers,
       followersPrevious,
+      dataAgeInDays,
     }
   })
 }

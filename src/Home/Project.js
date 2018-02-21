@@ -33,7 +33,15 @@ const OpenSourceStatIcon = styled.span`
   height: 18px;
 `
 
-const OpenSourceStat = styled(({ Icon, value, change, indicateColor, label, className }) => {
+const OpenSourceStat = styled(({
+  Icon,
+  value,
+  change,
+  indicateColor,
+  label,
+  dataAgeInDays,
+  className
+}) => {
   const disabled = typeof value !== 'number'
   const changeValue = parseFloat(change, 10) > 0 ? `+${change}` : change
 
@@ -45,12 +53,14 @@ const OpenSourceStat = styled(({ Icon, value, change, indicateColor, label, clas
       {disabled ? <div>N/A</div> :
         <div>
           <strong>{value}</strong>
-          {/*
-            Commenting this out for now, until we have 7 days of data.
-            <OpenSourceStatChange title={`${label} in the last 7 days`} indicateColor={indicateColor}>
+          {dataAgeInDays < 1 ? null :
+            <OpenSourceStatChange
+              title={`${label} in the last ${dataAgeInDays} days`}
+              indicateColor={indicateColor}
+            >
               {changeValue === 0 ? '--' : changeValue}
             </OpenSourceStatChange>
-          */}
+          }
         </div>
       }
     </div>
@@ -90,6 +100,7 @@ const OpenSourceStats = styled(({
   forksPrevious,
   followers,
   followersPrevious,
+  dataAgeInDays,
   className,
 }) =>
   <div className={className}>
@@ -99,12 +110,14 @@ const OpenSourceStats = styled(({
       value={stars}
       change={stars - starsPrevious}
       indicateColor={true}
+      dataAgeInDays={dataAgeInDays}
     />
     <OpenSourceStat
       Icon={() => <Octicon name="issue-opened" zoom="100%"/>}
       label="GitHub open issues"
       value={issues}
       change={issues - issuesPrevious}
+      dataAgeInDays={dataAgeInDays}
     />
     <OpenSourceStat
       Icon={() => <Octicon name="repo-forked" zoom="100%"/>}
@@ -112,6 +125,7 @@ const OpenSourceStats = styled(({
       value={forks}
       change={forks - forksPrevious}
       indicateColor={true}
+      dataAgeInDays={dataAgeInDays}
     />
     <OpenSourceStat
       Icon={() => <TwitterIcon/>}
@@ -119,6 +133,7 @@ const OpenSourceStats = styled(({
       value={followers}
       change={followers - followersPrevious}
       indicateColor={true}
+      dataAgeInDays={dataAgeInDays}
     />
   </div>
 )`
@@ -149,6 +164,7 @@ const Project = ({
   images,
   description,
   slug,
+  dataAgeInDays,
 }) => {
   const stats = {
     stars,
@@ -159,6 +175,7 @@ const Project = ({
     forksPrevious,
     followers,
     followersPrevious,
+    dataAgeInDays,
   }
 
   return (

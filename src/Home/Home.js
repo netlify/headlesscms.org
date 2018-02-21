@@ -156,7 +156,7 @@ class Home extends React.Component {
     const licenses = [ 'Open source', 'Closed source' ]
     const sorts = map(SORTS, 'label')
     return (
-      <RouteData render={({ types = [], generators = [], projects = [] }) => {
+      <RouteData render={({ dataAgeInDays, types = [], generators = [], projects = [] }) => {
         const visibleProjects = this.sort(this.filter(projects))
         return (
           <div className="main landing">
@@ -194,7 +194,12 @@ class Home extends React.Component {
             </div>
             <h2 className="cards-header">Open Source</h2>
             <h2 className="cards-header">Closed Source</h2>
-            <Projects projects={visibleProjects} filter={this.state.filter} sort={this.state.sort}/>
+            <Projects
+              dataAgeInDays={dataAgeInDays}
+              projects={visibleProjects}
+              filter={this.state.filter}
+              sort={this.state.sort}
+            />
           </div>
         );
       }}/>
