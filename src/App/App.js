@@ -272,10 +272,6 @@ const AppStyles = styled.div`
     float: right;
   }
 
-  .project.google-drive-cms h4, .project.kentico-cloud h4 {
-    font-size: 24px;
-    margin-top: 7px;
-  }
   .cards-header {
     display: none;
   }
@@ -340,6 +336,9 @@ const AppStyles = styled.div`
     font-weight: normal;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .hidden {

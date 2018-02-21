@@ -146,7 +146,7 @@ const OpenSourceStats = styled(({
 `
 
 
-const Project = ({
+const Project = styled(({
   title,
   repo,
   homepage,
@@ -165,6 +165,7 @@ const Project = ({
   description,
   slug,
   dataAgeInDays,
+  className,
 }) => {
   const stats = {
     stars,
@@ -179,12 +180,12 @@ const Project = ({
   }
 
   return (
-    <Link to={`/projects/${slug}`} className="card">
+    <Link to={`/projects/${slug}`} className={`card ${className}`}>
       <div className={`tag ${openSource ? '' : 'proprietary'}`}>
         {openSource ? 'open source' : null}
       </div>
       {images ? <img className="photos-inside" src={photos}/> : null}
-      <h4 className="title">{title}</h4>
+      <h4 className={`title ${title.length > 14 ? 'title-small' : ''}`}>{title}</h4>
       <OpenSourceStats {...stats}/>
       <div className="description">{description}</div>
       <DataPoint>
@@ -197,6 +198,12 @@ const Project = ({
       </DataPoint>
     </Link>
   )
-}
+})`
+  .title-small {
+    font-size: 24px;
+    padding-top: 7px !important;
+    padding-bottom: 10px !important;
+  }
+`
 
 export default Project
