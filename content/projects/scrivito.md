@@ -39,7 +39,7 @@ Editors love our usability – because our WYSIWYG editing lets them place conte
 
 ## Example App
 
-Scrivito comes with out [example app](https://scrivito-example.netlify.com/) with lots of pre-defined page types and widgets, which you can use use and adapt for your own site.
+Scrivito comes with our [example app](https://scrivito-example.netlify.com/) with lots of pre-defined page types and widgets, which you can use use and adapt for your own site.
 
 Scrivito's pricing starts at $4,99/month, [signup for a 30 day free trial now](https://www.scrivito.com/signup)!
 
