@@ -104,45 +104,62 @@ const OpenSourceStats = styled(({
   className,
 }) =>
   <div className={className}>
-    <OpenSourceStat
-      Icon={() => <Octicon name="star" zoom="100%"/>}
-      label="GitHub stars"
-      value={stars}
-      change={stars - starsPrevious}
-      indicateColor={true}
-      dataAgeInDays={dataAgeInDays}
-    />
-    <OpenSourceStat
-      Icon={() => <Octicon name="issue-opened" zoom="100%"/>}
-      label="GitHub open issues"
-      value={issues}
-      change={issues - issuesPrevious}
-      dataAgeInDays={dataAgeInDays}
-    />
-    <OpenSourceStat
-      Icon={() => <Octicon name="repo-forked" zoom="100%"/>}
-      label="GitHub forks"
-      value={forks}
-      change={forks - forksPrevious}
-      indicateColor={true}
-      dataAgeInDays={dataAgeInDays}
-    />
-    <OpenSourceStat
-      Icon={() => <TwitterIcon/>}
-      label="Twitter followers"
-      value={followers}
-      change={followers - followersPrevious}
-      indicateColor={true}
-      dataAgeInDays={dataAgeInDays}
-    />
+    <p className="days">change in last {dataAgeInDays} days</p>
+    <div className="stats">
+      <OpenSourceStat
+        Icon={() => <Octicon name="star" zoom="100%"/>}
+        label="GitHub stars"
+        value={stars}
+        change={stars - starsPrevious}
+        indicateColor={true}
+        dataAgeInDays={dataAgeInDays}
+      />
+      <OpenSourceStat
+        Icon={() => <Octicon name="issue-opened" zoom="100%"/>}
+        label="GitHub open issues"
+        value={issues}
+        change={issues - issuesPrevious}
+        dataAgeInDays={dataAgeInDays}
+      />
+      <OpenSourceStat
+        Icon={() => <Octicon name="repo-forked" zoom="100%"/>}
+        label="GitHub forks"
+        value={forks}
+        change={forks - forksPrevious}
+        indicateColor={true}
+        dataAgeInDays={dataAgeInDays}
+      />
+      <OpenSourceStat
+        Icon={() => <TwitterIcon/>}
+        label="Twitter followers"
+        value={followers}
+        change={followers - followersPrevious}
+        indicateColor={true}
+        dataAgeInDays={dataAgeInDays}
+      />
+    </div>
   </div>
 )`
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+  padding: 10px 18px 18px;
+  margin: 0 -18px;
   background: #fcfcfc;
-  padding: 18px;
-  margin: 16px -18px 0;
-  display: flex;
+
+  .days {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    color: #888;
+    margin: 0;
+  }
+
+  .stats {
+    display: flex;
+    border: 0;
+    padding: 0;
+    margin: 10px 0 0;
+  }
 `
 
 
