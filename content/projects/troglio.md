@@ -3,7 +3,7 @@ title: Troglio
 repo: Troglio/troglio
 homepage: https://troglio.com/
 twitter: try_troglio
-opensource: "Yes"
+opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:
   - All
