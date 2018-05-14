@@ -5,7 +5,7 @@
 +opensource: "No"
 +typeofcms: "API Driven"
 +supportedgenerators:
-+  All
+ - All
 +description: Quintype is the new age, mobile first publishing platform for digital publishers seeking to amplify audiences & revenues. 
 ---
 ## Benefits of Quintype CMS
