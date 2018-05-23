@@ -3,7 +3,7 @@ title: Editlayer
 homepage: https://editlayer.com
 twitter: Editlayer
 opensource: "No"
-typeofcms: "JSON-based"
+typeofcms: "API Driven"
 supportedgenerators:
   - All
 description: Editlayer is headless CMS that saves content as JSON to CDN
