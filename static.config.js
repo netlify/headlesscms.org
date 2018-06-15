@@ -51,7 +51,12 @@ function extractRelevantProjectData(data) {
   return mapValues(data, project => {
     const timestamps = map(project, 'timestamp');
     const newestTimestamp = dateFns.max(...timestamps).getTime()
-    const oldestTimestamp = dateFns.min(...timestamps).getTime()
+
+    // `targetOldestTimestamp` creates a timestamp which will serve as an anchor, we'll use the
+    // dataset with a timestamp closest to it as our oldest comparison data.
+    const targetOldestTimestamp = dateFns.subWeeks(Date.now(), 1).getTime()
+    const oldestTimestamp = dateFns.closestTo(targetOldestTimestamp, timestamps).getTime()
+
     const dataAgeInDays = dateFns.differenceInDays(Date.now(), oldestTimestamp)
     const { followers, forks, stars, issues } = find(project, { timestamp: newestTimestamp }) || {}
     const {

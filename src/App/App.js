@@ -555,7 +555,7 @@ const AppStyles = styled.div`
     position: relative;
     overflow: hidden;
     height: 32px;
-    width: 150px;
+    width: 200px;
     background: #f2f2f2;
     border: 1px solid;
     border-color: white #f7f7f7 whitesmoke;
@@ -713,6 +713,16 @@ const AppStyles = styled.div`
     .project:nth-of-type(2n+1) { clear: both; }
   }
 
+  @media all and (max-width: 900px) {
+    .projects-filters {
+      margin-right: 10px;
+    }
+
+    .projects-sort {
+      float: left;
+    }
+  }
+
   @media all and (max-width: 700px) {
     .projects-sort-filter-toolbar {
       padding: 0 24px;
@@ -724,6 +734,7 @@ const AppStyles = styled.div`
     }
     .projects-filters {
       float: none;
+      margin-right: 0;
     }
     .projects-sort-filter-toolbar .dropdown {
       display: block;
