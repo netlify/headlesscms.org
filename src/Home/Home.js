@@ -1,22 +1,55 @@
 import React from 'react'
 import { RouteData } from 'react-static'
 import styled from 'styled-components'
-import { partial, sortBy, reverse, map, find, difference, filter } from 'lodash'
+import { partial, sortBy, reverse, map, find, difference, filter, get, isString } from 'lodash'
 import Project from './Project'
 
-const SORTS = [
-  { field: 'stars', label: 'GitHub stars', reverse: true },
-  { field: 'followers', label: 'Twitter followers', reverse: true },
-  { field: 'title', label: 'Title' },
+const SORT_GROUPS = [
+  { name: 'trending', label: 'Trending' },
+  { name: 'total', label: 'Total' },
 ]
 
-const Dropdown = ({ emptyLabel, options, selection, onChange }) => {
+const SORTS = [
+  { name: 'title', label: 'Title' },
+  { name: 'stars', label: 'GitHub stars', group: 'total', reverse: true },
+  { name: 'followers', label: 'Twitter followers', group: 'total', reverse: true },
+  {
+    name: 'starsTrending',
+    label: 'GitHub stars (7 days)',
+    group: 'trending',
+    reverse: true,
+    filterBy: 'stars',
+    compute: p => p.stars - p.starsPrevious,
+  },
+  {
+    name: 'followersTrending',
+    label: 'Twitter followers (7 days)',
+    group: 'trending',
+    reverse: true,
+    filterBy: 'followers',
+    compute: p => p.followers - p.followersPrevious,
+  },
+]
+
+const Dropdown = ({ emptyLabel, options, groups, selection, onChange }) => {
   return (
     <div className="dropdown">
       <select value={selection} className="dropdown-select" onChange={onChange}>
         {emptyLabel ? <option value="">{emptyLabel}</option> : null}
-        {Object.entries(options).map(([ key, value ]) =>
-          <option key={key} value={value}>{value}</option>
+        {options.filter(opt => isString(opt) || !opt.group).map((value, key) => {
+          if (isString(value)) {
+            return <option key={key} value={value}>{value}</option>
+          }
+          if (!value.group) {
+            return <option key={key} value={value.name}>{value.label}</option>
+          }
+        })}
+        {!groups ? null : groups.map(group =>
+          <optgroup label={group.label}>
+            {options.filter(opt => get(opt, 'group') === group.name).map((value, key) =>
+              <option key={key} value={value.name}>{value.label}</option>
+            )}
+          </optgroup>
         )}
       </select>
     </div>
@@ -67,7 +100,7 @@ const ClearfixYesThisIsReallyHappening = styled.div`
 `
 
 const Projects = ({ projects, filter, sort }) => {
-  const shouldUseLicenseSections = !filter.license && sort === 'GitHub stars'
+  const shouldUseLicenseSections = !filter.license && sort.startsWith('stars')
 
   if (shouldUseLicenseSections) {
     const openSourceProjects = projects.filter(({ openSource }) => openSource)
@@ -107,7 +140,7 @@ const Projects = ({ projects, filter, sort }) => {
 class Home extends React.Component {
   state = {
     filter: {},
-    sort: SORTS[0].label,
+    sort: 'starsTrending',
   }
 
   canShow = (project) => {
@@ -119,19 +152,15 @@ class Home extends React.Component {
     return !shouldHide
   }
 
-  getSort = label => {
-    return find(SORTS, { label }) || {}
-  }
-
   sort = projects => {
     const { sort } = this.state
-    const sortObj = find(SORTS, { label: sort }) || {}
-    const sorted = sortBy(projects, sortObj.field)
+    const sortObj = find(SORTS, { name: sort }) || {}
+    const sorted = sortBy(projects, sortObj.compute || sortObj.name)
 
     if (sortObj.reverse) {
-      const withSortField = filter(sorted, sortObj.field)
-      const withoutSortField = difference(sorted, withSortField)
-      return [ ...reverse(withSortField), ...withoutSortField ]
+      const withSort = filter(sorted, sortObj.filterBy || sortObj.name)
+      const withoutSort = difference(sorted, withSort)
+      return [ ...reverse(withSort), ...withoutSort ]
     }
 
     return sorted
@@ -158,7 +187,6 @@ class Home extends React.Component {
     const { type, ssg, license } = this.state.filter
     const { sort } = this.state
     const licenses = [ 'Open source', 'Closed source' ]
-    const sorts = map(SORTS, 'label')
     return (
       <RouteData render={({ dataAgeInDays, types = [], generators = [], projects = [] }) => {
         const visibleProjects = this.sort(this.filter(projects))
@@ -190,7 +218,8 @@ class Home extends React.Component {
                 <ControlLabel>Sort</ControlLabel>
                 <Dropdown
                   name="sort"
-                  options={sorts}
+                  options={SORTS}
+                  groups={SORT_GROUPS}
                   selection={sort}
                   onChange={this.handleSortChange}
                 />
