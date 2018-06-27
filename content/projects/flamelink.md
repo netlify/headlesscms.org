@@ -1,9 +1,9 @@
 ---
-title: Flamelink 🔥🔗
+title: Flamelink
 homepage: https://flamelink.io
 twitter: FlamelinkCMS
 opensource: "No"
-typeofcms: "Realtime Headless"
+typeofcms: "API Driven"
 supportedgenerators:
   - All
 description: Flamelink is an easy to use, headless CMS specifically developed to add & manage content in Firebase
@@ -23,15 +23,11 @@ It's fast, secure, scalable and reliable. Flamelink leverages the power and feat
 
 ## Customized Content
 
-<img src="/images/flamelink-bro.png" title="Flamelink: Do you even add and manage content, bro?">
-
 Flamelink removes the guesswork by allowing you to create the content models you want via the CMS you need.
 
 ## Flexible Frontends
 
-<img src="/images/flamelink-flexible.png" title="Flamelink Flexibility">
-
-Put your best foot forward by coding in your favourite framework. Flamelink isn't judging.
+Put your best foot forward by coding in your favorite framework. Flamelink isn't judging.
 
 ## Realtime Updates
 
