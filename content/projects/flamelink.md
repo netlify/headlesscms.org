@@ -13,9 +13,9 @@ images:
 
 ## Flamelink CMS
 
-[Flamelink](https://flamelink.io) is an easy-to-use, headless CMS that seamlessly integrates with Google's Firebase.
+[Flamelink](https://flamelink.io) is a realtime, headless CMS for Firebase. Flamelink offers Coders and Content Managers an easy-to-use interface to add, manage and update content seamlessly integrated with their Firebase project. This lets Developers do what they do best — write white-hot code, while Content Managers can play around with content to their hearts desire.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*e5OXL_6lu3-1cuDbwplboQ.png" title="Flamelink Navigation">
+<img src="/images/flamelink-navigation.png" title="Flamelink Navigation">
 
 ## Powered by Google's Firebase
 
@@ -23,13 +23,13 @@ It's fast, secure, scalable and reliable. Flamelink leverages the power and feat
 
 ## Customized Content
 
-<img src="https://cdn-images-1.medium.com/max/800/1*xf5BWgbFria1A2qR4oweDg.png" title="Flamelink: Do you even add and manage content, bro?">
+<img src="/images/flamelink-bro.png" title="Flamelink: Do you even add and manage content, bro?">
 
 Flamelink removes the guesswork by allowing you to create the content models you want via the CMS you need.
 
 ## Flexible Frontends
 
-<img src="https://cdn-images-1.medium.com/max/800/1*YDpXH3yOIQ68bbe6TJo8eg.png" title="Flamelink Flexibility">
+<img src="/images/flamelink-flexible.png" title="Flamelink Flexibility">
 
 Put your best foot forward by coding in your favourite framework. Flamelink isn't judging.
 
@@ -44,3 +44,7 @@ Easily [integrate](https://flamelink.github.io/flamelink) with your Flamelink CM
 - Promise-based, simple and intuitive API
 - Supports multiple languages and environments
 - Built on top of the Firebase SDK
+
+> If you want to know more, check our [explainer video](https://youtu.be/8Cw5ktNADBQ) by clicking below.
+
+[![FLAMELINK EXPLAINER](/images/flamelink-explainer.jpg)](https://youtu.be/8Cw5ktNADBQ)
