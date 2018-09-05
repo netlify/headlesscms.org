@@ -2,11 +2,15 @@
 title: Sanity
 homepage: https://www.sanity.io
 twitter: sanity_io
+repo: sanity-io/sanity
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
 description: Sanity is the fully customizable, headless CMS.
+images:
+  - path: /images/sanity-content-studio.png
+  - path: /images/sanity-hosted-backend.png
 ---
 
 Sanity is a hosted backend for structured content with a real-time API, globally distributed CDN, and a powerful, but simple query language. It comes with a open source React-based editor, that can be configured with basic JavaScript.
@@ -19,7 +23,7 @@ Read the
 [documentation](https://www.sanity.io/docs/introduction/getting-started) on how
 to get started
 
-## Real-time CMS
+## Real-time CMS for structured content
 
 Edit structured, highly connected documents collaboratively
 
@@ -28,9 +32,9 @@ Edit structured, highly connected documents collaboratively
 Extend with your own data types, custom user interfaces and third-party
 integrations.
 
-## Block editor
+## Editor for structured text
 
-Rich text editor yields structured data. Embed editable data in running text.
+Rich text editor yields structured content. Embed editable data in running text.
 Defer markup to render time. No HTML, ever!
 
 ## Bring your own front-end
