@@ -9,9 +9,7 @@ supportedgenerators:
 description: Sanity is the fully customizable, headless CMS.
 ---
 
-Sanity is a headless, real-time CMS where the front end is an open source
-React-based construction kit and the back end is a graph-oriented cloud
-datastore with a globally distributed CDN.
+Sanity is a hosted backend for structured content with a real-time API, globally distributed CDN, and a powerful, but simple query language. It comes with a open source React-based editor, that can be configured with basic JavaScript.
 
 ## Quick start
 
