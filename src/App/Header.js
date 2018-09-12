@@ -115,7 +115,7 @@ const Header = () => (
             href="https://github.com/netlify/headlesscms.org"
             bannerColor="#313d3e"
             size="100"
-            svgStyle={{ "z-index": 300 }}
+            svgStyle={{ "z-index": "300" }}
           />
         </div>
         <div className="navbar">
