@@ -53,21 +53,19 @@ const JamstackConfBanner = () => (
   </div>
 );
 const JamstackConfBannerStyled = styled(JamstackConfBanner)`
-  .promo-banner {
-    background-color: #000;
-    color: #fff;
-    display: block;
-    text-align: center;
-    z-index: 200;
-    position: fixed;
+  background-color: #000;
+  color: #fff;
+  display: block;
+  text-align: center;
+  z-index: 200;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  p {
     margin: 0;
-    padding: 0;
-    width: 100%;
-    p {
-      margin: 0;
-      padding-top: 0.6em;
-      padding-bottom: 0.6em;
-    }
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
   }
 `;
 // swyx: temporary insert jamstack conf banner
