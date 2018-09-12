@@ -43,8 +43,8 @@ const ShareButton = styled(({ type, url, color, className, text }) => {
 `;
 
 // swyx: temporary insert jamstack conf banner
-const JamstackConfBanner = () => (
-  <div className="promo-banner">
+const JamstackConfBanner = ({ className }) => (
+  <div className={className}>
     <p>
       Learn more about the JAMstack at{" "}
       <a href="https://jamstackconf.com">JAMstack Conf</a>, San Francisco —
