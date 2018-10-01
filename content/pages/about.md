@@ -31,7 +31,7 @@ Headlesscms.org is run by [Netlify](https://www.netlify.com), an automation and 
 
 ## How is it made
 
-This site itself is built with [Victor Hugo](https://github.com/netlify/victor-hugo), an open-source boilerplate for Hugo (a site generator). [Netlify](https://www.netlify.com) builds and deploys the site daily. The source-code is available on GitHub and you’re more than welcome to [contribute](/contribute).
+This site itself is built with [react-static](https://github.com/nozzle/react-static), an open-source progressive static site generator for React. [Netlify](https://www.netlify.com) builds and deploys the site daily. The source-code is available on GitHub and you’re more than welcome to [contribute](/contribute).
 
 ## Explanation of Categories
 
