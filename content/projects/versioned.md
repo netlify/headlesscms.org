@@ -14,7 +14,7 @@ An admin UI and API backend that deliver content faster and cheaper to your webs
 
 ### Fully Managed and 100% Open Source
 
-No software development or operations required. Let your team focus on what they do best - building your product. The fact that all software is [open source](https://github.com/versioned-cms) gives you flexibility and ownership.
+No software development or operations required. Let your team focus on what they do best - building your product. The fact that all software is [open source](https://github.com/versioned) gives you flexibility and ownership.
 
 ### Dedicated Database/Storage/Search
 
