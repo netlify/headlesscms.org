@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Link } from 'react-static'
+import { Router } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
@@ -804,11 +804,11 @@ const AppStyles = styled.div`
 const App = () => (
   <Router>
     <AppStyles>
-      <Header/>
+      <Header />
       <div className="content">
         <Routes />
       </div>
-      <Footer/>
+      <Footer />
     </AppStyles>
   </Router>
 )
