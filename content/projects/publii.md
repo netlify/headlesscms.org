@@ -3,9 +3,9 @@ title: Publii
 repo: GetPublii/Publii
 homepage: https://getpublii.com/
 opensource: "Yes"
-typeofcms: ""
+typeofcms: "Git-based"
 supportedgenerators:
-  - All
+  - "Built In"
 description: Publii is a desktop-based CMS for Windows, Mac and Linux that makes creating static websites fast and hassle-free, even for beginners. 
 ---
 ## Publii
