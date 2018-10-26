@@ -45,7 +45,7 @@ const Dropdown = ({ emptyLabel, options, groups, selection, onChange }) => {
           }
         })}
         {!groups ? null : groups.map(group =>
-          <optgroup label={group.label}>
+          <optgroup key={group.name} label={group.label}>
             {options.filter(opt => get(opt, 'group') === group.name).map((value, key) =>
               <option key={key} value={value.name}>{value.label}</option>
             )}
