@@ -1,7 +1,7 @@
 ---
 title: GraphCMS
 homepage: https://graphcms.com/
-twitter: https://twitter.com/GraphCMS
+twitter: GraphCMS
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
