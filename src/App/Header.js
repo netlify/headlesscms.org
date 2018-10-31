@@ -48,7 +48,7 @@ const JamstackConfBanner = ({ className }) => (
     <p>
       Learn more about the JAMstack at{' '}
       <a href="https://jamstackconf.com">JAMstack Conf</a>, San Francisco —
-      29-30 October, 2018
+      29–30 October, 2018
     </p>
   </div>
 )
@@ -115,7 +115,7 @@ const Header = () => (
             href="https://github.com/netlify/headlesscms.org"
             bannerColor="#313d3e"
             size="100"
-            svgStyle={{ 'z-index': '300' }}
+            svgStyle={{ zIndex: 300 }}
           />
         </div>
         <div className="navbar">
