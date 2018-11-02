@@ -1,7 +1,7 @@
 import React from 'react'
 import { RouteData } from 'react-static'
 import styled from 'styled-components'
-import { partial, sortBy, reverse, map, find, difference, filter, get, isString } from 'lodash'
+import { partial, sortBy, reverse, find, difference, filter, get, isString } from 'lodash'
 import Project from './Project'
 
 const SORT_GROUPS = [
@@ -31,30 +31,25 @@ const SORTS = [
   },
 ]
 
-const Dropdown = ({ emptyLabel, options, groups, selection, onChange }) => {
-  return (
-    <div className="dropdown">
-      <select value={selection} className="dropdown-select" onChange={onChange}>
-        {emptyLabel ? <option value="">{emptyLabel}</option> : null}
-        {options.filter(opt => isString(opt) || !opt.group).map((value, key) => {
-          if (isString(value)) {
-            return <option key={key} value={value}>{value}</option>
-          }
-          if (!value.group) {
-            return <option key={key} value={value.name}>{value.label}</option>
-          }
-        })}
-        {!groups ? null : groups.map(group =>
-          <optgroup label={group.label}>
-            {options.filter(opt => get(opt, 'group') === group.name).map((value, key) =>
-              <option key={key} value={value.name}>{value.label}</option>
-            )}
-          </optgroup>
-        )}
-      </select>
-    </div>
-  );
-};
+const Dropdown = ({ emptyLabel, options, groups, selection, onChange }) => (
+  <div className="dropdown">
+    <select value={selection} className="dropdown-select" onChange={onChange}>
+      {emptyLabel && <option value="">{emptyLabel}</option>}
+      {options.filter(opt => isString(opt) || !opt.group).map((value, key) =>
+        isString(value)
+          ? <option key={key} value={value}>{value}</option>
+          : <option key={key} value={value.name}>{value.label}</option>
+      )}
+      {groups && groups.map(group => (
+        <optgroup label={group.label}>
+          {options.filter(opt => get(opt, 'group') === group.name).map((value, key) =>
+            <option key={key} value={value.name}>{value.label}</option>
+          )}
+        </optgroup>
+      ))}
+    </select>
+  </div>
+)
 
 const ControlLabel = styled.div`
   font-weight: 600;
@@ -73,21 +68,24 @@ const LicenseSectionHeader = styled.h2`
   }
 `
 
-const StaticGenPromo = () =>
+const StaticGenPromo = () => (
   <li className="project staticgen-promo">
     <h3>
-      Also visit <a href="https://www.staticgen.com" target="_blank">staticgen.com</a>
+      Also visit
+      <a href="https://www.staticgen.com" rel="noopener noreferrer" target="_blank">staticgen.com</a>
       for a ranked list of open source static site generators!
     </h3>
   </li>
+)
 
-const ProjectCard = ({ project }) =>
+const ProjectCard = ({ project }) => (
   <li className="project">
-    <Project key={project.slug} { ...project }/>
+    <Project key={project.slug} {...project} />
   </li>
+)
 
 const withStaticGenPromo = arr => {
-  arr.splice(3, 0, <StaticGenPromo key="static-gen-promo"/>)
+  arr.splice(3, 0, <StaticGenPromo key="static-gen-promo" />)
   return arr
 }
 
@@ -112,14 +110,16 @@ const Projects = ({ projects, filter, sort }) => {
           <LicenseSectionHeader>Open source</LicenseSectionHeader>
           <ul className="projects">
             {withStaticGenPromo(openSourceProjects.map(project =>
-              <ProjectCard key={project.slug} project={project}/>
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </ul>
         </ClearfixYesThisIsReallyHappening>
         <ClearfixYesThisIsReallyHappening>
           <LicenseSectionHeader>Closed source</LicenseSectionHeader>
           <ul className="projects">
-            {closedSourceProjects.map(project => <ProjectCard key={project.slug} project={project}/>)}
+            {closedSourceProjects.map(project =>
+              <ProjectCard key={project.slug} project={project} />
+            )}
           </ul>
         </ClearfixYesThisIsReallyHappening>
       </div>
@@ -130,7 +130,7 @@ const Projects = ({ projects, filter, sort }) => {
     <div>
       <ul className="projects">
         {withStaticGenPromo(projects.map(project =>
-          <ProjectCard key={project.slug} project={project}/>
+          <ProjectCard key={project.slug} project={project} />
         ))}
       </ul>
     </div>
@@ -143,7 +143,7 @@ class Home extends React.Component {
     sort: 'starsTrending',
   }
 
-  canShow = (project) => {
+  canShow = project => {
     const { license, ssg, type } = this.state.filter
     const shouldHide = (license === 'Open source' && !project.openSource)
       || (license === 'Closed source' && project.openSource)
@@ -160,22 +160,20 @@ class Home extends React.Component {
     if (sortObj.reverse) {
       const withSort = filter(sorted, sortObj.filterBy || sortObj.name)
       const withoutSort = difference(sorted, withSort)
-      return [ ...reverse(withSort), ...withoutSort ]
+      return [...reverse(withSort), ...withoutSort]
     }
 
     return sorted
   }
 
-  filter = projects => {
-    return projects.filter(this.canShow)
-  }
+  filter = projects => projects.filter(this.canShow)
 
   handleFilterChange = (filter, event) => {
     this.setState({
       filter: {
         ...this.state.filter,
         [filter]: event.target.value,
-      }
+      },
     })
   }
 
@@ -183,10 +181,10 @@ class Home extends React.Component {
     this.setState({ sort: event.target.value })
   }
 
-  render() {
+  render () {
     const { type, ssg, license } = this.state.filter
     const { sort } = this.state
-    const licenses = [ 'Open source', 'Closed source' ]
+    const licenses = ['Open source', 'Closed source']
     return (
       <RouteData render={({ dataAgeInDays, types = [], generators = [], projects = [] }) => {
         const visibleProjects = this.sort(this.filter(projects))
@@ -234,10 +232,10 @@ class Home extends React.Component {
               sort={this.state.sort}
             />
           </div>
-        );
-      }}/>
+        )
+      }} />
     )
   }
 }
 
-export default Home;
+export default Home
