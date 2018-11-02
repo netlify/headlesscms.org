@@ -66,7 +66,7 @@ const Project = () => (
 
         {images &&
           <div className="images">
-            {images.map(({ path }) => <img alt="" key={path} src={path} className="responsive"/>)}
+            {images.map(({ path }) => <img alt="" key={path} src={path} className="responsive" />)}
           </div>
         }
 
