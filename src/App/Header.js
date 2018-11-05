@@ -84,10 +84,6 @@ const Header = () => (
           </title>
         </Head>
 
-        {/* swyx: temporary insert jamstack conf banner */}
-        <JamstackConfBannerStyled />
-        {/* swyx: temporary insert jamstack conf banner */}
-
         <div className="hero">
           <h1>
             <Link to="/" title="headlessCMS">
