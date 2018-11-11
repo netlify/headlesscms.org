@@ -26,7 +26,7 @@ npm start
 In order to successfully retrieve Twitter followers and GitHub stars, you will need authentication
 keys for both services.
 
-For GitHub, all you'll need is a personal access token. This can be generated at
+For GitHub you'll need is a personal access token with permission to create Gists. This can be generated at
 <https://github.com/settings/tokens>. For Twitter, you need to create an application at
 <https://apps.twitter.com> to get the necessary tokens. When deploying, you must set the environment
 variables per the example below. If you are developing locally, you can set
