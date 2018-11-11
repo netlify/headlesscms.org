@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Octicon from 'react-component-octicons'
 import { EntypoTwitter } from 'react-entypo'
 import photos from 'Images/photos.svg'
+import NumberFormat from 'react-number-format'
 
 const DataPoint = styled.div`
   margin-top: 8px;
@@ -51,7 +52,7 @@ const OpenSourceStat = styled(({
       </OpenSourceStatIcon>
       {disabled ? <div>N/A</div> : (
         <div>
-          <strong>{value}</strong>
+          <strong><NumberFormat value={value} displayType="text" thousandSeparator /></strong>
           {dataAgeInDays >= 1 &&
             <OpenSourceStatChange
               title={`${label} in the last ${dataAgeInDays} day${dataAgeInDays === 1 ? '' : 's'}`}
