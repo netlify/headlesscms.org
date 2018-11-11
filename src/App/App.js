@@ -157,39 +157,34 @@ const AppStyles = styled.div`
   }
 
   .navbar {
-    height: 45px;
     background: #313D3E;
     overflow: hidden;
     z-index: 100;
   }
 
-  .menu.right {
-    text-align: right;
+  .menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
-  .menu > ul {
-    list-style: none;
+  .menu li {
     margin: 0;
     padding: 0;
   }
 
-  .menu > ul > li {
-    display: inline-block;
-    line-height: 45px;
-    height: 45px;
-  }
-
-  .menu > ul > li > a {
-    display: inline-block;
-    line-height: 45px;
-    height: 45px;
+  .menu a {
+    display: block;
+    padding: 10px 15px;
     color: #fff;
     text-decoration: none;
     font-weight: normal;
-    margin-left: 16px;
   }
 
-  .menu > ul > li > a:hover {
+  .menu a:hover {
     color: #5f90ff;
   }
 
@@ -209,11 +204,19 @@ const AppStyles = styled.div`
   }
 
   .sheet {
+    max-width: 900px;
+    margin: 0 auto;
     padding: 12px 47px 47px;
+    font-size: 19px;
+    line-height: 1.55em;
   }
   .sheet h1 {
-      margin: 0 0 20px;
+      margin: 0 0 10px;
+      padding: 15px 0;
       border-bottom: 1px solid #444;
+  }
+  .links {
+    font-size: 15px;
   }
   .links a {
       text-decoration: none;
@@ -223,7 +226,7 @@ const AppStyles = styled.div`
       color: #222;
   }
   .sheet p {
-      margin: 0 0 16px;
+      margin: 0 0 32px;
   }
   .separator {
       margin: 0 9px;
@@ -234,10 +237,10 @@ const AppStyles = styled.div`
       margin-right: 4px;
   }
   .sheet h3 {
-    margin: 18px 0 0;
+    margin: 18px 0 5px;
   }
   .sheet h4 {
-    margin: 12px 0 0;
+    margin: 12px 0 5px;
     line-height: 1.2;
   }
   .sheet ol, .sheet ul {
@@ -256,6 +259,9 @@ const AppStyles = styled.div`
     width: 100%;
     border: none;
     box-shadow: 0 0 7px rgba(0,0,0,.2);
+  }
+  .sheet img.simple {
+    box-shadow: none;
   }
 
   .projects, .stats, .trends {
@@ -507,7 +513,7 @@ const AppStyles = styled.div`
   }
 
   .footer {
-    background: #B6B6B6;
+    background: #313D3E;
     margin: 46px 0 0;
     padding: 46px 46px 23px;
   }
@@ -534,9 +540,12 @@ const AppStyles = styled.div`
   }
 
   .footer h3 {
+    max-width: 800px;
+    margin: 0 auto;
     color: white;
     font-weight: 100;
     font-size: 29px;
+    line-height: 1.5em;
     text-align: center;
   }
   .footer h3 a, .footer h3 a:visited, .footer h3 a:active, .footer h3 a:hover {
@@ -696,11 +705,7 @@ const AppStyles = styled.div`
     .navbar {
       height: initial;
     }
-    .menu > ul > li {
-      display: block;
-      text-align: center;
-    }
-    .navbar .menu a { margin-left: 0; }
+
   }
 
   @media all and (min-width: 500px) {
