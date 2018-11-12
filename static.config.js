@@ -191,7 +191,7 @@ export default {
           <Head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+            <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
 
             <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
 
