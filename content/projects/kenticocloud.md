@@ -24,3 +24,6 @@ Use the super-fast API to display your content on the web, in mobile apps, or on
 
 Track and analyze customer journeys. Deliver a personalized experience.
 
+### Static Site Generators
+
+See examples of [static site generators using Kentico Cloud as a content repository](https://developer.kenticocloud.com/v1/docs/static-site-generators).
