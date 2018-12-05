@@ -1,6 +1,6 @@
 ---
 title: dotCMS
-repo: /dotCMS/core
+repo: dotCMS/core
 homepage: https://www.dotcms.com/
 twitter: dotcms
 opensource: "Yes"
