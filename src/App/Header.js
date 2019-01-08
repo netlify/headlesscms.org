@@ -79,7 +79,7 @@ const Header = () => (
             {`${
               title
                 ? `${title} | headlessCMS`
-                : 'headlessCMS | Top Content Management Systems for JAMstack sites'
+                : "headlessCMS | Top Content Management Systems for JAMstack sites"
             }`}
           </title>
         </Head>
@@ -109,8 +109,8 @@ const Header = () => (
 
           <GitHubCorner
             href="https://github.com/netlify/headlesscms.org"
-            bannerColor="#313d3e"
-            size="100"
+            bannerColor="#24292e"
+            size="90"
             svgStyle={{ zIndex: 300 }}
           />
         </div>
@@ -125,7 +125,11 @@ const Header = () => (
                   <Link to="/contribute">Contribute</Link>
                 </li>
                 <li>
-                  <a href="https://jamstack.org/" rel="noopener noreferrer" target="_blank">
+                  <a
+                    href="https://jamstack.org/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
                     What is JAMstack?
                   </a>
                 </li>
@@ -139,6 +143,6 @@ const Header = () => (
       </div>
     )}
   />
-)
+);
 
 export default Header

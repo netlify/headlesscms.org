@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { reloadRoutes } from 'react-static/node'
+import chokidar from 'chokidar'
 import { ServerStyleSheet } from 'styled-components'
 import { map, mapValues, find, uniq, flatten, sortBy, pickBy } from 'lodash'
 import decamelize from 'decamelize'
@@ -6,9 +8,11 @@ import dateFns from 'date-fns'
 import { toSlug } from 'Scripts/util'
 import grayMatter from 'gray-matter'
 import marked from 'marked'
-import fetchArchive from './scripts/fetch-archive'
 import * as projectsMarkdown from './content/projects/*.md'
 import * as pagesMarkdown from './content/pages/*.md'
+import fetchArchive from './scripts/fetch-archive'
+
+chokidar.watch('./content').on('all', () => reloadRoutes())
 
 const SITE_URL = 'https://headlesscms.org'
 
@@ -187,7 +191,7 @@ export default {
           <Head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+            <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
 
             <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
 

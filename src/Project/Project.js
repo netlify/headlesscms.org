@@ -2,6 +2,7 @@ import React from 'react'
 import { RouteData } from 'react-static'
 import styled from 'styled-components'
 import { EntypoHome, EntypoTwitter, EntypoGithub } from 'react-entypo'
+import NumberFormat from 'react-number-format'
 
 const EntypoIcon = styled(({ Icon, className }) =>
   <Icon className={className} />
@@ -49,12 +50,12 @@ const Project = () => (
           </DetailLink>
           {twitter &&
             <DetailLink>
-              <a href={`https://twitter.com/${twitter}`}><EntypoIcon Icon={EntypoTwitter} /> {twitter} ({followers})</a>
+              <a href={`https://twitter.com/${twitter}`}><EntypoIcon Icon={EntypoTwitter} /> {twitter} (<NumberFormat value={followers} displayType="text" thousandSeparator />)</a>
             </DetailLink>
           }
           {repo &&
             <DetailLink>
-              <a href={`https://github.com/${repo}`}><EntypoIcon Icon={EntypoGithub} /> https://github.com/{repo} ({stars})</a>
+              <a href={`https://github.com/${repo}`}><EntypoIcon Icon={EntypoGithub} /> https://github.com/{repo} (<NumberFormat value={stars} displayType="text" thousandSeparator />)</a>
             </DetailLink>
           }
         </div>
