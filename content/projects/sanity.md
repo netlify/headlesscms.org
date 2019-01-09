@@ -51,3 +51,4 @@ your favourite language or framework below? Get in touch!
 
 * [JS Client](https://www.sanity.io/docs/client-libraries/js-client)
 * [PHP Client](https://www.sanity.io/docs/client-libraries/php-client)
+* [C# .NET LINQ Client](https://github.com/oslofjord/sanity-linq)
