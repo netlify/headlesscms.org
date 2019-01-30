@@ -2,6 +2,8 @@
 
 [headlesscms.org](http://www.headlesscms.org), a leaderboard of top open-source static site content management systems.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ff98559c-c0a7-498d-9989-27f09b139e6f/deploy-status)](https://app.netlify.com/sites/headlesscms/deploys)
+
 ## Contributing
 
 Missing a headless CMS here? Just fork the repo and add yours as a `<name>.md` in the
