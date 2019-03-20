@@ -7,39 +7,43 @@ opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-description: Strapi is the most advanced open-source Node.js Content Management Framework to build powerful API with no effort.
+description: Strapi is an open sourced Headless CMS Front-End Developers Love. It's more than a Node.js Framework and more than a Headless CMS, it saves API development time through a beautiful admin panel anyone can use.
 images:
   - path: /images/strapi-content-type-builder.png
   - path: /images/strapi-content-manager.png
 ---
-## Drastically reduce your API development time
+## Building self-hosted, customizable and performant Content APIs has never been easier.
 
-Strapi is the most advanced open-source Node.js Content Management Framework to build powerful API with no effort.
+Strapi is an open sourced Headless CMS Front-End Developers Love. It's more than a Node.js Framework and more than a Headless CMS, it saves API development time through a beautiful admin panel anyone can use.
 
-### API-first
+### Open source
 
-Strapi offers a powerful API to deliver content.
+Free and open source, forever. The entire codebase is available on GitHub and is maintained by hundreds of contributors.
 
-### Front-end agnostic
+### Self-hosted
 
-Consume your API from any client: website, mobile application, IoT...
+Security is crucial for companies. Host your data safely, on your own servers. GDPR compliant.
 
-### Settings Manager
+### Customizable
 
-Edit the configuration and adjust security rules of your Strapi project.
+Each project requires specific requirements. Easily customize the admin panel as well as the API.
 
-### Content Type Builder
+### RESTful or GraphQL
 
-Define the data structure of your API, create relations and generate code according to your needs.
+Consume the API from any client (React, Vue, Angular), mobile apps or even IoT, using REST or GraphQL.
 
-### Content Manager
+### 100% JavaScript
 
-Auto-generated content interface. Discover, create and edit the data managed by your API.
+One language to rule them all. Use JavaScript everywhere: both for your front-end and your Headless CMS.
 
-### Users and Permissions
+### Extensible by design
 
-Authentication and permissions system. Easily and precisely manage users permissions.
+Plugins system included. Install auth system, content management, custom plugins, and more, in seconds.
 
-### Demo
+### Authentications & Permissions
 
-Watch the demo: https://strapi.io/demo.
+Secure your endpoints by allowing or not allowing users to access your API by role.
+
+### Get Started
+
+Get started: [Getting Started Docs](https://strapi.io/documentation/3.x.x/getting-started/quick-start.html)
