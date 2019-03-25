@@ -3,6 +3,7 @@ title: headly.io
 homepage: https://headly.io
 opensource: "No"
 typeofcms: "API Driven"
+twitter: headlyio
 supportedgenerators:
   - All
 description: A robust, headless content management system with both the editor and developer in mind
