@@ -3,7 +3,7 @@ title: AbeCMS
 repo: abecms/abecms
 homepage: https://abecms.org/
 opensource: "Yes"
-typeofcms: "Git-based"
+typeofcms: "API Driven"
 supportedgenerators:
   - Jekyll
 description: The lightning fast CMS. Turn any static website into a powerful CMS in seconds..
