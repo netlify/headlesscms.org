@@ -2,7 +2,7 @@
 title: Ghost
 repo: TryGhost/Ghost
 homepage: https://ghost.org
-twitter: TryGhost
+twitter: Ghost
 opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:
