@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs-extra'
 import { map, find, fromPairs, mapValues } from 'lodash'
-import { differenceInMinutes } from 'date-fns'
+import { differenceInMinutes, differenceInDays } from 'date-fns'
 import Octokit from '@octokit/rest'
 import twitterFollowersCount from 'twitter-followers-count'
 
@@ -95,11 +95,18 @@ function editGist (content, id) {
   return octokit.gists.edit({ id, files: { [ARCHIVE_FILENAME]: { content } } })
 }
 
+function removeOutdated(data, days) {
+  return data.filter(({ timestamp }) => differenceInDays(Date.now(), timestamp) <= days)
+}
+
 async function updateArchive ({ timestamp, data }, archive) {
   const preppedData = archive
     ? {
       timestamp,
-      data: mapValues(data, (projectData, name) => [...projectData, ...(archive.data[name] || [])]),
+      data: mapValues(data, (projectData, name) => {
+        const projectArchive = removeOutdated(archive.data[name] || [], 30)
+        return [...projectData, ...projectArchive]
+      }),
     }
     : { timestamp, data }
   const content = JSON.stringify(preppedData)
