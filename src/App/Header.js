@@ -47,8 +47,7 @@ const JamstackConfBanner = ({ className }) => (
   <div className={className}>
     <p>
       Learn more about the JAMstack at{' '}
-      <a href="https://jamstackconf.com">JAMstack Conf</a>, San Francisco —
-      29–30 October, 2018
+      <a href="https://jamstackconf.com/london">JAMstack Conf</a> in London — 9-10 July, 2019
     </p>
   </div>
 )
@@ -67,13 +66,18 @@ const JamstackConfBannerStyled = styled(JamstackConfBanner)`
     padding-top: 0.6em;
     padding-bottom: 0.6em;
   }
+  a:link,
+  a:visited {
+    color: #00c7b7;
+  }
 `
-// swyx: temporary insert jamstack conf banner
+// temporary insert jamstack conf banner
 
 const Header = () => (
   <RouteData
     render={({ title, shareUrl, shareText }) => (
       <div>
+        <JamstackConfBannerStyled />
         <Head>
           <title>
             {`${
@@ -83,7 +87,6 @@ const Header = () => (
             }`}
           </title>
         </Head>
-
         <div className="hero">
           <h1>
             <Link to="/" title="headlessCMS">

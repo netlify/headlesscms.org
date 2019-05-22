@@ -115,7 +115,7 @@ const AppStyles = styled.div`
     background: linear-gradient(-45deg, #FF5F6D , #FFC371);
     background-size: cover;
     text-align: center;
-    padding: 29px 0;
+    padding: 60px 0 29px 0;
   }
   .hero h1 {
     margin: 31px 0 0;
