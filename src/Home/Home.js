@@ -19,7 +19,7 @@ const SORTS = [
     group: 'trending',
     reverse: true,
     filterBy: 'stars',
-    compute: p => p.stars - p.starsPrevious,
+    compute: p => p.stars - (p.starsPrevious || 0),
   },
   {
     name: 'followersTrending',
@@ -27,7 +27,7 @@ const SORTS = [
     group: 'trending',
     reverse: true,
     filterBy: 'followers',
-    compute: p => p.followers - p.followersPrevious,
+    compute: p => p.followers - (p.followersPrevious || 0),
   },
 ]
 
