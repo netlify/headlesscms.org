@@ -25,7 +25,7 @@ Keep your existing powerful architecture and avoid the additional costs of chang
 
 Every site has different needs. brXM offers the full spectrum of delivery, from "owning the glass" to headless delivery, and anything in between. For even more flexibility Bloomreach offers a hybrid approach where you can pick and choose various delivery models for different parts of the site.
 
-  - path: /images/bloomreach_delivery_options.png
+<img class="simple" src="/images/bloomreach_delivery_options.png" alt="Bloomreach Delivery Options" />
 
 ### Enterprise-grade
 
@@ -33,4 +33,9 @@ The last CMS you’ll ever need. Efficient caching, high-availability, industry-
 
 ### Get Started
 
+Bloomreach has been proudly open source for over a decade. We are a member and active contributor to the Apache Software Foundation. Get started by downloading Bloomreach Experience Manager today.
+
 [Try for free](https://developers.bloomreach.com/products/cms)
+
+
+[Bloomreach.com](https://developers.bloomreach.com/) | [Features](https://developers.bloomreach.com/products/cms) | [Open Source](https://developers.bloomreach.com/open-source) | [Github](https://github.com/bloomreach) | [Forum](https://community.bloomreach.com) | [Documentation](https://documentation.bloomreach.com)
