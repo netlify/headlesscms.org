@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@octokit/rest": "^14.0.9",
-    "chokidar": "^2.0.4",
+    "chokidar": "^3.0.2",
     "date-fns": "^1.29.0",
     "decamelize": "^2.0.0",
     "dotenv": "^5.0.0",
