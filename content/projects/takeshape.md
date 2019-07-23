@@ -2,7 +2,7 @@
 title: TakeShape
 homepage: http://www.takeshape.io/
 opensource: "No"
-twitter: takeshapecms
+twitter: TakeShapeIO
 typeofcms: "API Driven"
 supportedgenerators:
   - All
