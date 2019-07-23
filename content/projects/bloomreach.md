@@ -1,6 +1,5 @@
 ---
 title: Bloomreach
-repo: bloomreach
 homepage: https://developers.bloomreach.com
 twitter: bloomreach_tm
 opensource: "Yes"
