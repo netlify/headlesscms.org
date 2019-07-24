@@ -16,7 +16,7 @@
     "dotenv": "^5.0.0",
     "gray-matter": "^3.1.1",
     "lodash": "^4.17.11",
-    "marked": "^0.3.14",
+    "marked": "^0.7.0",
     "react": "^16.0.0",
     "react-component-octicons": "^1.5.0",
     "react-dom": "^16.0.0",
