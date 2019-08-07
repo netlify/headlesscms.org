@@ -6306,9 +6306,9 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
 react-number-format@^4.0.3:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.1.0.tgz#785ed40ee92e27961f00ed469c4c0cf92b4c56c4"
-  integrity sha512-fXMFx81FEXxB40HcrnEtBIq0HYrTe0r3/1kKQVGs7X0/4mk9c+Nsa8Hgdj+LxIV70ZjKzx1lBaCWrJL6aIwoLg==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.1.1.tgz#8b319996261972684305fe61b9f1079b3422d03f"
+  integrity sha512-f8sL9MziL2uQ5SKV199pFCbUD8xqFe9FGAPB6nvBxurIbRfXSYaYN6XBk/BQOHEnI753g37Ek+xBok6iKYfEqw==
   dependencies:
     prop-types "^15.7.2"
 
