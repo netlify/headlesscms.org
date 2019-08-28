@@ -12,6 +12,12 @@ description: The fastest Headless CMS to prototype, build, and deploy with. Agil
 
 The fastest Headless CMS to prototype, build, and deploy with. Agility CMS is a cloud-based, SaaS, and API driven platform with Free and Paid pricing tiers.
 
+Agility CMS was built by developers for developers to get things done faster and support their customers' needs. We aren't new to this. Agility CMS has been used for everything from small sites to huge ones, and from startups to large enterprises.
+
+## [Sign Up for Free (forever)!](https://account.agilitycms.com/sign-up?product=agility-free&leadsource=headlesscmsorg)
+
+![Agility CMS](https://cdn.agilitycms.com/content-manager/images/screenshots/for-devs-screenshot.png)
+
 ### Architecture
 Agility is a Headless CMS. Get started immediately and build your solution on your own terms.
 
