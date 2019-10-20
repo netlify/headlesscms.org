@@ -11,7 +11,7 @@ supportedgenerators:
 description: An open-source CMS toolkit for JS developers to build real-time editing into static websites.
 ---
 
-# Tina Is Not A CMS
+## Tina Is Not A CMS
 
 Tina is a **lightweight but powerful toolkit** for creating a content editing interface with JavaScript components. Tina surfaces superpowers for developers to create an intuitive UI for real-time content editing, built directly into their website.
 
