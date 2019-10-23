@@ -5,9 +5,7 @@ twitter: forestryio
 opensource: "No"
 typeofcms: "Git-based"
 supportedgenerators:
-  - Jekyll
-  - Hugo
-  - VuePress
+  - All
 description: A custom Content Manager with a clean, clutter-free UI that commits automatically to your repo.
 images:
   - path: /images/forestry-ui.png
