@@ -2249,7 +2249,7 @@ chokidar@^2.0.2, chokidar@^2.1.2:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.2.3:
+chokidar@^3.0.2:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.2.3.tgz#b9270a565d14f02f6bfdd537a6a2bbf5549b8c8c"
   integrity sha512-GtrxGuRf6bzHQmXWRepvsGnXpkQkVU+D2/9a7dAe4a7v1NhrfZOZ2oKf76M3nOs46fFYL8D+Q8JYA4GYeJ8Cjw==
@@ -7755,20 +7755,25 @@ react-hot-loader@^4:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-is@^16.3.1, react-is@^16.7.0, react-is@^16.8.1:
+react-is@^16.3.1, react-is@^16.7.0:
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha512-INBT1QEgtcCCgvccr5/86CfD71fw9EPmDxgiJX4I2Ddr6ZsV6iFXsuby+qWJPtmNuMY0zByTsG4468P7nHuNWA==
+
+react-is@^16.8.1:
+  version "16.11.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.11.0.tgz#b85dfecd48ad1ce469ff558a882ca8e8313928fa"
+  integrity sha512-gbBVYR2p8mnriqAwWx9LbuUrShnAuSCNnuPGyc7GJrMVQtPDAh8iLpv7FRuMPFb56KkaVZIYSz1PrjI9q0QPCw==
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-number-format@^4.0.3:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.3.0.tgz#3c6d7c77debad50a121da57a26abd937c9432da6"
-  integrity sha512-IAxm26MVyuiG+CCPlrz4KAOmxi/mVidK/3pIm2796qkfNtfF108QBBOBGLIFFRJQHwdDN/HI0beiAXK6mJM4Lw==
+react-number-format@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.3.1.tgz#eccfc851d88d74c894ba463620ccb467defbdefb"
+  integrity sha512-ze6Lp7SGM71Jr0uZhUaN6grthv08NKTfJezS26zAWZq63ubmJ++FOX7ueGSK27EvpT7/e3ce9L3jlqr1YMFS7Q==
   dependencies:
     prop-types "^15.7.2"
 
