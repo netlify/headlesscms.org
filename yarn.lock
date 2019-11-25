@@ -9383,10 +9383,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twitter-followers-count@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/twitter-followers-count/-/twitter-followers-count-1.0.3.tgz#a236fbaf8fa72bdcfb43cb4ce8db1e0bc39c9b1f"
-  integrity sha512-95ejHhXUC+2qsxlQGKDK/BoBrtl8JBBjxZSSbDCbQt0KXImp+UUKB1MUAJMcdOyvq+HAIidvIxWXscvP5ayzeQ==
+twitter-followers-count@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/twitter-followers-count/-/twitter-followers-count-1.0.6.tgz#0373307f15e3de7d5273a1a8f3bc6533998a91c4"
+  integrity sha512-nXPJ4WNO/AmEpImhEE+U7LJiOeqaTtoHLbUcMsdtUjpGc+3EIn6HWgiyzfN7gFxy0lJYWwjhsS9OCiR/hq4DbQ==
   dependencies:
     tiny-fns "^1.0.3"
     twitter "^1.7.1"
