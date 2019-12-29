@@ -77,7 +77,6 @@ const Header = () => (
   <RouteData
     render={({ title, shareUrl, shareText }) => (
       <div>
-        <JamstackConfBannerStyled />
         <Head>
           <title>
             {`${
