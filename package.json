@@ -9,7 +9,7 @@
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
-    "@octokit/rest": "^14.0.9",
+    "@octokit/rest": "^16.0.0",
     "chokidar": "^3.3.1",
     "date-fns": "^1.29.0",
     "decamelize": "^3.0.0",
