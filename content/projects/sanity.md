@@ -10,7 +10,6 @@ supportedgenerators:
 description: Sanity is the fully customizable, headless CMS.
 images:
   - path: /images/sanity-studio.png
-  - path: /images/sanity-portable-text-editor.png
 ---
 
 Sanity.io is the platform for structured content. It comes with an open-source editing environment called [Sanity Studio](https://www.sanity.io/studio) that you can customize with JavaScript, and a real-time hosted data store. Sanity has generous included quotas – so [getting started](https://www.sanity.io/create) is free.
@@ -44,16 +43,18 @@ Or go to [sanity.io/create](https://www.sanity.io/create) to get started with a 
 
 ### [Developer experience](https://www.sanity.io/developer-experience)
 
-- [Bring your own frontend, or whatever else you might need](https://www.sanity.io/docs/build-with-sanity): [React](https://www.sanity.io/react-cms), [Vue](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gridsome-blog), [Svelte](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-sapper-blog), [Node](https://www.sanity.io/nodejs-cms), [.NET](https://www.sanity.io/docs/dot-net), [PHP](https://www.sanity.io/docs/php-client), [Golang](https://github.com/sanity-io/client-go), or [whatever speaks HTTP](https://www.sanity.io/docs/http-api)
+- Bring your own frontend, or whatever else you might need:[Vue](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gridsome-blog), [Svelte](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-sapper-blog), [Node](https://www.sanity.io/nodejs-cms), [.NET](https://www.sanity.io/docs/dot-net), [PHP](https://www.sanity.io/docs/php-client), [Golang](https://github.com/sanity-io/client-go), or [whatever speaks HTTP](https://www.sanity.io/docs/http-api)
 - [Sweet APIs for reading, writing, importing, exporting, go back in time, and listening for updates](https://www.sanity.io/docs/datastore)
 - [Secure, scalable and GDPR compliant](https://www.sanity.io/security)
 - [Zero config Graph Oriented Query Language (GROQ)](https://www.sanity.io/docs/how-queries-work), and [GraphQL API](https://www.sanity.io/docs/graphql)
 - [Helpful and friendly developer community](https://slack.sanity.io)
+- Build the CMS solution you need:[React CMS](https://www.sanity.io/react-cms), [eCommerce CMS](https://www.sanity.io/ecommerce-cms), [Gatsby CMS](https://www.sanity.io/gatsby-cms), [JAMstack CMS](https://www.sanity.io/jamstack-cms), [Mobile CMS](https://www.sanity.io/mobile-cms)
 
 ### [Structured Content](https://www.sanity.io/structured-content)
 
 - Distribute from a single source of thruth, in real-time
 - Unlock programmatic approaches to workflows and design
 - [Upload images and transform them on demand](https://www.sanity.io/docs/asset-pipeline), and integrate with any digital asset manager
+- [Customizable previews](https://www.sanity.io/blog/evolve-authoring-experiences-with-views-and-split-panes)
 - Query images for metadata like dominant colors, sizes, geo-location, and EXIF metadata
-- [Rich text that can be serialized into any markup language](https://www.sanity.io/guides/introduction-to-portable-text)
+- [See how rich text that can be serialized into any markup language](https://www.sanity.io/guides/introduction-to-portable-text), and learn about the Sanity [Rich Text Editor](https://www.sanity.io/rich-text-editor)
