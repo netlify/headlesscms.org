@@ -25,7 +25,7 @@
     "react-number-format": "^4.0.3",
     "react-router": "^4.2.0",
     "react-share": "^3.0.0",
-    "react-static": "^5.9.12",
+    "react-static": "^7.0.0",
     "slug": "^1.1.0",
     "styled-components": "^3",
     "twitter-followers-count": "^1.0.0"
