@@ -1,7 +1,7 @@
 ---
 title: Umbraco Heartcore
 repo: umbraco/Umbraco.Headless.Client.NodeJs
-homepage: https://ghost.org
+homepage: https://umbraco.com/products/umbraco-heartcore/
 twitter: Umbraco
 opensource: "No"
 typeofcms: "API Driven"
