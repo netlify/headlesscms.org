@@ -2,6 +2,7 @@
 title: Agility CMS
 homepage: https://agilitycms.com/
 twitter: agilitycms
+repo: agility/agility-content-fetch-js-sdk
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
