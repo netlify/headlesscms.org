@@ -6,7 +6,7 @@ opensource: "Yes"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-description: Editlayer is headless CMS that saves content as JSON. Edit Layer is build to work easily on Google's development platform - Firebase.
+description: Editlayer is headless CMS that saves content as JSON. Editlayer is build to work easily on Google's development platform - Firebase.
 images:
   - path: /images/editlayer-1.png
   - path: /images/editlayer-2.png
