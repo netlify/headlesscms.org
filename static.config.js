@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { reloadRoutes } from 'react-static/node'
+import chokidar from 'chokidar'
 import { ServerStyleSheet } from 'styled-components'
 import { map, mapValues, find, uniq, flatten, sortBy, pickBy } from 'lodash'
 import decamelize from 'decamelize'
@@ -6,19 +8,21 @@ import dateFns from 'date-fns'
 import { toSlug } from 'Scripts/util'
 import grayMatter from 'gray-matter'
 import marked from 'marked'
-import fetchArchive from './scripts/fetch-archive'
 import * as projectsMarkdown from './content/projects/*.md'
 import * as pagesMarkdown from './content/pages/*.md'
+import fetchArchive from './scripts/fetch-archive'
+
+chokidar.watch('./content').on('all', () => reloadRoutes())
 
 const SITE_URL = 'https://headlesscms.org'
 
-function processMarkdown(markdown, key) {
+function processMarkdown (markdown, key) {
   const { content, data } = grayMatter(markdown)
   const html = marked(content)
   return { content: html, key: decamelize(key, '-'), ...data }
 }
 
-function mapProjectFrontMatter({
+function mapProjectFrontMatter ({
   title,
   repo,
   homepage,
@@ -47,11 +51,16 @@ function mapProjectFrontMatter({
   }
 }
 
-function extractRelevantProjectData(data) {
+function extractRelevantProjectData (data) {
   return mapValues(data, project => {
-    const timestamps = map(project, 'timestamp');
+    const timestamps = map(project, 'timestamp')
     const newestTimestamp = dateFns.max(...timestamps).getTime()
-    const oldestTimestamp = dateFns.min(...timestamps).getTime()
+
+    // `targetOldestTimestamp` creates a timestamp which will serve as an anchor, we'll use the
+    // dataset with a timestamp closest to it as our oldest comparison data.
+    const targetOldestTimestamp = dateFns.subWeeks(Date.now(), 1).getTime()
+    const oldestTimestamp = dateFns.closestTo(targetOldestTimestamp, timestamps).getTime()
+
     const dataAgeInDays = dateFns.differenceInDays(Date.now(), oldestTimestamp)
     const { followers, forks, stars, issues } = find(project, { timestamp: newestTimestamp }) || {}
     const {
@@ -68,7 +77,6 @@ function extractRelevantProjectData(data) {
       forksPrevious,
       starsPrevious,
       issuesPrevious,
-      followers,
       followersPrevious,
       dataAgeInDays,
     }
@@ -78,7 +86,7 @@ function extractRelevantProjectData(data) {
 /**
  * Retrieve and format all project data.
  */
-async function getProjects() {
+async function getProjects () {
   /**
    * Get project details from frontmatter.
    */
@@ -109,7 +117,7 @@ async function getProjects() {
 /**
  * Generate dropdown filter values from frontmatter values.
  */
-function generateFilters(projects) {
+function generateFilters (projects) {
   const types = sortBy(uniq(map(projects, 'type')))
   const generators = sortBy(uniq(flatten(map(projects, 'generators'))))
 
@@ -119,7 +127,7 @@ function generateFilters(projects) {
 /**
  * Retrieve and format markdown for unique pages.
  */
-function getPages() {
+function getPages () {
   return map(pagesMarkdown, processMarkdown)
 }
 
@@ -130,7 +138,7 @@ export default {
   getRoutes: async () => {
     const projects = await getProjects()
     const pages = await getPages()
-    const defaultShareText = `Check out headlessCMS, a leaderboard of content management systems for JAMstack sites.`;
+    const defaultShareText = 'Check out headlessCMS, a leaderboard of content management systems for JAMstack sites.'
     return [
       {
         path: '/',
@@ -138,7 +146,7 @@ export default {
         getData: () => {
           const { types, generators } = generateFilters(projects)
           return { projects, types, generators, shareUrl: SITE_URL, shareText: defaultShareText }
-        }
+        },
       },
       {
         path: 'projects',
@@ -150,15 +158,15 @@ export default {
             shareUrl: `${SITE_URL}/projects/${project.slug}`,
             shareText: `Check out ${project.title}, a headless CMS for JAMstack sites on the headlessCMS.org leaderboard.`,
           }),
-        }))
+        })),
       },
-      ...[ 'about', 'contribute', 'contact'  ].map(key => ({
+      ...['about', 'contribute', 'contact'].map(key => ({
         path: key,
         component: 'src/Page',
         getData: () => {
           const { title, content } = find(pages, { key })
           return { title, content, shareUrl: SITE_URL, shareText: defaultShareText }
-        }
+        },
       })),
       {
         is404: true,
@@ -183,11 +191,11 @@ export default {
           <Head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link type="image/x-icon" rel="shortcut icon" href="favicon.ico"/>
+            <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
 
-            <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible"/>
+            <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
 
-            <meta name="twitter:card" value="headlessCMS is a leaderboard of the top Content Management Systems (CMS) for JAMstack sites. Promoting a static approach to websites."/>
+            <meta name="twitter:card" value="headlessCMS is a leaderboard of the top Content Management Systems (CMS) for JAMstack sites. Promoting a static approach to websites." />
 
             <meta property="og:title" content="headlessCMS" />
             <meta property="og:type" content="website" />
@@ -195,8 +203,8 @@ export default {
             <meta property="og:image" content="https://headlesscms.org/images/headlesscms.png" />
             <meta property="og:description" content="headlessCMS is a leaderboard of the top Content Management Systems for JAMstack sites. Promoting a static approach to building websites." />
 
-            <link href='//fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'/>
-            <link href='//fonts.googleapis.com/css?family=Roboto:100,400,600,700' rel='stylesheet' type='text/css'/>
+            <link href="//fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet" type="text/css" />
+            <link href="//fonts.googleapis.com/css?family=Roboto:100,400,600,700" rel="stylesheet" type="text/css" />
 
             {renderMeta.styleTags}
           </Head>

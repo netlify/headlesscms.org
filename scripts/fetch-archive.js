@@ -1,27 +1,25 @@
-require('dotenv').config()
-
 import path from 'path'
 import fs from 'fs-extra'
-import { map, pick, pickBy, isEmpty, find, chunk, flatten, filter, fromPairs, mapValues } from 'lodash'
-import { differenceInMinutes } from 'date-fns'
+import { map, find, fromPairs, mapValues } from 'lodash'
+import { differenceInMinutes, differenceInDays } from 'date-fns'
 import Octokit from '@octokit/rest'
-import Twitter from 'twitter'
 import twitterFollowersCount from 'twitter-followers-count'
-import { toSlug } from 'Scripts/util'
+
+require('dotenv').config()
 
 const GITHUB_TOKEN = process.env.HEADLESS_CMS_GITHUB_TOKEN
 const TWITTER_CONSUMER_KEY = process.env.HEADLESS_CMS_TWITTER_CONSUMER_KEY
 const TWITTER_CONSUMER_SECRET = process.env.HEADLESS_CMS_TWITTER_CONSUMER_SECRET
 const TWITTER_ACCESS_TOKEN_KEY = process.env.HEADLESS_CMS_TWITTER_ACCESS_TOKEN_KEY
 const TWITTER_ACCESS_TOKEN_SECRET = process.env.HEADLESS_CMS_TWITTER_ACCESS_TOKEN_SECRET
-const PROJECTS_PATH = 'site/content/projects'
 const ARCHIVE_FILENAME = 'headless-cms-archive.json'
 const LOCAL_ARCHIVE_PATH = `tmp/${ARCHIVE_FILENAME}`
 const GIST_ARCHIVE_DESCRIPTION = 'HEADLESSCMS.ORG DATA ARCHIVE'
 
-let octokit, getTwitterFollowers
+let octokit
+let getTwitterFollowers
 
-function authenticate() {
+function authenticate () {
   octokit = Octokit()
   octokit.authenticate({ type: 'token', token: GITHUB_TOKEN })
   getTwitterFollowers = twitterFollowersCount({
@@ -32,22 +30,22 @@ function authenticate() {
   })
 }
 
-async function getProjectGitHubData(repo) {
-  const [ owner, repoName ] = repo.split('/')
+async function getProjectGitHubData (repo) {
+  const [owner, repoName] = repo.split('/')
   const { data } = await octokit.repos.get({ owner, repo: repoName })
   const { stargazers_count, forks_count, open_issues_count } = data
   return { stars: stargazers_count, forks: forks_count, issues: open_issues_count }
 }
 
-async function getAllProjectGitHubData(repos) {
-  const data =  await Promise.all(repos.map(async repo => {
+async function getAllProjectGitHubData (repos) {
+  const data = await Promise.all(repos.map(async repo => {
     const repoData = await getProjectGitHubData(repo)
-    return [ repo, repoData ]
+    return [repo, repoData]
   }))
   return fromPairs(data)
 }
 
-async function getAllProjectData(projects) {
+async function getAllProjectData (projects) {
   const timestamp = Date.now()
   const twitterScreenNames = map(projects, 'twitter').filter(val => val)
   const twitterFollowers = await getTwitterFollowers(twitterScreenNames)
@@ -61,21 +59,20 @@ async function getAllProjectData(projects) {
   return { timestamp, data }
 }
 
-async function getLocalArchive() {
+async function getLocalArchive () {
   try {
     return await fs.readJson(path.join(process.cwd(), LOCAL_ARCHIVE_PATH))
-  }
-  catch(e) {
+  } catch (e) {
     console.log('Local archive not found, fetching new data.')
   }
 }
 
-function updateLocalArchive(data) {
+function updateLocalArchive (data) {
   return fs.outputJson(path.join(process.cwd(), LOCAL_ARCHIVE_PATH), data)
 }
 
 
-async function getArchive() {
+async function getArchive () {
   const gists = await octokit.gists.getAll({ per_page: 100 })
   const gistArchive = find(gists.data, { description: GIST_ARCHIVE_DESCRIPTION })
   if (!gistArchive) {
@@ -86,7 +83,7 @@ async function getArchive() {
   return { ...archive, id: gistArchive.id }
 }
 
-function createGist(content) {
+function createGist (content) {
   return octokit.gists.create({
     files: { [ARCHIVE_FILENAME]: { content } },
     public: true,
@@ -94,16 +91,30 @@ function createGist(content) {
   })
 }
 
-function editGist(content, id) {
+function editGist (content, id) {
   return octokit.gists.edit({ id, files: { [ARCHIVE_FILENAME]: { content } } })
 }
 
-async function updateArchive({ timestamp, data }, archive) {
+function removeOutdated(data, days) {
+  return data.filter(({ timestamp }) => differenceInDays(Date.now(), timestamp) <= days)
+}
+
+async function updateArchive ({ timestamp, data }, archive) {
   const preppedData = archive
-    ? { timestamp, data: mapValues(data, (projectData, name) => [...projectData, ...(archive.data[name] || [])]) }
+    ? {
+      timestamp,
+      data: mapValues(data, (projectData, name) => {
+        const projectArchive = removeOutdated(archive.data[name] || [], 30)
+        return [...projectData, ...projectArchive]
+      }),
+    }
     : { timestamp, data }
   const content = JSON.stringify(preppedData)
-  await archive ? editGist(content, archive.id) : createGist(content)
+  if (archive) {
+    await editGist(content, archive.id)
+  } else {
+    await createGist(content)
+  }
   return preppedData
 }
 
@@ -112,11 +123,11 @@ async function updateArchive({ timestamp, data }, archive) {
  * minutes short of 24 hours, just in case a daily refresh webhook gets called
  * a little early.
  */
-function archiveExpired(archive) {
+function archiveExpired (archive) {
   return differenceInMinutes(Date.now(), archive.timestamp) > 1410
 }
 
-async function run(projects) {
+async function run (projects) {
   const localArchive = await getLocalArchive()
   if (localArchive && !archiveExpired(localArchive)) {
     return localArchive.data

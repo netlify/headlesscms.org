@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Octicon from 'react-component-octicons'
 import { EntypoTwitter } from 'react-entypo'
 import photos from 'Images/photos.svg'
-
+import NumberFormat from 'react-number-format'
 
 const DataPoint = styled.div`
   margin-top: 8px;
@@ -40,7 +40,7 @@ const OpenSourceStat = styled(({
   indicateColor,
   label,
   dataAgeInDays,
-  className
+  className,
 }) => {
   const disabled = typeof value !== 'number'
   const changeValue = parseFloat(change, 10) > 0 ? `+${change}` : change
@@ -48,21 +48,21 @@ const OpenSourceStat = styled(({
   return (
     <div title={label} className={`${className} ${disabled ? 'disabled' : ''}`}>
       <OpenSourceStatIcon>
-        <Icon/>
+        <Icon />
       </OpenSourceStatIcon>
-      {disabled ? <div>N/A</div> :
+      {disabled ? <div>N/A</div> : (
         <div>
-          <strong>{value}</strong>
-          {dataAgeInDays < 1 ? null :
+          <strong><NumberFormat value={value} displayType="text" thousandSeparator /></strong>
+          {dataAgeInDays >= 1 &&
             <OpenSourceStatChange
-              title={`${label} in the last ${dataAgeInDays} days`}
+              title={`${label} in the last ${dataAgeInDays} day${dataAgeInDays === 1 ? '' : 's'}`}
               indicateColor={indicateColor}
             >
               {changeValue === 0 ? '--' : changeValue}
             </OpenSourceStatChange>
           }
         </div>
-      }
+      )}
     </div>
   )
 })`
@@ -85,7 +85,7 @@ const OpenSourceStat = styled(({
 `
 
 const TwitterIcon = styled(({ className }) =>
-  <EntypoTwitter className={className}/>
+  <EntypoTwitter className={className} />
 )`
   width: 16px !important;
   height: 16px !important;
@@ -102,41 +102,41 @@ const OpenSourceStats = styled(({
   followersPrevious,
   dataAgeInDays,
   className,
-}) =>
+}) => (
   <div className={className}>
     <OpenSourceStat
-      Icon={() => <Octicon name="star" zoom="100%"/>}
+      Icon={() => <Octicon name="star" zoom="100%" />}
       label="GitHub stars"
       value={stars}
       change={stars - starsPrevious}
-      indicateColor={true}
+      indicateColor
       dataAgeInDays={dataAgeInDays}
     />
     <OpenSourceStat
-      Icon={() => <Octicon name="issue-opened" zoom="100%"/>}
+      Icon={() => <Octicon name="issue-opened" zoom="100%" />}
       label="GitHub open issues"
       value={issues}
       change={issues - issuesPrevious}
       dataAgeInDays={dataAgeInDays}
     />
     <OpenSourceStat
-      Icon={() => <Octicon name="repo-forked" zoom="100%"/>}
+      Icon={() => <Octicon name="repo-forked" zoom="100%" />}
       label="GitHub forks"
       value={forks}
       change={forks - forksPrevious}
-      indicateColor={true}
+      indicateColor
       dataAgeInDays={dataAgeInDays}
     />
     <OpenSourceStat
-      Icon={() => <TwitterIcon/>}
+      Icon={() => <TwitterIcon />}
       label="Twitter followers"
       value={followers}
       change={followers - followersPrevious}
-      indicateColor={true}
+      indicateColor
       dataAgeInDays={dataAgeInDays}
     />
   </div>
-)`
+))`
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   background: #fcfcfc;
@@ -145,11 +145,8 @@ const OpenSourceStats = styled(({
   display: flex;
 `
 
-
 const Project = styled(({
   title,
-  repo,
-  homepage,
   openSource,
   type,
   generators = [],
@@ -182,11 +179,11 @@ const Project = styled(({
   return (
     <Link to={`/projects/${slug}`} className={`card ${className}`}>
       <div className={`tag ${openSource ? '' : 'proprietary'}`}>
-        {openSource ? 'open source' : null}
+        {openSource && 'open source'}
       </div>
-      {images ? <img className="photos-inside" src={photos}/> : null}
+      {images && <img alt="" className="photos-inside" src={photos} />}
       <h4 className={`title ${title.length > 14 ? 'title-small' : ''}`}>{title}</h4>
-      <OpenSourceStats {...stats}/>
+      <OpenSourceStats {...stats} />
       <div className="description">{description}</div>
       <DataPoint>
         <DataPointTitle>Type:</DataPointTitle>
