@@ -8,7 +8,7 @@ supportedgenerators:
   - All
 description: Flotiq is an effortless headless Content Management System, offering developers powerful SDKs and integrations.
 images:
-  - path: /images/flotiq.png
+  - path: /images/flotiq-sdk-benefits.gif
 ---
 ## Flotiq
 
