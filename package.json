@@ -12,7 +12,7 @@
     "@octokit/rest": "^14.0.9",
     "chokidar": "^3.3.1",
     "date-fns": "^1.29.0",
-    "decamelize": "^3.0.0",
+    "decamelize": "^4.0.0",
     "dotenv": "^5.0.0",
     "gray-matter": "^3.1.1",
     "lodash": "^4.17.11",
