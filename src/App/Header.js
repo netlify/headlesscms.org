@@ -19,7 +19,9 @@ const ShareButtonWrapper = styled.div`
   }
 `
 
-const ShareButton = styled(({ type, url, className, text }) => {
+const ShareButton = styled(({
+  type, url, className, text,
+}) => {
   const components = {
     twitter: { Button: TwitterShareButton, Icon: TwitterIcon },
     reddit: { Button: RedditShareButton, Icon: RedditIcon },
@@ -42,22 +44,19 @@ const ShareButton = styled(({ type, url, className, text }) => {
   }
 `
 
-// swyx: temporary insert jamstack conf banner
-const JamstackConfBanner = ({ className }) => (
+const AnnouncementBar = ({ className }) => (
   <div className={className}>
     <p>
-      Learn more about the JAMstack at{' '}
-      <a href="https://jamstackconf.com/sf">JAMstack Conf</a> in San Francisco — 16-18 October, 2019
+      Share your JAMstack technology decisions and experiences. <a href="https://www.surveymonkey.com/r/DH9KZZT" target="_blank" rel="noopener noreferrer">Take&nbsp;the&nbsp;survey&nbsp;by&nbsp;April&nbsp;19</a>
     </p>
   </div>
 )
-const JamstackConfBannerStyled = styled(JamstackConfBanner)`
+const AnnouncementBarStyled = styled(AnnouncementBar)`
   background-color: #000;
   color: #fff;
   display: block;
   text-align: center;
   z-index: 200;
-  position: fixed;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -71,7 +70,6 @@ const JamstackConfBannerStyled = styled(JamstackConfBanner)`
     color: #00c7b7;
   }
 `
-// temporary insert jamstack conf banner
 
 const Header = () => (
   <RouteData
@@ -82,10 +80,11 @@ const Header = () => (
             {`${
               title
                 ? `${title} | headlessCMS`
-                : "headlessCMS | Top Content Management Systems for JAMstack sites"
+                : 'headlessCMS | Top Content Management Systems for JAMstack sites'
             }`}
           </title>
         </Head>
+        <AnnouncementBarStyled />
         <div className="hero">
           <h1>
             <Link to="/" title="headlessCMS">
@@ -145,6 +144,6 @@ const Header = () => (
       </div>
     )}
   />
-);
+)
 
 export default Header

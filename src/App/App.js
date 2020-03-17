@@ -116,6 +116,7 @@ const AppStyles = styled.div`
     background-size: cover;
     text-align: center;
     padding: 60px 0 29px 0;
+    position: relative;
   }
   .hero h1 {
     margin: 31px 0 0;
