@@ -1,5 +1,6 @@
 ---
 title: Editlayer
+repo: raneio/editlayer
 homepage: https://editlayer.rane.io
 twitter: Editlayer
 opensource: "Yes"
