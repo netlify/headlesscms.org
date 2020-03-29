@@ -1,5 +1,6 @@
 ---
 title: Flotiq
+repo: flotiq/flotiq-blog
 homepage: https://flotiq.com/
 twitter: flotiq
 opensource: "No"
