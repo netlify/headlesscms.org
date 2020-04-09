@@ -47,7 +47,7 @@ const ShareButton = styled(({
 const AnnouncementBar = ({ className }) => (
   <div className={className}>
     <p>
-      Share your JAMstack technology decisions and experiences. <a href="https://www.surveymonkey.com/r/DH9KZZT" target="_blank" rel="noopener noreferrer">Take&nbsp;the&nbsp;survey&nbsp;by&nbsp;April&nbsp;19</a>
+      Share your Jamstack technology decisions and experiences. <a href="https://www.surveymonkey.com/r/DH9KZZT" target="_blank" rel="noopener noreferrer">Take&nbsp;the&nbsp;survey&nbsp;by&nbsp;April&nbsp;19</a>
     </p>
   </div>
 )
@@ -80,7 +80,7 @@ const Header = () => (
             {`${
               title
                 ? `${title} | headlessCMS`
-                : 'headlessCMS | Top Content Management Systems for JAMstack sites'
+                : 'headlessCMS | Top Content Management Systems for Jamstack sites'
             }`}
           </title>
         </Head>
@@ -91,7 +91,7 @@ const Header = () => (
               <img alt="headlessCMS" src={logo} />
             </Link>
           </h1>
-          <h2>A List of Content Management Systems for JAMstack Sites</h2>
+          <h2>A List of Content Management Systems for Jamstack Sites</h2>
 
           <ShareButtonWrapper>
             <ShareButton
@@ -131,7 +131,7 @@ const Header = () => (
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    What is JAMstack?
+                    What is Jamstack?
                   </a>
                 </li>
                 <li>

@@ -19,7 +19,7 @@ Tina is a **lightweight but powerful toolkit** for creating a content editing in
 
 ![tina-gif](https://res.cloudinary.com/forestry-demo/video/upload/du_16,w_700,e_loop/v1571159974/tina-hero-demo.gif)
 
-Tina is optimized for next-gen JAMstack tools. It is written in JavaScript and easily adapted to multiple different frameworks.
+Tina is optimized for next-gen Jamstack tools. It is written in JavaScript and easily adapted to multiple different frameworks.
 
 Tina currently supports React-based frameworks, including:
 
@@ -29,7 +29,7 @@ Tina currently supports React-based frameworks, including:
 
 ## Get Started
 
-To use Tina, you should have a good working knowledge of your JavaScript framework & JAMstack tools of choice.
+To use Tina, you should have a good working knowledge of your JavaScript framework & Jamstack tools of choice.
 
 To get a better idea of what Tina is all about, take a look at [how Tina works](https://tinacms.org/docs/getting-started/how-tina-works 'How Tina Works').
 

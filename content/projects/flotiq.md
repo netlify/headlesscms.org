@@ -12,14 +12,14 @@ images:
 ---
 ## Flotiq
 
-Flotiq is an effortless headless Content Management System. 
+Flotiq is an effortless headless Content Management System.
 Flotiq's goal is to provide developers with an easy to use API and powerful integrations and SDKs that allow them to build complex systems.
 
 ## Where to start?
 
 Head over to [Flotiq Docs](https://flotiq.com/docs/) or start exploring immediately with a [free account](https://editor.flotiq.com/register.html).
 
-We published several deep-dive docs describing how to get started building JAMstack-based apps with Flotiq, try [building a blog in 3 minutes](https://flotiq.com/docs/Deep-Dives/Building-a-blog-in-3-minutes/).
+We published several deep-dive docs describing how to get started building Jamstack-based apps with Flotiq, try [building a blog in 3 minutes](https://flotiq.com/docs/Deep-Dives/Building-a-blog-in-3-minutes/).
 
 ## Key features
 
