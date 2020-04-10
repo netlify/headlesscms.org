@@ -22,7 +22,7 @@ Get started from the command line:
 npm i -g @sanity/cli && sanity init
 ```
 
-Or go to [sanity.io/create](https://www.sanity.io/create) to get started with a headless JAMstack website deployed on [Netlify](https://netlify.com) in minutes: [Gatsby Blog](https://www.sanity.io/create?template=sanity-io/sanity-template-gatsby-blog), [Gatsby Portfolio](https://www.sanity.io/create?template=sanity-io/sanity-template-gatsby-portfolio), [Next.js Landing Pages](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-nextjs-landing-pages), [Gridsome Blog](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gridsome-blog), [Nuxt.js Events page](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-nuxt-events), [Sapper Blog](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-sapper-blog), [Eleventy Blog](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-eleventy-blog).
+Or go to [sanity.io/create](https://www.sanity.io/create) to get started with a headless Jamstack website deployed on [Netlify](https://netlify.com) in minutes: [Gatsby Blog](https://www.sanity.io/create?template=sanity-io/sanity-template-gatsby-blog), [Gatsby Portfolio](https://www.sanity.io/create?template=sanity-io/sanity-template-gatsby-portfolio), [Next.js Landing Pages](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-nextjs-landing-pages), [Gridsome Blog](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gridsome-blog), [Nuxt.js Events page](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-nuxt-events), [Sapper Blog](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-sapper-blog), [Eleventy Blog](https://www.sanity.io/create?template=sanity-io%2Fsanity-template-eleventy-blog).
 
 - Watch the [getting started video on YouTube](https://www.youtube.com/watch?v=2ceM_tSus_M&lc=z224vtt5nqq1cbcf2acdp43aylzlb5jhft1kmuafltxw03c010c).
 - [Read the introduction](https://www.sanity.io/docs/a-short-introduction-to-sanity-io) in the documentation
@@ -48,7 +48,7 @@ Or go to [sanity.io/create](https://www.sanity.io/create) to get started with a 
 - [Secure, scalable and GDPR compliant](https://www.sanity.io/security)
 - [Zero config Graph Oriented Query Language (GROQ)](https://www.sanity.io/docs/how-queries-work), and [GraphQL API](https://www.sanity.io/docs/graphql)
 - [Helpful and friendly developer community](https://slack.sanity.io)
-- Build the CMS solution you need:[React CMS](https://www.sanity.io/react-cms), [eCommerce CMS](https://www.sanity.io/ecommerce-cms), [Gatsby CMS](https://www.sanity.io/gatsby-cms), [JAMstack CMS](https://www.sanity.io/jamstack-cms), [Mobile CMS](https://www.sanity.io/mobile-cms)
+- Build the CMS solution you need:[React CMS](https://www.sanity.io/react-cms), [eCommerce CMS](https://www.sanity.io/ecommerce-cms), [Gatsby CMS](https://www.sanity.io/gatsby-cms), [Jamstack CMS](https://www.sanity.io/Jamstack-cms), [Mobile CMS](https://www.sanity.io/mobile-cms)
 
 ### [Structured Content](https://www.sanity.io/structured-content)
 

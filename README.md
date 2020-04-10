@@ -12,7 +12,7 @@ Missing a headless CMS here? Just fork the repo and add yours as a `<name>.md` i
 Make sure to follow the following rules:
 
 *   **Truly headless:** This means your CMS must interact with content and data, and cannot be responsible for building the site.
-*   **JAMstack:** Your CMS has to work with the JAMstack methodology: JavaScript, API's and Markup.
+*   **Jamstack:** Your CMS has to work with the Jamstack methodology: JavaScript, API's and Markup.
 *   **Stick to the format:** Fill out all the same fields as the other CMS's in `content/projects`.
 *   **Short description:** Keep all the details for the body text, keep the description for the overview page short and sweet.
 

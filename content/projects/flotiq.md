@@ -14,7 +14,8 @@ images:
 ---
 ## Flotiq
 
-Flotiq is an effortless headless Content Management System. Flotiq's goal is to provide developers with an easy to use API, powerful integrations and SDKs that allow them to build complex systems.
+Flotiq is an effortless headless Content Management System. 
+Flotiq's goal is to provide developers with an easy to use API, powerful integrations and SDKs that allow them to build complex systems.
 
 ## Where to start
 
