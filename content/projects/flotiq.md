@@ -1,6 +1,5 @@
 ---
 title: Flotiq
-repo: flotiq/flotiq-blog
 homepage: https://flotiq.com/
 repo: flotiq/flotiq-blog
 twitter: flotiq
