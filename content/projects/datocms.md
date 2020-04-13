@@ -59,7 +59,7 @@ Give your authors the freedom to compose inspiring visual stories by alternating
 Customize theme colors, logo, custom domain.. you can easily setup DatoCMS to match your — or your clients' — brand identity.
 We don't want to get in the way: your editors will hardly notice the presence of a third-party CMS.
 
-####Multi-language
+#### Multi-language
 DatoCMS offers full localization support. All your content types and assets can be localizable, including rich text, images, geopoints and especially your URLs.
 
 #### Tree-like structures
