@@ -2129,14 +2129,14 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30001048"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001048.tgz#4f431c688cb6bc0435994dcbb8e565d004869d43"
-  integrity sha512-HqYsBIZlVARU5GDXPziXSFwFVpGx9KqCznr62iaey7bT2sqpx7/jI4B3PvbKguKi8kGeEannJ7WEPB5H71rjFQ==
+  version "1.0.30001049"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001049.tgz#5b711efaa75c05184f5e7cf2102aa033278fe567"
+  integrity sha512-oTLa9yDgd0GM07FRD5MVm7bD7rgHXsbLwE5i3R0jVSYpXwMxIdUMKBxY9gk9+SJTmNF1QpN7al4GSJK6V3JXKA==
 
 caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844:
-  version "1.0.30001048"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001048.tgz#4bb4f1bc2eb304e5e1154da80b93dee3f1cf447e"
-  integrity sha512-g1iSHKVxornw0K8LG9LLdf+Fxnv7T1Z+mMsf0/YYLclQX4Cd522Ap0Lrw6NFqHgezit78dtyWxzlV2Xfc7vgRg==
+  version "1.0.30001049"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001049.tgz#97d560015d2bdd7102b82ec807ec28d8aa7bd73e"
+  integrity sha512-VBcWTkexrbyurOakYo1E7tmzB39jFLB1Tav7e9JQGIz5MCfv0FBj8qZz8XRJgJzo+xn5YGeOYb8Vt6JxR2xXQg==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
