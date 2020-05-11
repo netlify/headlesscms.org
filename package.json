@@ -27,7 +27,7 @@
     "react-share": "^3.0.0",
     "react-static": "^5.9.12",
     "slug": "^1.1.0",
-    "styled-components": "^3",
+    "styled-components": "^5.0.0",
     "twitter-followers-count": "^1.0.0"
   },
   "devDependencies": {
