@@ -4,9 +4,9 @@ title: About HeadlessCMS
 
 # About HeadlessCMS
 
-HeadlessCMS.org is an overview of the top Content Management tools for JAMstack sites.
+HeadlessCMS.org is an overview of the top Content Management tools for Jamstack sites.
 
-'Headless CMS' is also commonly known as 'JAMstack CMS' or 'Decoupled CMS'.
+'Headless CMS' is also commonly known as 'Jamstack CMS' or 'Decoupled CMS'.
 
 ## What is a Headless CMS
 
@@ -23,11 +23,11 @@ You could also say that any content management tool that can manage content on s
 
 ## Why is Headless better than legacy systems
 
-The advantages of this approach is huge, and it works with [JAMstack](https://www.jamstack.org/) sites that are many times faster safer and cheaper to scale than traditional sites.
+The advantages of this approach is huge, and it works with [Jamstack](https://www.Jamstack.org/) sites that are many times faster safer and cheaper to scale than traditional sites.
 
 ## Who makes this
 
-Headlesscms.org is run by [Netlify](https://www.netlify.com), an automation and deployment service for Headless CMS and JAMstack sites  in general, as a way to promote the JAMstack approach to building websites.
+Headlesscms.org is run by [Netlify](https://www.netlify.com), an automation and deployment service for Headless CMS and Jamstack sites  in general, as a way to promote the Jamstack approach to building websites.
 
 ## How is it made
 
