@@ -45,13 +45,9 @@ https://graphcms.com/graphql-headless-cms/
 #### Learn about working with a GraphQL Headless CMS:
 https://graphcms.com/graphql-headless-cms/
 
-#### Learn about working with GraphCMS and React, NextJS, Vue, Gatsby, and Static Sites:
-https://graphcms.com/react-cms/
-
-https://graphcms.com/nextjs-cms/
-
-https://graphcms.com/vue-cms/
-
-https://graphcms.com/gatsby-cms/
-
-https://graphcms.com/static-sites/
+#### Learn about using GraphCMS with:
+- React: https://graphcms.com/react-cms/
+- NextJS: https://graphcms.com/nextjs-cms/
+- Vue: https://graphcms.com/vue-cms/
+- Gatsby: https://graphcms.com/gatsby-cms/
+- Static Sites: https://graphcms.com/static-sites/
