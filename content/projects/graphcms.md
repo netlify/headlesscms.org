@@ -6,7 +6,7 @@ opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-description: GraphCMS is a GraphQL Based Headless Content Management System
+description: GraphCMS is the original GraphQL native Headless CMS with both read and write support to deliver digital projects at scale.
 images:
   - path: /images/graphcms-intro.png
   - path: /images/graphcms-features.png
