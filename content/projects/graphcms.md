@@ -39,6 +39,13 @@ https://graphcms.com/features/
 #### Sign up for a free developer account:
 https://app.graphcms.com/signup/
 
+#### Get started with GraphCMS examples and open source references:
+- eCommerce SWAG store with Gatsby, Netlify, Algolia, Printful, and Stripe: https://github.com/graphcms/gatsby-graphcms-ecommerce-starter/
+- Hotels website for dynamic content with Gatsby: https://github.com/GraphCMS/example-gatsby-static-dynamic-hotel
+- Podcast website with the serverless stack using NextJS and Tailwind: https://github.com/graphCMS/nextjs-graphcms-podcast-starter/
+- GraphCMS examples with NextJS, NuxtJS, Gridsome, Gatsby, Vue, and more: https://github.com/GraphCMS/graphcms-examples/
+- Events and Speakers website with NextJS, Vercel, and Postmark: https://github.com/graphCMS/nextjs-graphcms-events-starter/
+
 #### Learn about GraphQL Headless CMS:
 https://graphcms.com/graphql-headless-cms/
 
