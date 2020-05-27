@@ -47,7 +47,7 @@ const ShareButton = styled(({
 const AnnouncementBar = ({ className }) => (
   <div className={className}>
     <p>
-      Join the first Virtual Jamstack Conf on May 27-28. <a href="https://jamstackconf.com/virtual/" target="_blank" rel="noopener noreferrer">Registration&nbsp;is&nbsp;Free!</a>
+      Check out the videos from Jamstack Conf Virtual, May 27. <a href="https://www.youtube.com/watch?v=w9yrrQBBKos&list=PL58Wk5g77lF8jzqp_1cViDf-WilJsAvqT" target="_blank" rel="noopener noreferrer">Watch&nbsp;the&nbsp;presentations</a>
     </p>
   </div>
 )
