@@ -45,7 +45,7 @@ Trello is a simple collaboration tool really intuitive to organize ideas into li
 
 *Why use Troglio instead of Trello's API ?*
 
-Troglio comes with all the tools you expect from a classic CMS: custom types, publish/draft logic, template override... and even live previews ! Using TOML, authors can enrich content with more structured data leading to endless possiblities. 
+Troglio comes with all the tools you expect from a classic CMS: custom types, publish/draft logic, template override... and even live previews ! Using TOML, authors can enrich content with more structured data leading to endless possibilities. 
 Finally, the most important part of Troglio is that it is an opninionated framework to manage apps and websites content from Trello: it removes the need for each developers to think about implementation details and Troglio helps get started right away. Examples, tutorials, starters, support... are all the benefits given from having a common framework to work with instead of being isolated :)
 Don't be shy and help us enhance Troglio's experience by submitting an issue in [our Github repo](https://github.com/Troglio/troglio).
 
