@@ -11,9 +11,11 @@ supportedgenerators:
 description: An open-source CMS toolkit for JS developers to build real-time editing into static websites.
 ---
 
-## Tina Is Not A CMS
+## Tina is not a CMS
 
 Tina is a **lightweight but powerful toolkit** for creating a content editing interface with JavaScript components. Tina surfaces superpowers for developers to create an intuitive UI for real-time content editing, built directly into their website.
+
+To see Tina in action just go to [tinacms.org](https://tinacms.org) and click "Edit this Site"!
 
 ## The Next Generation of Content Management
 
@@ -23,9 +25,9 @@ Tina is optimized for next-gen Jamstack tools. It is written in JavaScript and e
 
 Tina currently supports React-based frameworks, including:
 
-- Create-React-App
+- Next.js
 - Gatsby
-- NextJS
+- Create-React-App
 
 ## Get Started
 
@@ -39,4 +41,4 @@ If you're itching to see what Tina can do, head over to the [Gatsby Quickstart G
 
 Want to help out with Tina's development? Please visit our [Contributing](https://tinacms.org/docs/contributing/guidelines) section in our docs to learn more.
 
-Looking for help with Tina, or want to stay on top of the latest developments? [Join our Slack Community](https://tinacms.slack.com 'Join the TinaCMS Slack') to chat with other Tina enthusiasts.
+Looking for help with Tina, or want to stay on top of the latest developments? [Join our Forum](https://community.tinacms.org 'Join the TinaCMS Forum') to chat with other Tina enthusiasts.
