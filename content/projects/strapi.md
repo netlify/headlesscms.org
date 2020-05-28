@@ -46,4 +46,4 @@ Secure your endpoints by allowing or not allowing users to access your API by ro
 
 ### Get Started
 
-Get started: [Getting Started Docs](https://strapi.io/documentation/3.x.x/getting-started/quick-start.html)
+Get started: [Getting Started Docs](https://strapi.io/documentation/v3.x/getting-started/introduction.html)
