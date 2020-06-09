@@ -40,7 +40,7 @@ Directus mirrors _your_ actual database so it will automatically stay in sync wi
 3. Update your database schema at any point and Directus will instantly reflect changes
 4. Create, update, and delete content directly from the database
 
-This database-first approach means that you have the option to completely bypass Directus as needed. Connecting your application directly to the database means Directus is completely bypassed, removing even the slightest possiblility of a bottleneck, and giving you the unbridled power of SQL.
+This database-first approach means that you have the option to completely bypass Directus as needed. Connecting your application directly to the database means Directus is completely bypassed, removing even the slightest possibility of a bottleneck, and giving you the unbridled power of SQL.
 
 ### Complex Relationships
 

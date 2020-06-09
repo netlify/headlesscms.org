@@ -17,6 +17,6 @@ From a simple homepage to a blog, a photo gallery or a newsletter... all the way
 
 b2evolution is Free Open-Source software that you can download and run on the web-hosting service of your choice.
 
-b2evolution can be used as a headless CMS throught its Restful API: <a href="https://b2evolution.net/man/advanced-topics/external-apis/rest-api/">https://b2evolution.net/man/advanced-topics/external-apis/rest-api/</a>
+b2evolution can be used as a headless CMS through its Restful API: <a href="https://b2evolution.net/man/advanced-topics/external-apis/rest-api/">https://b2evolution.net/man/advanced-topics/external-apis/rest-api/</a>
 
 See demo here: <a href="http://demo.b2evolution.net">http://demo.b2evolution.net</a>
