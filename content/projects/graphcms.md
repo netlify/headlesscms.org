@@ -18,7 +18,7 @@ As the first GraphQL native Headless CMS, our mission is to remove traditional c
 
 ## Why Use GraphCMS?
 
-## API-first CMS with the most flexible content API in the CMS industry
+### API-first CMS with the most flexible content API in the CMS industry
 Our generated APIs offer endless flexibility for fetching or writing content. Precise content selection, filtering, ordering, pagination, union types and much more.
 
 ## We're focused on Developers challenges
