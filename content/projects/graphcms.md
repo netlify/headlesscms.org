@@ -25,7 +25,7 @@ Our generated APIs offer endless flexibility for fetching or writing content. Pr
 Minimum payload, client-driven data queries, generated documentation, powerful tooling and extensive filtering for an utterly flexible interaction with your API. 
 The generated GraphQL API works for read and write operations and scales seamlessly.
 
-## Free forever developer plan
+### Free forever developer plan
 Enjoy GraphCMS for personal or small-scale projects. Our free forever plan lets up to 2 users work on GraphCMS projects with restricted locales, user roles, and stages. Flexible and project based pricing suited to accommodate your growth as your project needs scale. 
 
 ## Useful Links to get Started with GraphCMS
