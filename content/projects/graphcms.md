@@ -21,7 +21,7 @@ As the first GraphQL native Headless CMS, our mission is to remove traditional c
 ### API-first CMS with the most flexible content API in the CMS industry
 Our generated APIs offer endless flexibility for fetching or writing content. Precise content selection, filtering, ordering, pagination, union types and much more.
 
-## We're focused on Developers challenges
+### We're focused on Developers challenges
 Minimum payload, client-driven data queries, generated documentation, powerful tooling and extensive filtering for an utterly flexible interaction with your API. 
 The generated GraphQL API works for read and write operations and scales seamlessly.
 
