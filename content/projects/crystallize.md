@@ -7,7 +7,7 @@ opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
     - All
-description: Crystallize is a GraphQL PIM service with a twist; manage structured product information and rich marketing content. A fast GraphQL API for building juicy headless customer experiences in any channel. Ideal for JAMStack & React. Sign up to your [free tier Crystallize account](https://crystallize.com/signup) and start building.
+description: Headless PIM with a twist, product information and marketing content as a fast & scalable GraphQL service. Commerce + Content. JAMStack ready.
 images:
     - path: /images/crystallize-JAMStack-ecommerce-boilerplate.png
     - path: /images/crystallize-beautiful-editorial-ui.png
@@ -49,7 +49,7 @@ Your content is stored on our servers, they will be safe, secure and delivered s
 
 ### Structured Content
 
-Model content your way using [shapes](https://crystallize.com/learn/concepts/pim/shape) in Crystallize. Build a [custom content model](https://crystallize.com/blog/structured-content-pim-withhttps://crystallize.com/learn/best-practices/information-architecture/content-modelling) instead of dealing with fixed, predefined templates.
+Model content your way using [shapes](https://crystallize.com/learn/concepts/pim/shape) in Crystallize. Build a [custom content model](https://crystallize.com/blog/structured-content-pim-with-products-of-any-shape) instead of dealing with fixed, predefined templates.
 
 ### Build rich taxonomies
 
