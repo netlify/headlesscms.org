@@ -2,7 +2,7 @@
 title: Crystallize
 homepage: https://www.crystallize.com/
 twitter: CrystallizeAPI
-repo: https://github.com/CrystallizeAPI
+repo: CrystallizeAPI
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
@@ -14,8 +14,6 @@ images:
     - path: /images/crystallize-topic-maps-taxonomies.png
     - path: /images/crystallize-fast-graphql-api.png
 ---
-
-<img class="simple" src="/images/crystallize-beautiful-editorial-ui.png" alt="Crystallize Admin UI" />
 
 ## Bring your own frontend
 
