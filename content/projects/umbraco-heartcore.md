@@ -1,12 +1,13 @@
 ---
 title: Umbraco Heartcore
-repo: umbraco/Umbraco.Headless.Client.NodeJs
+repo: umbraco/Umbraco-cms
 homepage: https://umbraco.com/products/umbraco-heartcore/
+twitter: umbraco
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
   - All
-description: Umbraco Heartcore is a headless CMS with an editor experience like no other. On top of a managed RESTful API and CDN, you'll get a powerful backoffice to structure, organize and create content in a fast and efficient manner.
+description: Umbraco Heartcore is a headless CMS with an editor experience like no other. On top of a managed RESTful and graphQL API and CDN, you'll get a powerful backoffice to structure, organize and create content in a fast and efficient manner.
 images:
   - path: /images/umbraco-heartcore-backoffice.png
   - path: /images/umbraco-heartcore-channels.png
