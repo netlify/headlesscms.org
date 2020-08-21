@@ -22,7 +22,7 @@ Crownpeak DXM is a cloud-native platform, built for agility and extensibility, a
   - Component-based design
   - API and microservice architecture 
 
-![crownpeak headless diagram](/images/crownpeak_headless_diagram.jpg)
+![crownpeak headless diagram](/public/images/crownpeak_headless_diagram.jpg)
 
 [Request a Demo](https://www.crownpeak.com/about/demo-request)
 
