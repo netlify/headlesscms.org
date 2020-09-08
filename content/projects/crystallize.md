@@ -2,7 +2,7 @@
 title: Crystallize
 homepage: https://www.crystallize.com/
 twitter: CrystallizeAPI
-repo: https://github.com/CrystallizeAPI
+#repo: https://github.com/CrystallizeAPI
 opensource: "No"
 typeofcms: "API Driven"
 supportedgenerators:
