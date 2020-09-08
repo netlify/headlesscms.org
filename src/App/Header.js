@@ -47,7 +47,7 @@ const ShareButton = styled(({
 const AnnouncementBar = ({ className }) => (
   <div className={className}>
     <p>
-      Join us at the first Headless Commerce Summit, Sept 3rd. <a href="https://headlesscommercesummit.com/" target="_blank" rel="noopener noreferrer">Learn&nbsp;more</a>
+      Join us at Jamstack Conf Virtual, October 6-7. <a href="https://ti.to/netlify/jamstack_virtual_oct" target="_blank" rel="noopener noreferrer">Register&nbsp;now!</a>
     </p>
   </div>
 )
