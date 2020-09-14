@@ -103,6 +103,7 @@ const AppStyles = styled.div`
     background: #122b3b;
     padding: 10px 20px;
     border: 1px solid #000;
+    color: #fff;
   }
 
   .logo {

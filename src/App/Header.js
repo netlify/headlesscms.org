@@ -47,7 +47,7 @@ const ShareButton = styled(({
 const AnnouncementBar = ({ className }) => (
   <div className={className}>
     <p>
-      Check out the videos from Jamstack Conf Virtual, May 27. <a href="https://www.youtube.com/watch?v=w9yrrQBBKos&list=PL58Wk5g77lF8jzqp_1cViDf-WilJsAvqT" target="_blank" rel="noopener noreferrer">Watch&nbsp;the&nbsp;presentations</a>
+      Join us at Jamstack Conf Virtual, October 6-7. <a href="https://ti.to/netlify/jamstack_virtual_oct" target="_blank" rel="noopener noreferrer">Register&nbsp;now!</a>
     </p>
   </div>
 )
