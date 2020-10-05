@@ -1,5 +1,5 @@
 / https://next-design-iteration--jamstack-site.netlify.app/ 301!
-/about https://next-design-iteration--jamstack-site.netlify.app/generators/ 301!
-/contribute https://next-design-iteration--jamstack-site.netlify.app/generators/ 301!
+/about https://next-design-iteration--jamstack-site.netlify.app/headless-cms/ 301!
+/contribute https://next-design-iteration--jamstack-site.netlify.app/headless-cms/ 301!
 /contact https://next-design-iteration--jamstack-site.netlify.app/ 301!
-/* https://next-design-iteration--jamstack-site.netlify.app/generators/:splat 301!
+/* https://next-design-iteration--jamstack-site.netlify.app/headless-cms/:splat 301!
