@@ -1,6 +1,6 @@
 / https://jamstack.org/headless-cms/ 301!
-/contact https://www.jamstack.org/ 301!
-/about https://www.jamstack.org/headless-cms/ 301!
-/contribute https://www.jamstack.org/headless-cms/ 301!
+/contact https://jamstack.org/ 301!
+/about https://jamstack.org/headless-cms/ 301!
+/contribute https://jamstack.org/headless-cms/ 301!
 /projects/* https://www.jamstack.org/headless-cms/:splat 301!
 /* https://www.jamstack.org/:splat 301!
