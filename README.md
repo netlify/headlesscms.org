@@ -1,4 +1,10 @@
-# headlesscms.org
+## ⚠️ We have moved staticgen.com to jamstack.org/headless-cms/
+
+You can still contribute at https://github.com/jamstack/jamstack.org/ or join us on Slack at http://jamstack.slack.com/
+
+---
+
+## headlesscms.org
 
 [headlesscms.org](http://www.headlesscms.org), a leaderboard of top open-source static site content management systems.
 
