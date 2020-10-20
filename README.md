@@ -1,4 +1,4 @@
-## ⚠️ We have moved staticgen.com to jamstack.org/headless-cms/
+## ⚠️ We have moved headlesscms.org to jamstack.org/headless-cms/
 
 You can still contribute at https://github.com/jamstack/jamstack.org/ or join us on Slack at http://jamstack.slack.com/
 
